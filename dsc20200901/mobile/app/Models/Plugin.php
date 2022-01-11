@@ -1,0 +1,14 @@
+<?php
+//大商创开源码版本2.5.3
+namespace app\models;
+
+class Plugin extends \Illuminate\Database\Eloquent\Model
+{
+	protected $table = 'plugins';
+	protected $primaryKey = 'code';
+	public $timestamps = false;
+	protected $fillable = array('version', 'library', 'assign', 'install_date');
+	protected $guarded = array();
+}
+
+?>

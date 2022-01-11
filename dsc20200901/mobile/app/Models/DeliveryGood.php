@@ -1,0 +1,14 @@
+<?php
+//大商创开源码版本2.5.3
+namespace app\models;
+
+class DeliveryGood extends \Illuminate\Database\Eloquent\Model
+{
+	protected $table = 'delivery_goods';
+	protected $primaryKey = 'rec_id';
+	public $timestamps = false;
+	protected $fillable = array('delivery_id', 'goods_id', 'product_id', 'product_sn', 'goods_name', 'brand_name', 'goods_sn', 'is_real', 'extension_code', 'parent_id', 'send_number', 'goods_attr');
+	protected $guarded = array();
+}
+
+?>

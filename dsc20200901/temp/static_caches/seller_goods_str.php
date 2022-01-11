@@ -1,0 +1,27 @@
+<?php
+$data = array (
+  'domain' => 'http://dsc253.noonet.cn',
+  'url' => 'http://dsc253.noonet.cn/',
+  'shop_name' => '商创商城',
+  'shop_title' => '商创商城',
+  'shop_desc' => '商创商城',
+  'shop_keywords' => '商创商城',
+  'country' => '中国',
+  'province' => '上海',
+  'city' => '上海',
+  'address' => '中国北京',
+  'qq' => '12345',
+  'ww' => '12345@qq.com',
+  'ym' => '123456789',
+  'msn' => '',
+  'email' => '12345@qq.com',
+  'phone' => '13354638533',
+  'icp' => '15002903',
+  'version' => 'v2.5.2',
+  'release' => '20180409',
+  'language' => 'zh_cn',
+  'php_ver' => '5.6.1',
+  'mysql_ver' => '5.5.40',
+  'charset' => 'utf-8',
+);
+?>

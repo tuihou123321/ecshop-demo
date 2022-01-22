@@ -244,7 +244,7 @@ class ApiController extends \App\Modules\Admin\Controllers\EditorController
 
 			if ($type == 'function') {
 				$category = array('cat_id' => '1', 'cat_name' => '分类', 'parent_id' => 0, 'url' => url('category/index/index'));
-				$cart = array('cat_id' => '2', 'cat_name' => '购物车', 'parent_id' => 0, 'url' => url('cart/index/index'));
+				$cart = array('cat_id' => '2', 'cat_name' => 'ショッピングカート', 'parent_id' => 0, 'url' => url('cart/index/index'));
 				$user = array('cat_id' => '3', 'cat_name' => '用户中心', 'parent_id' => 0, 'url' => url('user/index/index'));
 				$store = array('cat_id' => '4', 'cat_name' => '店铺街', 'parent_id' => 0, 'url' => url('store/index/index'));
 				$brand = array('cat_id' => '5', 'cat_name' => '品牌街', 'parent_id' => 0, 'url' => url('brand/index/index'));

@@ -14,7 +14,7 @@
 */
 $_LANG['region_message'] = "您尚未拥有此配送地区，请您填写配送地址！";
 $_LANG['default'] = "默认";
-$_LANG['is_new'] = '新品';
+$_LANG['is_new'] = '新着商品';
 $_LANG['begin_minute'] = "即将开始";
 $_LANG['Appointment'] = "预约中";
 $_LANG['array_order'] = "排列";
@@ -64,7 +64,7 @@ $_LANG['presale_Estimate_two'] = "时开始发货";
 $_LANG['Store_cat'] = '店内分类';
 $_LANG['see_exc_goods'] = '查看全部商品';
 $_LANG['Product_details'] = '商品详情';
-$_LANG['Commodity_number'] = "商品编号";
+$_LANG['Commodity_number'] = "商品品番";
 $_LANG['weight'] = "重量";
 $_LANG['evaluation_single'] = '商品评价';
 $_LANG['captcha_comment'] = '发表评论';
@@ -92,10 +92,10 @@ $_LANG['Already_buy'] = '已购买';
 /*haojialeju*/
 
 
-$_LANG['js_languages']['shiping_prompt'] = "暂不支持配送";
+$_LANG['js_languages']['shiping_prompt'] = "配送は当分サポートしておりません";
 $_LANG['js_languages']['Have_goods'] = "有货"; 
 $_LANG['js_languages']['No_goods'] = "无货";
 $_LANG['js_languages']['Deliver_back_order'] = "下单后立即发货";
 $_LANG['js_languages']['Time_delivery'] = " 时发货";
 $_LANG['js_languages']['goods_over'] = "此商品暂时售完";
-$_LANG['is_shipping_area'] = "[ 暂不支持配送 ]";
+$_LANG['is_shipping_area'] = "[ 配送は当分サポートしておりません ]";

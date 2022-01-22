@@ -44,8 +44,8 @@ $data = array (
           'middlemen' => 0,
           'goodmen' => 0,
           'left' => 90,
-          'up_down' => 50,
-          'is_status' => 2,
+          'up_down' => 100,
+          'is_status' => 1,
         ),
       ),
       'commentServer' => 
@@ -63,8 +63,8 @@ $data = array (
           'middlemen' => 0,
           'goodmen' => 0,
           'left' => 90,
-          'up_down' => 50,
-          'is_status' => 2,
+          'up_down' => 100,
+          'is_status' => 1,
         ),
       ),
       'commentDelivery' => 
@@ -82,8 +82,8 @@ $data = array (
           'middlemen' => 0,
           'goodmen' => 0,
           'left' => 90,
-          'up_down' => 50,
-          'is_status' => 2,
+          'up_down' => 100,
+          'is_status' => 1,
         ),
       ),
       'all_zconments' => 

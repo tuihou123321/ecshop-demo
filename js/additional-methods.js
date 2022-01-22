@@ -10,7 +10,7 @@
  * 验证是否是有效的手机号
  */
 $.validator.addMethod("phoneZH", function(value, element) { 
-    var tel = /^(((13[0-9]{1})|(14[0-9]{1})|(17[0]{1})|(15[0-3]{1})|(15[5-9]{1})|(18[0-9]{1}))+\d{8})$/; 
+    var tel = /^[\d|\-|\s|\_]+$/; 
     return tel.test(value) || this.optional(element); 
 }, "请输入正确的手机号码");
  
@@ -28,7 +28,7 @@ $.validator.addMethod("isTel", function(value, element) {
 //联系电话(手机/电话皆可)验证
 $.validator.addMethod("isPhone", function(value,element) {
 	var length = value.length;
-	var mobile = /^(((13[0-9]{1})|(14[0-9]{1})|(17[0]{1})|(15[0-3]{1})|(15[5-9]{1})|(18[0-9]{1}))+\d{8})$/;
+	var mobile = /^[\d|\-|\s|\_]+$/;
 	var tel = /^\d{3,4}-?\d{7,9}$/;
 	return this.optional(element) || (tel.test(value) || mobile.test(value));
 }, "请正确填写您的联系电话");

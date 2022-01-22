@@ -205,20 +205,7 @@
                                             <div class="p-num">{$lang.Sold}<em>{$goods.sales_volume}</em>{$lang.jian}</div>
                                         </div>
                                         <div class="p-name"><a href="{$goods.goods_url}" title="{$goods.goods_name|escape:html}" target="_blank">{$goods.goods_name}</a></div>
-                                        <div class="p-store">
-                                            <a href="{$goods.shop_url}" title="{$goods.shop_name}" class="store" target="_blank">{$goods.shop_name}</a>
-                                            <!--start 在线客服 -->
-                                            {if $goods.is_IM eq 1 || $goods.is_dsc}
-                                            <a href="javascript:;" id="IM" onclick="openWin(this)" goods_id="{$goods.goods_id}" class="p-kefu"><i class="iconfont icon-kefu"></i></a>
-                                            {else}
-                                                {if $goods.kf_type eq 1}
-                                                <a href="http://www.taobao.com/webww/ww.php?ver=3&touid={$goods.kf_ww}&siteid=cntaobao&status=1&charset=utf-8" class="p-kefu" target="_blank"><i class="iconfont icon-kefu"></i></a>
-                                                {else}
-                                                <a href="http://wpa.qq.com/msgrd?v=3&uin={$goods.kf_qq}&site=qq&menu=yes" class="p-kefu" target="_blank"><i class="iconfont icon-kefu"></i></a>
-                                                {/if}
-                                            {/if}
-                                            <!--end 在线客服 -->
-                                        </div>
+                                      
                                         {if $goods.is_new || $goods.is_hot || $goods.is_best || $goods.is_shipping || $goods.self_run}
                                         <div class="p-activity">
                                             {if $goods.is_new}
@@ -302,20 +289,7 @@
                                             </div>
                                         </div>
                                         <div class="col col-2">
-                                            <div class="p-store">
-                                                <a href="{$goods.store_url}" title="{$goods.shop_name}" target="_blank">{$goods.shop_name}</a>
-                                                <!--start 在线客服 -->
-                                            {if $goods.is_IM eq 1 || $goods.is_dsc}
-                                            <a href="javascript:;" id="IM" onclick="openWin(this)" goods_id="{$goods.goods_id}" class="p-kefu"><i class="iconfont icon-kefu"></i></a>
-                                            {else}
-                                                {if $goods.kf_type eq 1}
-                                                <a href="http://www.taobao.com/webww/ww.php?ver=3&touid={$goods.kf_ww}&siteid=cntaobao&status=1&charset=utf-8" class="p-kefu" target="_blank"><i class="iconfont icon-kefu"></i></a>
-                                                {else}
-                                                <a href="http://wpa.qq.com/msgrd?v=3&uin={$goods.kf_qq}&site=qq&menu=yes" class="p-kefu" target="_blank"><i class="iconfont icon-kefu"></i></a>
-                                                {/if}
-                                            {/if}
-                                            <!--end 在线客服 -->
-                                            </div>
+                                       
                                         </div>
                                         <div class="col col-3">
                                             <div class="p-price">

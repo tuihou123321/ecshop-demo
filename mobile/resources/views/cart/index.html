@@ -6,11 +6,11 @@
 			<span class="gwc-bg">
 						<i class="iconfont icon-gouwuche"></i>
 					</span>
-            <p class="t-remark text-center">购物车什么也没有</p>
-            <a href="{url('/')}" type="button" class="btn-default-new min-btn br-5">去逛逛</a>
+            <p class="t-remark text-center">カートには商品がございません</p>
+            <a href="{url('/')}" type="button" class="btn-default-new min-btn br-5">注文に行く</a>
 
             <div class="f-n-c-prolist product-one-list j-f-n-c-prolist b-color-f">
-                <h3 class="padding-all" style="font-size:1.6rem; padding-bottom:.4rem;">你可能想要</h3>
+                <h3 class="padding-all" style="font-size:1.6rem; padding-bottom:.4rem;">ここはあなたが買いたい商品かもしれません。</h3>
                 <div class="swiper-wrapper">
                     <!-- {foreach $relation as $key} -->
                     <li class="swiper-slide">
@@ -46,7 +46,7 @@
                         <i class="j-select-btn active-i" data-type="1"></i>
                             <a class="box-flex f-06" href="{if $key.ru_id>0}{url('store/index/shop_info',array('id'=>$key.ru_id))}{else}javascript:;{/if}">
                                 <i class="iconfont icon-dianpu2 flow-shop-icon {if  $key.ru_id == 0} active{/if}"></i>
-                                    {$key.ru_name}{$key.user_id}
+                                    RUSH专门店
                                  {if  $key.ru_id == 1}<i class="iconfont icon-more f-08 col-7"></i>{/if}
                             </a>
                     </label>
@@ -171,7 +171,7 @@
         <!-- 按店铺显示商品  end-->
         <section>
             <section class="padding-all text-center t-remark2 ">
-                <p class="j-goodsinfo-div">推荐商品</p>
+                <p class="j-goodsinfo-div">おすすめ商品</p>
             </section>
             <section class="product-list j-product-list product-list-medium new-flow-bottom">
                 <ul>
@@ -187,8 +187,8 @@
                             <div class="product-text index-product-text">
                                 <a href="{$key.url}">
                                     <h4>{$key.goods_name}</h4></a>
-                                <p class="dis-box p-t-remark"><span class="box-flex">库存:{$key.goods_number}</span><span
-                                        class="box-flex">销量:{$key.sales_volume}</span></p>
+                                <p class="dis-box p-t-remark"><span class="box-flex">在庫量:{$key.goods_number}</span><span
+                                        class="box-flex">売上高:{$key.sales_volume}</span></p>
                                 <p class="cart-price-height"><span class="p-price t-first ">
                                              {if $key.is_promote && $key.gmt_end_time}
                                              {$key.promote_price}
@@ -243,43 +243,43 @@
             <div class="ect-select">
                 <label class="dis-box label-all active">
                     <i class="select-btn active-i"></i>
-                    <span class="box-flex">全选</span></span>
+                    <span class="box-flex">選択</span></span>
                 </label>
             </div>
             <div class="g-cart-filter-price of-hidden">
-                <p class="dis-box"><em class="dis-block">合计：</em>
+                <p class="dis-box"><em class="dis-block">合計:</em>
                     <span class="t-first box-flex onelist-hidden cart-price-show"></span>
                     <span class="t-first box-flex onelist-hidden cart-price-hidden" style="display:none"></span>
                 </p>
-                <p class="t-remark">不含运费</p>
+               <!-- <p class="t-remark">郵便料金は含まれていません</p>-->
             </div>
         </div>
         <div class="g-cart-filter-sb">
-            <span class="span-bianji fl"><i class="iconfont icon-bianji1"></i><em>编辑</em></span>
+            <span class="span-bianji fl"><i class="iconfont icon-bianji1"></i><em>編集</em></span>
             <form id="formid" action="{url('flow/index/index')}" class="fl" method="post">
                 <input type="hidden" name="cart_value" value="{$cart_value}">
                 <input type="hidden" name="store_id"/>
-                <a type="button" class="btn-submit fl" onclick="c_value()">结算 <span class='cart-number-show f-05'>({$cart_show.cart_goods_number})</span></a>
+                <a type="button" class="btn-submit fl" onclick="c_value()">決済 <span class='cart-number-show f-05'>({$cart_show.cart_goods_number})</span></a>
             </form>
         </div>
         <div class="g-cart-filter-bj">
-            <span class="heart j-heart fl"><i class="ts-2 shoucang"></i><em class="ts-2">收藏</em></span>
-            <a type="button" class="btn-default j-btn-default fl">返回</a>
-            <a type="button" class="btn-submit fl delete">删除</a>
+            <span class="heart j-heart fl"><i class="ts-2 shoucang"></i><em class="ts-2">コレクション</em></span>
+            <a type="button" class="btn-default j-btn-default fl">戻る</a>
+            <a type="button" class="btn-submit fl delete">削除</a>
         </div>
     </section>
     <footer class="footer-nav dis-box p-s">
         <a href="{url('/')}" class="box-flex nav-list">
-            <i class="nav-box i-home"></i><span>首页</span>
+            <i class="nav-box i-home"></i><span>トップページ</span>
         </a>
         <a href="{url('category/index/index')}" class="box-flex nav-list">
-            <i class="nav-box i-cate"></i><span>分类</span>
+            <i class="nav-box i-cate"></i><span>カテゴリ</span>
         </a>
         <a href="{url('search/index/index')}" class="box-flex nav-list">
-            <i class="nav-box i-shop"></i><span>搜索</span>
+            <i class="nav-box i-shop"></i><span>検索</span>
         </a>
         <a href="{url('cart/index/index')}" class="box-flex position-rel nav-list  active">
-            <i class="nav-box i-flow"></i><span>购物车</span>
+            <i class="nav-box i-flow"></i><span>ショッピングカート</span>
         </a>
         {if $filter}
         <a href="{url('drp/user/index')}" class="box-flex nav-list">
@@ -291,7 +291,7 @@
         </a>
         {else}
         <a href="{url('user/index/index')}" class="box-flex nav-list">
-            <i class="nav-box i-user"></i><span>我</span>
+            <i class="nav-box i-user"></i><span>私の</span>
         </a>
         {/if}
     </footer>
@@ -302,16 +302,16 @@
 
 <footer class="footer-nav dis-box">
     <a href="{url('/')}" class="box-flex nav-list">
-        <i class="nav-box i-home"></i><span>首页</span>
+            <i class="nav-box i-home"></i><span>トップページ</span>
     </a>
     <a href="{url('category/index/index')}" class="box-flex nav-list">
-        <i class="nav-box i-cate"></i><span>分类</span>
+            <i class="nav-box i-cate"></i><span>カテゴリ</span>
     </a>
     <a href="{url('search/index/index')}" class="box-flex nav-list">
-        <i class="nav-box i-shop"></i><span>搜索</span>
+            <i class="nav-box i-shop"></i><span>検索</span>
     </a>
     <a href="{url('cart/index/index')}" class="box-flex position-rel nav-list  active">
-        <i class="nav-box i-flow"></i><span>购物车</span>
+            <i class="nav-box i-flow"></i><span>ショッピングカート</span>
     </a>
     {if $filter}
     <a href="{url('drp/user/index')}" class="box-flex nav-list">
@@ -323,7 +323,7 @@
     </a>
     {else}
     <a href="{url('user/index/index')}" class="box-flex nav-list">
-        <i class="nav-box i-user"></i><span>我</span>
+            <i class="nav-box i-user"></i><span>私の</span>
     </a>
     {/if}
 </footer>

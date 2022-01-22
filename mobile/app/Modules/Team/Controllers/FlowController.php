@@ -505,7 +505,7 @@ class FlowController extends FrontendController
         }
         //
         $this->assign('store_id', $store_id);
-        $this->assign('page_title', '订单确认');
+        $this->assign('page_title', '注文書確認');
         $this->display();
     }
 
@@ -533,7 +533,7 @@ class FlowController extends FrontendController
                 $user_bonus[$key]['use_end_date'] = local_date('Y-m-d', $val['use_end_date']);
                 //全场通用优惠券
                 if ($val['usebonus_type'] == 1) {
-                    $user_bonus[$key]['shop_name'] = '全场通用';
+                    $user_bonus[$key]['shop_name'] = '満場共通';
                 } elseif ($val['user_id'] == 0) {
                     //自营
                     $user_bonus[$key]['shop_name'] = '';

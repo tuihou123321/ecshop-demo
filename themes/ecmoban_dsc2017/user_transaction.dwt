@@ -54,10 +54,10 @@
         <div class="user-mod">
             <div class="user-account-warp">
                 <div class="user-title">
-                    <h2>操作日志</h2>
+                    <h2>操作ログ</h2>
 					<ul class="tabs">
                         <li><a href="user.php?act=profile">{$lang.profile}</a></li>
-                        <li class="active"><a href="user.php?act=users_log">操作日志</a></li>
+                        <li class="active"><a href="user.php?act=users_log">操作ログ</a></li>
                     </ul>
                 </div>
                 <div class="account-main account-not">
@@ -118,7 +118,7 @@
                 <h2>{$lang.profile}</h2>
 				<ul class="tabs">
                     <li class="active"><a href="user.php?act=profile">{$lang.profile}</a></li>
-                    <li><a href="user.php?act=users_log">操作日志</a></li>
+                    <li><a href="user.php?act=users_log">操作ログ</a></li>
                 </ul>
             </div>
             <div class="user-profile-info">
@@ -190,7 +190,7 @@
                             <div class="value">
                                 <span class="txt-lh2 fl" id="profile_email">{$profile.email}</span>
                                 <!--{if $profile.is_validate eq 0}-->
-                                <span class="txt-lh2 ml10"><a href="user.php?act=account_safe&type=change_email" class="ftx-05">{$lang.Immediately_verify}</a></span>
+                               
                                 <!--{else}-->
                                 <span class="succeed"><i></i></span>
                                 <!--{/if}-->
@@ -257,15 +257,7 @@
                         </div>
                     </form>
                 </div>
-                <div class="avatar_change" ectype="upImgTouch">
-                	
-                    {if $profile.user_picture}
-                    <img class="am-circle" src="{$profile.user_picture}?&'+Math.random();" width="120" height="120">
-                    {else}
-                    <img class="am-circle" src="themes/<?php echo $GLOBALS['_CFG']['template']; ?>/images/touxiang.jpg" width="120" height="120">
-                    {/if}
-                    <a href="javascript:void(0);" class="changeavatar"><div class="shadeDiv"></div><span>{$lang.Modify_Avatar}</span></a>
-                </div>
+             
             </div>
         </div>
         
@@ -273,14 +265,14 @@
         <div class="am-modal" ectype="docMdal">
             <div class="am-modal-dialog">
                 <div class="am-modal-hd">
-                    <label>修改头像</label>
+                    <label>アイコンの変更</label>
                     <a href="javascript: void(0)" class="am-close am-close-spin" data-am-modal-close>&times;</a>
                 </div>
                 <div class="am-modal-bd">
                     <div class="am-g am-fl">
                         <div class="am-form-group am-form-file">
                             <div class="am-fl">
-                                <button type="button" class="am-btn am-btn-default"><i class="iconfont icon-cloud-upload-alt"></i> 选择要上传的文件</button>
+                                <button type="button" class="am-btn am-btn-default"><i class="iconfont icon-cloud-upload-alt"></i> アップロードするファイルを選択</button>
                             </div>
                             <input type="file" ectype="fileImage" id="inputImage">
                         </div>
@@ -1526,9 +1518,9 @@
         <!-- {if $action eq 'order_list' || $action eq 'order_recycle'} -->
         <div class="user-mod">
             <div class="user-title">
-                <h2>我的订单</h2>
+                <h2>私の注文</h2>
                 <ul class="tabs">
-                    <li {if $order_type neq toBe_confirmed && $order_type neq toBe_pay && $order_type neq toBe_confirmed && $order_type neq toBe_finished}class="active"{/if}><a href="user.php?act=order_list">全部订单({$allorders})</a></li>
+                    <li {if $order_type neq toBe_confirmed && $order_type neq toBe_pay && $order_type neq toBe_confirmed && $order_type neq toBe_finished}class="active"{/if}><a href="user.php?act=order_list">すべての注文({$allorders})</a></li>
                     <li class="user-count3 {if $order_type eq to_unconfirmed}active{/if}" onclick="get_OrderSearch('to_unconfirmed', '{$action}', 'toBe_unconfirmed','','.user-count3')">
                     <a href="javascript:void(0);">{$lang.cs.0}({$unconfirmed})</a>
                     <input name="to_unconfirmed" id="to_unconfirmed" type="hidden" value="0" />
@@ -1594,7 +1586,7 @@
         <!-- {if $action eq 'order_detail' || $action eq 'auction_order_detail'} -->
         <div class="user-mod user-order-detail">
             <div class="user-title">
-                <h2>订单详情</h2>
+                <h2>オーダー詳細</h2>
                 <a href="user.php?act=message_list&is_order=1&order_id={$order.order_id}" class="more">{$lang.type.0}<em>&nbsp;&nbsp;(&nbsp;{$feedback_num}&nbsp;)</em></a>
             </div>
             <div class="order-detail-statu">
@@ -1618,17 +1610,17 @@
                 </div>
                 <div class="statu-right mt10">
                     {if $order.affirm_received}
-                    <a href="{$order.affirm_received}" onclick="if (!confirm('你确认已经收到货物了吗？否则财物两空哦！')) return false;" class="sc-btn sc-blue-btn">确认收货</a>
+                    <a href="{$order.affirm_received}" onclick="if (!confirm('商品を受け取ったことを確認しましたか?')) return false;" class="sc-btn sc-blue-btn">商品の受領確認</a>
                     {/if}
                 </div>
             </div>
             
             <ul class="order-detail-progress progress-{$order.order_tracking}">
                 <li>{$lang.order_addtime}<div class="tip">{$order.add_time}</div></li>
-                <li>付款<div class="tip">{$order.pay_time}</div></li>
-                <li>发货<div class="tip">{$order.shipping_time}</div></li>
-                <li>收货<div class="tip">{$order.confirm_take_time}</div></li>
-                <li>完成<div class="tip"></div></li>
+                <li>金を払う<div class="tip">{$order.pay_time}</div></li>
+                <li>出荷<div class="tip">{$order.shipping_time}</div></li>
+                <li>商品を受け取る<div class="tip">{$order.confirm_take_time}</div></li>
+                <li>完了<div class="tip"></div></li>
             </ul>
             <div class="user-info-list">
                 <div class="info-title"><h2>{$lang.consignee_info}</h2></div>
@@ -1698,7 +1690,7 @@
             
             {if $order.extension_code neq 'wholesale'}
             <div class="user-info-list">
-                <div class="info-title"><h2>付款信息</h2></div>
+                <div class="info-title"><h2>支払情報</h2></div>
 				{if !$seckill_status || $order.pay_time}
                 <div class="info-content">
                     <div class="info-item">
@@ -1713,7 +1705,7 @@
                             <!--{if $is_onlinepay}--><!--只有当用户开启了在线支付,才显示在线支付的一系列方法-->
                                 <!--{if $payment_list}-->
                                 <div class="info-item">
-                                    <div class="item-label lh30">在线支付：</div>
+                                    <div class="item-label lh30">オンライン決済:</div>
                                     <div class="item-value">
                                         <form name="payment" method="post" action="user.php">
                                         <select name="pay_id">
@@ -1905,22 +1897,22 @@
                     </div>
                     {if $order.pay_time}
                     <div class="info-item">
-                        <div class="item-label">付款时间：</div>
+                        <div class="item-label">支払時間：</div>
                         <div class="item-value">{$order.pay_time}</div>
                     </div>
                     {/if}
                 </div>
 				{else}
                 <div class="statu-left">
-                    <p class="red">该订单已失效，请重新下单！</p>
+                    <p class="red">この注文書は失効しましたので、再注文してください！</p>
                 </div>
 				{/if}
             </div>
             {/if}
             <div class="user-info-list">
                 <div class="info-title">
-                    <h2>配送信息</h2>
-                    <!-- {if $order.dsc_shipping_status eq 1 && $open_order_delay eq 1 && $order.allow_order_delay eq 1} --><a href="javascript:void(0);" class="sc-btn sc-blue-btn ml10" data-id="{$order.order_id}" id="sbumit_order_delay">延迟收货</a><!--{/if}-->
+                    <h2>配送情報</h2>
+                    <!-- {if $order.dsc_shipping_status eq 1 && $open_order_delay eq 1 && $order.allow_order_delay eq 1} --><a href="javascript:void(0);" class="sc-btn sc-blue-btn ml10" data-id="{$order.order_id}" id="sbumit_order_delay">受入貨物の延長</a><!--{/if}-->
                 </div>
                 <div class="info-content">
                     <div class="info-item">
@@ -1940,7 +1932,7 @@
 								{foreach from=$order.invoice_no_list item=invoice_no_item}
 								<li data-invoice_no="{$invoice_no_item}">
 									<span>{$invoice_no_item}</span>
-									{if $order.invoice_no_count gt 1}<a href="javascript:view_logistics_info('{$order.order_id}', '{$invoice_no_item}');" class="ml10">查看物流</a>{/if}
+									{if $order.invoice_no_count gt 1}<a href="javascript:view_logistics_info('{$order.order_id}', '{$invoice_no_item}');" class="ml10">追跡スタート</a>{/if}
 								</li>
 								{/foreach}
 							</ul>
@@ -2038,7 +2030,7 @@
             </div>
             {if $order.invoice_no}
             <div class="user-info-list">
-                <div class="info-title"><h2>物流跟踪</h2></div>
+                <div class="info-title"><h2>速達便追跡情報</h2></div>
                 <div class="info-content">
                     <div class="logistics-items" id="retData_{$order.order_id}"></div>
                 </div>
@@ -2156,17 +2148,7 @@
             </div>
             {/if}
             <div class="pt10 pb10">
-                <a href="{$order.shop_url}" class="user-shop-link">{$order.shop_name}</a>
-                {if $order.is_IM eq 1 || $order.is_dsc}
-                <a id="IM" onclick="openWin(this)" href="javascript:;" ru_id="{$order.ru_id}" goods_id="{$goods.goods_id}" class="iconfont icon-kefu user-shop-kefu"></a>
-                {else}
-                {if $order.kf_type eq 1}
-                <a href="http://www.taobao.com/webww/ww.php?ver=3&touid={$order.kf_ww}&siteid=cntaobao&status=1&charset=utf-8" class="iconfont icon-kefu user-shop-kefu" target="_blank"></a>
-                {else}
-                <a href="http://wpa.qq.com/msgrd?v=3&uin={$order.kf_qq}&site=qq&menu=yes" class="iconfont icon-kefu user-shop-kefu" target="_blank"></a>
-                {/if}
-                {/if}
-                {if $order.return_url}<a href="{$order.return_url}" class="more">申请售后</a>{/if}
+               
             </div>
             {if $order.is_zc_order eq 1}
             <table class="user-table user-table-detail-goods">
@@ -2224,7 +2206,7 @@
                         <th width="40%">{$lang.goods}</th>
                         <th width="20%" class="tl">{$lang.goods_attr}</th>
                         <th width="10%" class="tl">{$lang.user_goods_sn}</th>
-                        <th width="10%" class="tl">{$lang.delivery_warehouse}</th>
+                        <th width="10%" class="tl"></th>
                         <th width="10%" class="tl">{$lang.unit_price_user}</th>
                         <th width="10%">{$lang.ws_subtotal}</th>
                     </tr>
@@ -2238,7 +2220,7 @@
                         <!-- {/if} -->
                         <!-- {if $goods.goods_id gt 0 && $goods.extension_code neq 'package_buy'} 商品 -->							
                             <a href="{$goods.url}" class="name"{if $goods.is_real eq 0 and $goods.virtual_info} style="margin-top:7px;"{/if}>{$goods.goods_name}</a>
-                            <p class="fl ftx-05">{$lang.give_integral}：{$goods.give_integral}</p>
+                            
                             <!-- {if $goods.parent_id > 0} -->
                             <p class="fl ftx-01">（{$lang.accessories}）</p>
                             <!-- {elseif $goods.is_gift} -->
@@ -2291,7 +2273,7 @@
             <div class="user-order-detail-total">
                 {if $goods_list_count gt 0}
                 <dl class="total-row">
-                    <dt class="total-label">商品件数：</dt>
+                    <dt class="total-label">商品の数量：</dt>
                     <dd class="total-value">{$goods_list_count}{$lang.jian}</dd>
                 </dl>
                 {/if}
@@ -2477,7 +2459,7 @@
                                 <span class="info-item">{$lang.Logistics_company}：{if $goods.out_invoice_no != ""}{$goods.out_shipp_shipping}{else}&nbsp;{/if}</span>
                             </div>
                             <div class="t-right" ectype="track-packages-btn">
-                                <a href="javascript:void(0)" class="sc-btn"><i class="iconfont icon-truck"></i>跟踪</a>
+                                <a href="javascript:void(0)" class="sc-btn"><i class="iconfont icon-truck"></i>追跡スタート</a>
                                 <div class="comment-box" ectype="track-packages-info">
                                     <i class="box-i"></i>
                                     <div class="conmment-box-content">
@@ -2692,8 +2674,8 @@
         <!-- {if $action eq 'address_list'} -->
         <div class="user-mod">
             <div class="user-title">
-                <h2>收货地址</h2>
-                <h3>您已创建<span class="red">{$count_consignee}</span>个收货地址，最多可创建<span class="red">10</span>个</h3>
+                <h2>受取人住所</h2>
+                <h3><span class="red">{$count_consignee}</span>個のアドレスが作成されました，最大<span class="red">10</span>個まで作成可能</h3>
             </div>
             <ul class="cosignee-list">
                 {if $count_consignee < 11}
@@ -2728,7 +2710,7 @@
                                     {$consignee.city_name}
                                 <!-- {/if}  -->
                                 </span>
-                                {if $consignee.address_id eq $address && $address > 0}<span class="tag">默认地址</span>{/if}
+                                {if $consignee.address_id eq $address && $address > 0}<span class="tag">デフォルトアドレス</span>{/if}
                             </div>
                         </div>
                         <div class="body">
@@ -3845,8 +3827,8 @@
                             <a href="javascript:void(0);" class="order-prolist-more" ectype="opm">查看更多︾</a>
                             {/if}
                         </div>
-                        <div class="c-handle" ectype="track-packages-btn">
-                            <a href="javascript:void(0)" class="sc-btn"><i class="iconfont icon-truck"></i>跟踪</a>
+                        <div ectype="track-packages-btn">
+                            <a href="javascript:void(0)" class="sc-btn"><i class="iconfont icon-truck"></i>追跡スタート</a>
                             <div class="comment-box" ectype="track-packages-info">
                                 <i class="box-i"></i>
                                 {if $item.invoice_no}
@@ -5038,13 +5020,13 @@
                 <form action="" method="post">
                 <div class="user-items">
                     <div class="item">
-                        <div class="label"><em>*</em>红包卡号：</div>
+                        <div class="label"><em>*</em>カード番号：</div>
                         <div class="value">
                             <input type="text" name="bonus_sn" class="text text-2 txt_input_cardnum">
                         </div>
                     </div>
                     <div class="item">
-                        <div class="label"><em>*</em>红包密码：</div>
+                        <div class="label"><em>*</em>パスワード：</div>
                         <div class="value">
                             <input type="text" name="bonus_password" class="text text-2 txt_input_cardpw">
                         </div>
@@ -5083,8 +5065,8 @@
                             <div class="item{if $smarty.foreach.available_list.iteration % 3 == 0} item-last{/if}">
                                 <div class="b-price">{$item.type_money}</div>
                                 <div class="b-i-bot">
-                                    <div class="storeName">{$item.shop_name}</div>
-                                    <p>卡号：{$item.bonus_sn|default:N/A} - 订单限额：{$item.min_goods_amount}</p>
+                                    <div class="storeName">Rush専門店</div>
+                                    <p>注文書使用額：{$item.min_goods_amount}</p>
                                     <p>{$item.use_startdate} ~ {$item.use_enddate}</p>
                                 </div>
                                 {if $item.usebonus_type}<i class="i-soon">{$lang.general_audience}</i>{/if}
@@ -5108,11 +5090,11 @@
                         <div class="item{if $smarty.foreach.expire_list.iteration % 3 == 0} item-last{/if}">
                             <div class="b-price">{$item.type_money}</div>
                             <div class="b-i-bot">
-                                <div class="storeName">{$item.shop_name}</div>
-                                <p>卡号：{$item.bonus_sn|default:N/A} - 订单限额：{$item.min_goods_amount}</p>
+                                
+                                <p>注文書使用額：{$item.min_goods_amount}</p>
                                 <p>{$item.use_startdate} ~ {$item.use_enddate}</p>
                             </div>
-                            <i class="i-soon">即将到期</i>
+                            <i class="i-soon">有効期限が近づく</i>
                         </div>
                         <!--{/foreach}-->
                         </div>
@@ -5132,11 +5114,10 @@
                         <div class="item item-disabled{if $smarty.foreach.useup_list.iteration % 3 == 0} item-last{/if}">
                             <div class="b-price">{$item.type_money}</div>
                             <div class="b-i-bot">
-                                <div class="storeName">{$item.shop_name}</div>
-                                <p>卡号：{$item.bonus_sn|default:N/A} - 订单限额：{$item.min_goods_amount}</p>
+                                <p>注文書使用額：{$item.min_goods_amount}</p>
                                 <p>{$item.use_startdate} ~ {$item.use_enddate}</p>
                             </div>
-                            <i class="i-soon">已经使用</i>
+                            <i class="i-soon">使用済み</i>
                         </div>
                         <!--{/foreach}-->
                         </div>
@@ -5152,7 +5133,7 @@
                 </div>
             </div>
             <div class="user-prompt mt20">
-                <div class="tit"><span>红包温馨提示</span><i class="iconfont icon-down"></i></div>
+                <div class="tit"><span>代金券ヒントについて </span><i class="iconfont icon-down"></i></div>
                 <div class="info">
                     {$lang.bonus_info}
                 </div>
@@ -6621,7 +6602,7 @@
                                 <span class="info-item">{$lang.Logistics_company}：{if $goods.out_invoice_no != ""}{$goods.out_shipp_shipping}{else}&nbsp;{/if}</span>
                             </div>
                             <div class="t-right" ectype="track-packages-btn">
-                                <a href="javascript:void(0)" class="sc-btn"><i class="iconfont icon-truck"></i>跟踪</a>
+                                <a href="javascript:void(0)" class="sc-btn"><i class="iconfont icon-truck"></i>追跡スタート</a>
                                 <div class="comment-box" ectype="track-packages-info">
                                     <i class="box-i"></i>
                                     <div class="conmment-box-content">

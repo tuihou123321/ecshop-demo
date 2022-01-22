@@ -48,7 +48,6 @@
 					{if $cache_info }
 					<div class="tishi-tag"></div>
 					{/if}
-					<label class="f-02">消息</label>
 				</a>
 
 				<a class="shezhi" href="{url('profile/index')}">
@@ -62,8 +61,8 @@
 	<section class="b-color-f user-function-list">
 		<a href="{url('order/index',array('status'=>0))}">
 			<div class="dis-box padding-all wallet-bt">
-				<h3 class="box-flex"><i class="iconfont icon-iconfontquanbudingdan color-red"></i>我的订单</h3>
-				<div class="box-flex f-03 text-right onelist-hidden jian-top">全部订单</div>
+				<h3 class="box-flex"><i class="iconfont icon-iconfontquanbudingdan color-red"></i>私の注文</h3>
+				<div class="box-flex f-03 text-right onelist-hidden jian-top">すべての注文</div>
 				<span class="t-jiantou"><i class="iconfont icon-jiantou tf-180 jian-top"></i></span>
 			</div>
 		</a>
@@ -72,88 +71,45 @@
 
 				<li>
 					<h4><i class="iconfont icon-daifukuan"></i></h4>
-					<p class="t-remark3">待付款</p>
+					<p class="t-remark3">支払い待ち</p>
 					{if $pay_count > 0}
 					<div class="user-list-num">{$pay_count}</div>
 					{/if}
 				</li>
 			</a>
 			{if $team}
-			<a href="{url('team/user/index')}" class="box-flex">
-
-				<li>
-					<h4><i class="iconfont icon-wodetuandui"></i></h4>
-					<p class="t-remark3">待拼团</p>
-					{if $team_num > 0}
-					<div class="user-list-num">{$team_num}</div>
-					{/if}
-				</li>
-			</a>
+		
 			{/if}
 			<a href="{url('user/order/index',array('status'=>2))}" class="box-flex">
 				<li>
 					<h4><i class="iconfont icon-wodetubiaosvg03"></i></h4>
-					<p class="t-remark3">待收货</p>
+					<p class="t-remark3">受取待ち</p>
 					{if $confirmed_count > 0}
 					<div class="user-list-num">{$confirmed_count}</div>
 					{/if}
 				</li>
 			</a>
-			<a href="{url('user/index/comment_list')}" class="box-flex">
-				<li>
-					<h4><i class="iconfont icon-pinglun1" style="font-size:2.3rem;"></i></h4>
-					<p class="t-remark3">待评价</p>
-					{if $not_comment > 0}
-					<div class="user-list-num">{$not_comment}</div>
-					{/if}
-				</li>
-			</a>
-			<a href="{url('user/refound/index')}" class="box-flex">
-				<li>
-					<h4><i class="iconfont icon-tuihuanhuo"></i></h4>
-					<p class="t-remark3">退换货</p>
-					{if $return_count > 0}
-					<div class="user-list-num">{$return_count}</div>
-					{/if}
-				</li>
-			</a>
-		</ul>
+					</ul>
 	</section>
 	<!--money-list-->
 	<section class="m-top08 user-function-list b-color-f">
-		<a href="{url('user/account/index')}">
 			<div class="dis-box padding-all wallet-bt">
-				<h3 class="box-flex"><i class="iconfont icon-qianbao  color-fe"></i>我的钱包</h3>
-				<div class="box-flex f-03 text-right onelist-hidden jian-top">资金管理</div>
-				<span class="t-jiantou"><i class="iconfont icon-jiantou tf-180 jian-top"></i></span>
+				<h3 class="box-flex"><i class="iconfont icon-qianbao  color-fe"></i>私の券</h3>
 			</div>
-		</a>
-		<ul class="user-order-list  dis-box text-center">
-			<a href="{url('user/account/index')}" class="box-flex">
-				<li>
-					<h4 class="ellipsis-one">{$user_pay.user_money}</h4>
-					<p class="t-remark3">余额</p>
-				</li>
-			</a>
+		
+		<ul class="user-order-list  dis-box text-center">			
 			<a href="{url('user/account/bonus')}" class="box-flex">
-
 				<li>
 					<h4 class="ellipsis-one">{$bonus}</h4>
-					<p class="t-remark3">红包</p>
+					<p class="t-remark3">代金券</p>
 				</li>
 			</a>
-			<a href="javascript:;" class="box-flex">
-				<li>
-					<h4 class="ellipsis-one">{$user_pay.pay_points}</h4>
-					<p class="t-remark3">积分</p>
-				</li>
-			</a>
-			<a href="{url('user/account/coupont')}" class="box-flex">
+						<a href="{url('user/account/coupont')}" class="box-flex">
 				<li>
 					{if $couponses == '' }
 					<h4 class="ellipsis-one">0</h4> {else}
 					<h4 class="ellipsis-one">{$couponses}</h4> {/if}
-					<p class="t-remark3">优惠券</p>
+					<p class="t-remark3">クーポン</p>
 				</li>
 			</a>
 		</ul>
@@ -172,102 +128,67 @@
 		<div class="box ul-4 text-c b-color-f">
 			<a href="{url('user/index/collectionlist')}">
 				<label><i class="iconfont icon-zan-alt color-fe"></i></label>
-				<p class="f-02 col-7">收藏的商品</p>
+				<p class="f-02 col-7">コレクション商品</p>
 			</a>
-			<a href="{url('user/index/storelist')}" class="">
-				<label><i class="iconfont icon-star-n color-f9c"></i></label>
-				<p class="f-02 col-7">关注的店铺</p>
-			</a>
+			
 			{if $share}
-			<a href="{url('user/index/affiliate')}">
-				<label><i class="iconfont icon-fenxiang3 color-e72"></i></label>
-				<p class="f-02 col-7">我的分享</p>
-			</a>
+		
 			{/if}
 			<!--<a href="{url('user/index/service')}">-->
 				<!--<label><i class="iconfont icon-3shouce color-f9c"></i></label>-->
 				<!--<p class="f-02 col-7">服务中心</p>-->
 			<!--</a>-->
 			{if $drp}
-			<a href="{url('drp/index/index')}">
-				<label><i class="iconfont icon-dianpu color-red"></i></label>
-				<p class="f-02 col-7">我的微店</p>
-			</a>
+		
 			{/if}
-			<a href="{url('user/crowd/index')}">
-				<label><i class="iconfont icon-zichou color-ff7"></i></label>
-				<p class="f-02 col-7">我的微筹</p>
-			</a>
+		
 			{if $team}
-			<a href="{url('team/index/index')}">
-				<label><i class="iconfont icon-wodetuandui  color-f9c"></i></label>
-				<p class="f-02 col-7">拼团频道</p>
-			</a>
+		
 			{/if}
-			<a href="{url('merchants/index/index')}">
-				<label><i class="iconfont icon-shangjiaruzhu- color-98"></i></label>
-				<p class="f-02 col-7">商家入驻</p>
-			</a>
+		
 			<a href="{url('user/index/history')}">
 				<label><i class="iconfont icon-zuji color-c78"></i></label>
-				<p class="f-02 col-7">浏览记录</p>
+				<p class="f-02 col-7">ブラウズレコード</p>
 			</a>
 
 			{if $bargain && $is_wechat == 1}
-			<a href="{url('user/bargain/index')}">
-				<label><i class="iconfont icon-40kanjia color-red"></i></label>
-				<p class="f-02 col-7">我的砍价</p>
-			</a>
+		
 			{/if}
 			{if $purchase && $is_wechat == 1 && $demand == 0}
-			<a href="{url('purchase/index/index')}">
-				<label><i class="iconfont icon-btn_pljj color-fe"></i></label>
-				<p class="f-02 col-7">我的批发</p>
-			</a>
-			<a href="{url('purchase/order/index')}">
-				<label><i class="iconfont icon-btn_pljj color-fe"></i></label>
-				<p class="f-02 col-7">我的采购单</p>
-			</a>
+		
 			{/if}
 			{if $demand == 1}
-			<a href="{url('demand/order/index')}">
-				<label><i class="iconfont icon-btn_pljj color-fe"></i></label>
-				<p class="f-02 col-7">我的采购单</p>
-			</a>
-			<a href="{url('demand/order/return_list')}">
-				<label><i class="iconfont icon-btn_pljj color-fe"></i></label>
-				<p class="f-02 col-7">采购单退换货</p>
-			</a>
+		
 			{/if}
 		</div>
 	</nav>
 
 </div>
 <footer class="footer-nav dis-box">
-	<a href="{url('/')}" class="box-flex nav-list">
-		<i class="nav-box i-home"></i><span>首页</span>
-	</a>
-	<a href="{url('category/index/index')}" class="box-flex nav-list">
-		<i class="nav-box i-cate"></i><span>分类</span>
-	</a>
-	<a href="{url('search/index/index')}" class="box-flex nav-list">
-		<i class="nav-box i-shop"></i><span>搜索</span>
-	</a>
-	<a href="{url('cart/index/index')}" class="box-flex position-rel nav-list">
-		<i class="nav-box i-flow"></i><span>购物车</span>
-	</a>
-	{if $filter}
-	<a href="{url('drp/user/index')}" class="box-flex nav-list active">
-		<i class="nav-box i-user"></i><span>{$custom}中心</span>
-	</a>
-	{elseif $community}
-	<a href="{url('community/index/index')}" class="box-flex nav-list active">
-		<i class="nav-box i-user"></i><span>社区</span>
-	</a>
-	{else}
-	<a href="{url('user/index/index')}" class="box-flex nav-list active">
-		<i class="nav-box i-user"></i><span>我</span>
-	</a>
+  <a href="{url('/')}" class="box-flex nav-list">
+            <i class="nav-box i-home"></i><span>トップページ</span>
+        </a>
+        <a href="{url('category/index/index')}" class="box-flex nav-list">
+            <i class="nav-box i-cate"></i><span>カテゴリ</span>
+        </a>
+        <a href="{url('search/index/index')}" class="box-flex nav-list">
+            <i class="nav-box i-shop"></i><span>検索</span>
+        </a>
+        <a href="{url('cart/index/index')}" class="box-flex position-rel nav-list  active">
+            <i class="nav-box i-flow"></i><span>ショッピングカート</span>
+        </a>
+        {if $filter}
+        <a href="{url('drp/user/index')}" class="box-flex nav-list">
+            <i class="nav-box i-user"></i><span>{$custom}中心</span>
+        </a>
+        {elseif $community}
+        <a href="{url('community/index/index')}" class="box-flex nav-list">
+            <i class="nav-box i-user"></i><span>社区</span>
+        </a>
+        {else}
+        <a href="{url('user/index/index')}" class="box-flex nav-list">
+            <i class="nav-box i-user"></i><span>私の</span>
+        </a>
 	{/if}
 </footer>
 <!--悬浮菜单e-->

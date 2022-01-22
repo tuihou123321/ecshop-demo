@@ -263,7 +263,7 @@ function order_amount($order_id, $include_gift = true)
 		$sql .= ' AND is_gift = 0';
 	}
 
-	return floatval($GLOBALS['db']->getOne($sql));
+	return floatval($GLOBALS['db']->getOne($sql)); 
 }
 
 function order_weight_price($order_id)
@@ -461,7 +461,7 @@ function order_fee($order, $goods, $consignee, $type = 0, $cart_value = '', $pay
 
 			if (isset($total['bonus_kill'])) {
 				$use_bonus_kill = min($total['bonus_kill'], $max_amount);
-				$total['amount'] -= $price = number_format($total['bonus_kill'], 2, '.', '');
+				$total['amount'] -= $price = number_format($total['bonus_kill'], 0, '.', '');
 			}
 
 			$total['bonus'] = $use_bonus;
@@ -3282,7 +3282,7 @@ function get_give_integral($goods = array(), $cart_value)
 	}
 
 	$sql = 'SELECT SUM(c.goods_number * IF(g.give_integral > -1, g.give_integral, c.goods_price))' . 'FROM ' . $GLOBALS['ecs']->table('cart') . ' AS c, ' . $GLOBALS['ecs']->table('goods') . ' AS g ' . 'WHERE c.goods_id = g.goods_id ' . 'AND ' . $c_sess . 'AND c.goods_id > 0 ' . 'AND c.parent_id = 0 ' . 'AND c.rec_type = 0 ' . 'AND c.is_gift = 0' . $where;
-	return intval($GLOBALS['db']->getOne($sql));
+	return floatval($GLOBALS['db']->getOne($sql));
 }
 
 function integral_to_give($order)

@@ -106,7 +106,6 @@
             </p>
             <!--{/if}-->
             <!-- ICP 证书{if $icp_number} --> 
-            <b>{$lang.icp_number}:<a href="http://www.miibeian.gov.cn/" target="_blank">{$icp_number}</a> <a href="http://www.dscmall.cn/" target="_blank">111111</a></b>
             <!-- 结束ICP 证书{/if} -->
             <p style="display:none">{insert name='query_info'}</p>
             <p>&nbsp;</p>

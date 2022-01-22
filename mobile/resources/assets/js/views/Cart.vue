@@ -3,7 +3,7 @@
     <h1>{{ msg }}</h1>
 
     <router-link :to="{path:'/checkout'}" tag="a">
-      订单确认
+      注文書確認
     </router-link>
   </div>
 </template>

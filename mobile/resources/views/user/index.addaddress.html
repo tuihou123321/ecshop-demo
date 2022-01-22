@@ -3,16 +3,16 @@
     <div class="con b-color-f" id="checkPage">
         <div class="flow-consignee margin-lr">
             <div class="text-all dis-box j-text-all">
-                <label>收货人<em class="color-red">*</em></label>
+                <label>お名前(漢字)<em class="color-red">*</em></label>
                 <div class="box-flex input-text">
-                    <input name='consignee' class="j-input-text" type="text" placeholder="请输入收货人姓名" datatype="*" nullmsg="请输入收货人姓名" value="{$consignee_list.consignee}" id='realname'/>
+                    <input name='consignee' class="j-input-text" type="text" placeholder="受取人の名前を入力してください" datatype="*" nullmsg="受取人の名前を入力してください" value="{$consignee_list.consignee}" id='realname'/>
                     <i class="iconfont icon-guanbi1 close-common j-is-null"></i>
                 </div>
             </div>
             <div class="text-all dis-box j-text-all">
-                <label>手机号码<em class="color-red">*</em></label>
+                <label>携帯番号<em class="color-red">*</em></label>
                 <div class="box-flex input-text">
-                    <input class="j-input-text" name='mobile' type="tel" placeholder="请输入联系电话" errormsg="手机号码格式不正确" datatype="*" nullmsg="请输入联系电话" value="{$consignee_list.mobile}" id="phone"/>
+                    <input class="j-input-text" name='mobile' type="tel" placeholder="連絡先を入力してください"  datatype="n" nullmsg="連絡先を入力してください" value="{$consignee_list.mobile}" id="phone"/>
                     <i class="iconfont icon-guanbi1 close-common j-is-null"></i>
                 </div>
             </div>
@@ -26,21 +26,24 @@
                 <input type="hidden" id="region_id" name="region_id" value="">
                 <input type="hidden" id="address_id" name="address_id" value="{$consignee_list.address_id}">
                 <div class="address-box" id="selectAddressBtn" region-data="">
-                        <label class="fl">所在地区<em class="color-red">*</em></label>
+                        <label class="fl">所在地<em class="color-red">*</em></label>
                         <span class="fl text-all-span addressdetail" id="addressLabelId">{$consignee_list.province}{$consignee_list.city}{$consignee_list.district}{$consignee_list.town}{$consignee_list.village}</span>
                         <span class="t-jiantou fr"><i class="iconfont icon-jiantou tf-180"></i></span>
                 </div>
             </div>
             <!--address-end-->
             <div class="text-all ">
-                <label>详细信息<em class="color-red">*</em></label>
+                <label>ご住所<em class="color-red">*</em></label>
                 <div class="box-flex input-text">
-                    <input class="j-input-text wx-location" name='address' type="text" value="{$consignee_list.address}" placeholder="详细地址" datatype="*" nullmsg="请输入详细地址" id='addr_de'/>
+                    <input class="j-input-text wx-location" name='address' type="text" value="{$consignee_list.address}" placeholder="詳細アドレス" datatype="*" nullmsg="詳細アドレスを入力してください" id='addr_de'/>
                     <i class="iconfont icon-guanbi1 close-common j-is-null"></i>
                 </div>
             </div>
             <div class="ect-button-more dis-box m-top12">
-                <input type="submit" name="submit"  class="btn-submit box-flex br-5 min-two-btn"  value="保存"/>
+                           郵便番号：<input name='zipcode' class="j-input-text" type="text" value="{$consignee_list.zipcode}" id='zipcode'/>
+                        </div>
+            <div class="ect-button-more dis-box m-top12">
+                <input type="submit" name="submit"  class="btn-submit box-flex br-5 min-two-btn"  value="保存する"/>
             </div>
 
             {if $is_wechat}
@@ -60,7 +63,7 @@
            <li>
                 <a href="javascript:history.go(-1);">
                      <i class="iconfont icon-dingwei"></i>
-                     <p>收货地址</p>
+                     <p>受取人住所</p>
                 </a>
             </li>
 {include file="float_nav_footer"}

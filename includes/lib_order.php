@@ -377,7 +377,7 @@ function order_amount($order_id, $include_gift = true)
 		$sql .= ' AND is_gift = 0';
 	}
 
-	return floatval($GLOBALS['db']->getOne($sql));
+	return intval($GLOBALS['db']->getOne($sql));
 }
 
 function order_weight_price($order_id)

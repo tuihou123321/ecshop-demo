@@ -20,7 +20,7 @@ function get_bonus_list($num = 10, $page = 1, $status = 4)
 			$tab[$k]['shop_name'] = sprintf(L('use_limit'), get_shop_name($v['user_id'], 1));
 		}
 		else {
-			$tab[$k]['shop_name'] = '全场通用';
+			$tab[$k]['shop_name'] = '満場共通';
 		}
 
 		if ($_SESSION['user_id']) {

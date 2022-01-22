@@ -44,22 +44,7 @@ $(function(){
 				required : true,
 				equalTo : "#pwd"
 			},
-			mobile_phone:{
-				required : true,
-				isMobile : true,
-				notequalTo:"#username",
-				remote : {
-					cache: false,
-					async:false,
-					type:'POST',
-					url:'user.php?act=check_phone',
-					data:{
-						mobile_phone:function(){
-							return $("input[name='mobile_phone']").val();
-						}
-					}
-				}
-			},
+			
 			captcha:{
 				required : true,
 				remote : {
@@ -171,10 +156,10 @@ $(function(){
 			mobileagreement:{
 				required : agreement
 			},
-			send_code :{
-				required : msg_email_code,
-				remote : msg_email_code_not
-			},
+		//	send_code :{
+		//		required : msg_email_code,
+		//		remote : msg_email_code_not
+		//	},
 			sel_question :{
 				required : select_password_question
 			},
@@ -230,13 +215,7 @@ $(function(){
 			});
 		}
 		
-		//手机号码验证
-		form.find("input[name='mobile_phone']").rules("add",{
-			required : true,
-			messages : {
-				required : null_phone
-			}
-		});
+	
 		
 		//手机短信验证码
 		form.find("input[name='mobile_code']").rules("add",{
@@ -258,30 +237,6 @@ $(function(){
 			}
 		});
 		
-		//验证码验证
-		form.find("input[name='captcha']").rules("add",{
-			required : true,
-			remote : {
-				cache: false,
-				async:false,
-				type:'POST',
-				url:'user.php?act=captchas_pass&seKey='+seKey,
-				data:{
-					captcha:function(){
-						return form.find("input[name='captcha']").val();
-					},
-					dataFilter:function(data,type){
-						if(data == "false"){
-							form.find("input[name='captcha']").siblings(".captcha_img").click();
-						}
-						return data;
-					}
-				}
-			},
-			messages : {
-				required : msg_identifying_code,
-				remote : msg_identifying_not_correct
-			}
 		});
 		
 		//邮箱账号
@@ -330,7 +285,7 @@ $(function(){
 			}
 		});
 	});
-});
+
 
 //获取邮箱验证码
 function sendChangeEmail(type){

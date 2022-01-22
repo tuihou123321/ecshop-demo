@@ -105,10 +105,10 @@ class cls_mysql
 				$this->platform = 'WINDOWS';
 			}
 
-			if ($this->platform == 'OTHER' && ($dbhost != '.' && strtolower($dbhost) != 'localhost:3307' && $dbhost != '127.0.0.1:3307') || '5.1' <= PHP_VERSION && date_default_timezone_get() == 'UTC') {
+			if ($this->platform == 'OTHER' && ($dbhost != '.' && strtolower($dbhost) != 'localhost:3306' && $dbhost != '127.0.0.1:3306') || '5.1' <= PHP_VERSION && date_default_timezone_get() == 'UTC') {
 				$result = mysql_query('SELECT UNIX_TIMESTAMP() AS timeline, UNIX_TIMESTAMP(\'' . date('Y-m-d H:i:s', $this->starttime) . '\') AS timezone', $this->link_id);
 				$row = mysql_fetch_assoc($result);
-				if ($dbhost != '.' && strtolower($dbhost) != 'localhost:3307' && $dbhost != '127.0.0.1:3307') {
+				if ($dbhost != '.' && strtolower($dbhost) != 'localhost:3306' && $dbhost != '127.0.0.1:3306') {
 					$this->timeline = $this->starttime - $row['timeline'];
 				}
 

@@ -140,7 +140,7 @@
 
     // 发送验证码
 	$("#sendsms").click(function(){
-        var myreg = /^1(3[0-9]|4[57]|5[0-35-9]|7[0135678]|8[0-9])\d{8}$/;
+        var myreg = /^[\d|\-|\s|\_]+$/;
         var mobile = $("#mobie_phone").html();
         var verify_code = $("input[name=verify]").val();
 
@@ -181,7 +181,7 @@
     function check(){
         var sms_code = $("input[name=sms_code]").val();
         var mobile = $("#mobie_phone").html();
-        var myreg = /^1(3[0-9]|4[57]|5[0-35-9]|7[0135678]|8[0-9])\d{8}$/;
+        var myreg = /^[\d|\-|\s|\_]+$/;
         if( mobile == ''){
             d_messages('请输入手机号');
             return false;

@@ -273,7 +273,6 @@
                                                 {$goods.shop_price}
                                                 {/if}
                                             </div>
-                                            <div class="p-num">已售<em>{$goods.sales_volume}</em>{$lang.jian}</div>
                                         </div>
                                         <div class="p-name"><a target="_blank" title="{$goods.goods_name|escape:html}" href="{$goods.url}">{$goods.goods_name}</a></div>
                                     </div>

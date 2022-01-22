@@ -288,11 +288,6 @@ class ProfileController extends \App\Modules\Base\Controllers\FrontendController
 				$mobile = I('post.mobile');
 				$code = rand(1000, 9999);
 
-				if (is_mobile($mobile) == false) {
-					$result['error'] = 1;
-					$result['content'] = '手机号码格式错误';
-					exit(json_encode($result));
-				}
 
 				$message = array('code' => $code);
 
@@ -489,9 +484,7 @@ class ProfileController extends \App\Modules\Base\Controllers\FrontendController
 
 			$form = new \App\Extensions\Form();
 
-			if (!$form->isMobile($real_user['bank_mobile'], 1)) {
-				exit(json_encode(array('status' => 1, 'msg' => '手机号码格式不正确')));
-			}
+		
 
 			if (strpos($real_user['self_num'], '*') == false) {
 				if (!$form->isCreditNo($real_user['self_num'], 1)) {

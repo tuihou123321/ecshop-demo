@@ -272,11 +272,7 @@ class LoginController extends \App\Modules\Base\Controllers\FrontendController
 			$code = $this->generateCodeString();
 			$template = L('you_auth_code') . $code . L('please_protect_authcode');
 
-			if (is_mobile($number) == false) {
-				$result['error'] = 1;
-				$result['content'] = '手机号码格式错误';
-				exit(json_encode($result));
-			}
+			
 
 			$message = array('code' => $code);
 
@@ -429,9 +425,7 @@ class LoginController extends \App\Modules\Base\Controllers\FrontendController
 				exit(json_encode(array('status' => 'n', 'info' => '手机号码不能为空')));
 			}
 
-			if (is_mobile($mobile) == false) {
-				exit(json_encode(array('status' => 'n', 'info' => '手机号码格式错误')));
-			}
+			
 
 			if (strlen($password) < 6) {
 				exit(json_encode(array('status' => 'n', 'info' => $passport_js['password_shorter'])));

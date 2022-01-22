@@ -16,15 +16,15 @@
                         </span>
                         <em class="j-goods-coupon t-first f-04">
                             <%if order.order_status == 1 %>
-                            已完成
+                            完了
                             <%else%>
-                            未确认
+                            未確認
                             <%/if%>
                         </em>
                     </header>
                     <div class="f-c-p-orderid padding-all m-top1px b-color-f">
                         <h4 class="t-remark2">
-                            <label class="t-remark">订单号：</label><%order.order_sn%>
+                            <label class="t-remark">注文書番号：</label><%order.order_sn%>
                              <span class="t-jiantou"></span>
                         </h4>
                         <p class="t-remark3 m-top04"><%order.order_time%></p>
@@ -77,7 +77,7 @@
                         <h4 class="t-remark2 box-flex"></h4>
                         <p class="ect-button-more ect-button-more-dete n-br-5">
                             <%if order.order_status == 1 %>
-                            <button class="btn-default-new br-5 min-btn">已完成</button>
+                            <button class="btn-default-new br-5 min-btn">完了</button>
                             <%else%>
                             <button class="btn-default-new br-5 min-btn received-order" data-item-received="<%order.order_id%>">设置为完成</button>
                             <%/if%>

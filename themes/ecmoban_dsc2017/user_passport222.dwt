@@ -1,0 +1,281 @@
+<!doctype html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="Keywords" content="{$keywords}" />
+<meta name="Description" content="{$description}" />
+<!-- TemplateBeginEditable name="doctitle" -->
+<title>{$page_title}</title>
+<!-- TemplateEndEditable -->
+<!-- TemplateBeginEditable name="head" -->
+<!-- TemplateEndEditable -->
+<link rel="shortcut icon" href="favicon.ico" />
+<!-- #BeginLibraryItem "/library/js_languages_new.lbi" --><!-- #EndLibraryItem -->
+<script type="text/javascript">
+/*登录、注册、找回密码js语言包*/
+{foreach from=$lang.js_languages.passport_js item=item key=key}
+var {$key} = "{$item}";
+{/foreach}
+</script>
+</head>
+
+<body class="bg-ligtGary">
+<!-- {if $action eq 'login'} 登陆 -->
+<div class="login">
+    <div class="loginRegister-header">
+        <div class="w w1200">
+            <div class="logo">
+                <div class="logoImg"><a href="./index.php" class="logo">{if $user_login_logo}<img src="{$user_login_logo}" />{/if}</a></div>
+                <div class="logo-span">
+                    {if $login_logo_pic}<b style="background:url({$login_logo_pic}) no-repeat;"></b>{/if}
+                </div>
+            </div>
+            <div class="header-href">
+            {if $shop_reg_closed neq 1}
+                <span>いいえID<a href="user.php?act=register" class="jump">{$lang.Free_registration}</a></span>
+            {/if}
+            </div>
+        </div>
+    </div>
+    <div class="container">
+        <div class="login-wrap">
+            <div class="w w1200">
+                <div class="login-form">
+                    <div class="coagent">
+                    {if $website_list}
+                        <div class="tit"><h3>{$lang.Third_party_Lgion}</h3><span></span></div>
+                        <div class="coagent-warp">
+                        {foreach from=$website_list item=website}
+                            {if $website.web_type eq 'weixin'}
+                                <a href="wechat_oauth.php?act=login" class="{$website.web_type}"><b class="third-party-icon {$website.web_type}-icon"></b></a>
+                            {else}
+                                <a href="user.php?act=oath&type={$website.web_type}" class="{$website.web_type}"><b class="third-party-icon {$website.web_type}-icon"></b></a>
+                            {/if}
+                        {/foreach}
+                        </div>
+                    {/if}
+                    </div>
+                    <div class="login-box">
+                        <div class="tit"><h3>会員登録</h3><span></span></div>
+                        <div class="msg-wrap">
+                            <div class="msg-error" style="display:none">{$lang.passport_one}</div>
+                        </div>
+                        <div class="form">
+                            <form name="formLogin" action="user.php" method="post" onSubmit="userLogin();return false;">
+                                <div class="item">
+                                    <div class="item-info">
+                                        <i class="iconfont icon-name"></i>
+                                        <input type="text" id="username" name="username" class="text" value="" placeholder="{$lang.label_username}" autocomplete="off" />
+                                    </div>
+                                </div>
+                                <div class="item" ectype="password">
+                                    <div class="item-info">
+                                        <i class="iconfont icon-password"></i>
+                                        <input type="password" style="display:none"/>
+                                        <input type="password" id="nloginpwd" name="password" class="text" value="" placeholder="{$lang.label_password}" autocomplete="off" />
+                                    </div>
+                                </div>
+                                {include file='library/captcha.lbi'}
+                                <div class="item">
+                                    <input id="remember" name="remember" type="checkbox" class="ui-checkbox">
+                                    <label for="remember" class="ui-label">{$lang.remember}</label>
+                                </div>
+                                <div class="item item-button">
+                                    <input type="hidden" name="dsc_token" value="{$dsc_token|default:0}" autocomplete="off" />
+                                    <input type="hidden" name="act" value="act_login" autocomplete="off" />
+                                    <input type="hidden" name="back_act" value="{$back_act}" autocomplete="off" />
+                                    <input type="submit" name="submit" id="loginSubmit" value="{$lang.signin_now}" class="btn sc-redBg-btn">
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            {* DSC 提醒您：动态载入login_banner.lbi，登陆页广告位 *}{insert name='get_adv_child' ad_arr=$login_banner}  
+        </div>
+    </div>
+</div>
+<!-- {/if} -->
+
+<!--{if $action eq 'register'} 注册-->
+<div class="register">
+    <div class="loginRegister-header">
+        <div class="w w1200">
+            <div class="logo">
+                <div class="logoImg"><a href="./index.php" class="logo">{if $user_login_logo}<img src="{$user_login_logo}" />{/if}</a></div>
+                <div class="logo-span">
+                    {if $login_logo_pic}<b style="background:url({$login_logo_pic}) no-repeat;"></b>{/if}
+                </div>
+            </div>
+            <div class="header-href">
+                <span>クリック可能な登録済み<a href="user.php" class="jump">{$lang.login_here}</a></span>
+            </div>
+        </div>
+    </div>
+    <div class="container">
+        <div class="w w1200">
+            <div class="register-wrap"><div class="fullDiv">
+      <h3>{$lang.sign_up}</h3>
+      {insert_scripts files='utils.js'}
+      <form action="user.php" method="post" name="formUser" onsubmit="return register();">
+      <div class="fborder clearfix">
+        <table width="100%"  border="0" align="left" cellpadding="5" cellspacing="3" class="tableList">
+        <tr>
+          <td width="40%" align="right">{$lang.label_username}</td>
+          <td width="60%" align="left">
+          <input name="username" type="text" size="25" id="username" onblur="is_registered(this.value);" class="textInput"/>
+            <span id="username_notice" style="color:#FF0000"> *</span>
+          </td>
+        </tr>
+        <tr>
+          <td align="right">{$lang.label_email}</td>
+          <td>
+          <input name="email" type="text" size="25" id="email" onblur="checkEmail(this.value);"  class="textInput"/>
+            <span id="email_notice" style="color:#FF0000"> *</span>
+          </td>
+        </tr>
+        <tr>
+          <td align="right">{$lang.label_password}</td>
+          <td>
+          <input name="password" type="password" id="password" onblur="check_password(this.value);" onkeyup="checkIntensity(this.value)" class="textInput" style="width:179px;" />
+            <span style="color:#FF0000" id="password_notice"> *</span>
+          </td>
+        </tr>
+        <tr>
+          <td align="right">{$lang.label_password_intensity}</td>
+          <td>
+            <table width="145" border="0" cellspacing="0" cellpadding="1">
+              <tr align="center">
+                <td width="33%" id="pwd_lower">{$lang.pwd_lower}</td>
+                <td width="33%" id="pwd_middle">{$lang.pwd_middle}</td>
+                <td width="33%" id="pwd_high">{$lang.pwd_high}</td>
+              </tr>
+            </table>
+          </td>
+        </tr>
+        <tr>
+          <td align="right">{$lang.label_confirm_password}</td>
+          <td>
+          <input name="confirm_password" type="password" id="conform_password" onblur="check_conform_password(this.value);"  class="textInput" style="width:179px;"/>
+            <span style="color:#FF0000" id="conform_password_notice"> *</span>
+          </td>
+        </tr>
+        <!-- {foreach from=$extend_info_list item=field} -->
+    <!-- {if $field.id eq 6} -->
+        <tr>
+       
+        </tr>
+        <tr>
+          <td align="right" <!-- {if $field.is_need} -->id="passwd_quesetion"<!--{/if}-->>{$lang.passwd_answer}</td>
+          <td>
+      <input name="passwd_answer" type="text" size="25" class="textInput" maxlengt='20'/><!-- {if $field.is_need} --><span style="color:#FF0000"> *</span><!-- {/if} -->
+          </td>
+        </tr>
+    <!-- {else} -->
+        <tr>
+    
+        </tr>
+    <!-- {/if} -->
+    <!-- {/foreach} -->
+      <!-- 判断是否启用验证码{if $enabled_captcha} -->
+      <tr>
+      <td align="right">{$lang.comment_captcha}</td>
+      <td><input type="text" size="8" name="captcha" class="textInput" />
+      <img src="captcha.php?{$rand}" alt="captcha" style="vertical-align: middle;cursor: pointer;" onclick="this.src='captcha.php?'+Math.random()" /> </td>
+      </tr>
+      <!--{/if}-->
+        <tr>
+          <td>&nbsp;</td>
+          <td><label>
+            <input name="agreement" type="checkbox" value="1" checked="checked" />
+            {$lang.agreement}</label></td>
+        </tr>
+        <tr>
+          <td>&nbsp;</td>
+          <td align="left">
+              <input name="act" type="hidden" value="act_register" >
+              <input type="hidden" name="back_act" value="{$back_act}" />
+              <input name="Submit" class="btn btn4" type="submit" value="{$lang.confirm_register}">
+          </td>
+        </tr>
+        <tr>
+          <td colspan="2">&nbsp;</td>
+        </tr>
+        <tr>
+          <td>&nbsp;</td>
+          <td class="actionSub">
+          <a href="user.php?act=login" class="txtdot">{$lang.want_login}</a><br />
+          </td>
+        </tr>
+      </table>
+      </div>
+      </form>
+    <p class="bot"></p>
+    </div>
+                <div class="register-adv">
+                {* DSC 提醒您：动态载入login_banner.lbi，注册页左侧广告 *}{insert name='get_adv' logo_name=$regist_banner}
+                </div>             
+
+          </div>            
+      </div>
+  </div>
+</div>
+    </div>
+</div>
+<!-- {/if} -->
+
+<!--{if $action eq 'get_password'} 找回密码-->
+<div class="get_pwd">
+<div class="container">
+        <div class="w w1200">
+            <div class="get_pwd_warp">
+                <div class="get_pwd_form">
+                    <!--找回密码第一步-->
+                    
+<!-- {/if} -->
+<!-- #BeginLibraryItem "/library/page_footer_flow.lbi" --><!-- #EndLibraryItem -->
+{insert_scripts files='user.js,user_register.js,utils.js,jquery.SuperSlide.2.1.1.js,./sms/sms.js,perfect-scrollbar/perfect-scrollbar.min.js,jquery.validation.min.js'}
+<script type="text/javascript" src="themes/<?php echo $GLOBALS['_CFG']['template']; ?>/js/dsc-common.js"></script>
+<script type="text/javascript" src="themes/<?php echo $GLOBALS['_CFG']['template']; ?>/js/jquery.purebox.js"></script>
+<script type="text/javascript">
+$(function(){
+	if(document.getElementById("seccode")){
+		$("#seccode").val({$sms_security_code|default:0});
+	}
+	
+	<!--{if $action eq 'get_password'} 找回密码start-->
+	//找回密码方式切换
+	$("*[ectype='formWarp']").slide({titCell:"*[ectype='gpTab'] li",mainCell:"*[ectype='gpContent']",effect:"fade",trigger:"click",titOnClassName:"curr"});
+	<!--{/if} 找回密码end-->
+	
+	<!--{if $action eq 'register'} 找回密码start-->
+	//邮箱验证和手机验证切换
+	$("*[ectype='meSwitch']").on("click",function(){
+		var type = $(this).data("type");
+		
+		if(type == "phone"){
+			$("#email_yz,#code_email").show(); //邮箱验证 邮箱号和邮箱验证码显示
+			$("#phone_yz,#code_mobile").hide(); //邮箱验证 手机号码和短信隐藏
+			
+			$("input[name='register_type']").val(0); //邮箱验证标识
+			$("input[name='mobile_phone']").val(""); //手机号码清空
+			$("input[name='mobile_phone'],input[name='mobile_code']").addClass("ignore"); //邮箱验证 邮箱和邮箱验证码添加验证标识
+			$("input[name='email'],input[name='send_code']").removeClass("ignore"); //邮箱验证 手机号码和短信去除验证标识
+		}else{
+			$("#email_yz,#code_email").hide(); //手机验证 邮箱号和邮箱验证码隐藏
+			$("#phone_yz,#code_mobile").show(); //手机验证 手机号码和短信显示
+			
+			$("input[name='register_type']").val(1); //手机注册标识
+			$("input[name='mobile_phone'],input[name='mobile_code']").removeClass("ignore"); //手机验证 手机号码和短信验证标识
+			$("input[name='email'],input[name='send_code']").addClass("ignore"); //手机验证 邮箱和邮箱验证码去除验证标识
+		}
+	});
+	<!--{/if} 找回密码end-->
+	
+	//注册问题下拉
+	$.divselect("#divselect","#passwd_quesetion");
+});
+</script>
+</body>
+</html>
+

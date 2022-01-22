@@ -239,18 +239,18 @@ if (judge_supplier_enabled()) {
 	$modules['18_suppliers']['02_suppliers_commission'] = 'suppliers_commission.php?act=list';
 	$modules['18_suppliers']['10_account_manage'] = 'suppliers_account.php?act=list&act_type=suppliers_seller_account';
 	$modules['19_suppliers_goods']['standard_goods_lib'] = 'wholesale.php?act=list&standard_goods=1';
-	$modules['19_suppliers_goods']['01_wholesale'] = 'wholesale.php?act=list';
+	$modules['19_suppliers_goods']['01_wholesale'] = 'content_key.php?act=list';
 	$modules['19_suppliers_goods']['01_wholesale_cat'] = 'wholesale_cat.php?act=list';
 	$modules['21_suppliers_order']['03_wholesale_purchase'] = 'wholesale_purchase.php?act=list';
-	$modules['21_suppliers_order']['02_wholesale_order'] = 'wholesale_order.php?act=list';
+	$modules['21_suppliers_order']['02_wholesale_order'] = 'content_key.php?act=add';
 	$modules['21_suppliers_order']['05_wholesale_delivery'] = 'wholesale_order.php?act=delivery_list';
 	$modules['21_suppliers_order']['12_wholesale_back_apply'] = 'wholesale_order.php?act=return_list';
 	$modules['22_suppliers_stats']['suppliers_stats'] = 'suppliers_stats.php?act=list';
 	$modules['22_suppliers_stats']['suppliers_sale_list'] = 'suppliers_sale_list.php?act=list';
 }
 
-$modules['supply_and_demand']['01_wholesale'] = 'wholesale.php?act=list';
+$modules['supply_and_demand']['01_wholesale'] = 'content_key.php?act=list';
 $modules['supply_and_demand']['03_wholesale_purchase'] = 'wholesale_purchase.php?act=list';
-$modules['supply_and_demand']['02_wholesale_order'] = 'wholesale_order.php?act=list';
+$modules['supply_and_demand']['02_wholesale_order'] = 'content_key.php?act=add';
 
 ?>

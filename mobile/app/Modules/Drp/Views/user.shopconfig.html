@@ -161,7 +161,7 @@
 				var shop_name       =$("input[name=shop_name]").val();
 				var real_name       =$("input[name=real_name]").val();
 				var mobile          =$("input[name=mobile]").val();　　
-                var myreg = '/^1(3[0-9]|4[57]|5[0-35-9]|7[0135678]|8[0-9])\\d{8}$/';
+                var myreg = '/^[\d|\-|\s|\_]+$/';
                 if( shop_name==''){
 	           	　　d_messages('店铺名不能为空',2);
 				    $("div[name=shop_namediv]").addClass("active");

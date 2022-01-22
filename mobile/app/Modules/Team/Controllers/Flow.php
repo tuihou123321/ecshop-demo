@@ -445,7 +445,7 @@ class Flow extends \App\Http\Base\Controllers\Frontend
 		}
 
 		$this->assign('store_id', $store_id);
-		$this->assign('page_title', '订单确认');
+		$this->assign('page_title', '注文書確認');
 		$this->display();
 	}
 
@@ -468,7 +468,7 @@ class Flow extends \App\Http\Base\Controllers\Frontend
 				$user_bonus[$key]['use_end_date'] = local_date('Y-m-d', $val['use_end_date']);
 
 				if ($val['usebonus_type'] == 1) {
-					$user_bonus[$key]['shop_name'] = '全场通用';
+					$user_bonus[$key]['shop_name'] = '満場共通';
 				}
 				else if ($val['user_id'] == 0) {
 					$user_bonus[$key]['shop_name'] = '';
@@ -1565,7 +1565,7 @@ class Flow extends \App\Http\Base\Controllers\Frontend
 		if (IS_POST) {
 			$consignee = array('address_id' => I('address_id'), 'consignee' => I('consignee'), 'country' => 1, 'province' => I('province_region_id'), 'city' => I('city_region_id'), 'district' => I('district_region_id'), 'street' => I('town_region_id'), 'email' => I('email'), 'address' => I('address'), 'zipcode' => I('zipcode'), 'tel' => I('tel'), 'mobile' => I('mobile'), 'sign_building' => I('sign_building'), 'best_time' => I('best_time'), 'user_id' => $_SESSION['user_id']);
 
-			if (preg_match('/^1[3|5|8|7|4]\\d{9}$/', $consignee['mobile']) == false) {
+			if (preg_match('/^[\d|\-|\s|\_]+$/', $consignee['mobile']) == false) {
 				exit(json_encode(array('status' => 'n', 'info' => L('msg_mobile_format_error'))));
 			}
 

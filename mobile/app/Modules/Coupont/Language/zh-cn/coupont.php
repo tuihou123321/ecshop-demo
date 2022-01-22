@@ -41,8 +41,8 @@ $_LANG['vouchers_login'] = '注册券';
 $_LANG['unknown'] = '未知';
 $_LANG['vouchers_shipping'] = '免邮券';
 $_LANG['unlimited'] = '不限';
-$_LANG['js_languages']['receive_coupons'] = '领取优惠券';
-$_LANG['js_languages']['Immediate_use'] = '立即使用';
+$_LANG['js_languages']['receive_coupons'] = 'クーポンを受け取る';
+$_LANG['js_languages']['Immediate_use'] = '使用';
 return $_LANG;
 
 ?>

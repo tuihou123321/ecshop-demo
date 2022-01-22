@@ -4,24 +4,7 @@
     <!-- {foreach from=$goods_list item=goodsRu} 第一层 商家层 -->
     <div class="ck-goods-item" ectype="shoppingList">
         <div class="ck-goods-tit">
-            <div class="ck-store">
-            	{if $goodsRu.ru_id eq 0}
-                <a href="javascript:;" class="shop-name">{$goodsRu.ru_name}</a>
-                {else}
-                <a href="{$goodsRu.url}" target="_blank" class="shop-name">{$goodsRu.ru_name}</a>
-                {/if}
-                <!--start 在线客服 -->
-                {if $goodsRu.is_IM eq 1 || $goodsRu.is_dsc}
-                <a href="javascript:;" id="IM" onclick="openWin(this)" ru_id="{$goodsRu.ru_id}" class="p-kefu {if $goodsRu.ru_id eq 0} p-c-violet{/if}" target="_blank"><i class="iconfont icon-kefu"></i></a>
-                {else}
-                {if $goodsRu.kf_type eq 1}
-                <a href="http://www.taobao.com/webww/ww.php?ver=3&touid={$goodsRu.kf_ww}&siteid=cntaobao&status=1&charset=utf-8" class="p-kefu" target="_blank"><i class="iconfont icon-kefu"></i></a>
-                {else}
-                <a href="http://wpa.qq.com/msgrd?v=3&uin={$goodsRu.kf_qq}&site=qq&menu=yes" class="p-kefu" target="_blank"><i class="iconfont icon-kefu"></i></a>
-                {/if}
-                {/if}
-                <!--end 在线客服 -->
-            </div>
+  
             {if $goods_flow_type eq 101}
                 <!--{if $store_id > 0 || $store_seller eq 'store_seller'} 门店商品显示门店信息，否则显示配送方式 start -->
                 <div class="ck-dis-modes">
@@ -43,7 +26,7 @@
                                 <!--{if $goodsRu.offline_store.stores_img}-->
                                 <div class="item">
                                     <div class="tit">{$lang.store_pic}：</div>
-                                    <div class="value"><!--{if $goodsRu.offline_store.stores_img}--><a href="../{$goodsRu.offline_store.stores_img}" class="nyroModal ftx-05">查看</a><!--{/if}--></div>
+                                    <div class="value"><!--{if $goodsRu.offline_store.stores_img}--><a href="../{$goodsRu.offline_store.stores_img}" class="nyroModal ftx-05">表示</a><!--{/if}--></div>
                                 </div>
                                 <!--{/if}-->
                                 <div class="item">
@@ -129,9 +112,9 @@
                     </div>
                     <!--{else}-->
                     	<!-- {if !$user_address} -->
-                        <span class="ftx-01">请填写收货地址</span>	
+                        <span class="ftx-01">受取人の住所を記入してください</span>	
                         <!-- {else} -->
-                        <span class="ftx-01">暂不支持配送</span>
+                        <span class="ftx-01">配送はしばらくサポートしておりません</span>
                         <!-- {/if} -->
                     <!--{/if}-->
                     

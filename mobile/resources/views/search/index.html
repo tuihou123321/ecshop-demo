@@ -10,7 +10,7 @@
                     <!-- <span>商品</span><i class="iconfont icon-xiajiantou"></i> -->
                     <i class="iconfont icon-sousuo f-04 col-9 mr-small"></i>
                 </label>
-                <input class="j-input-text"  id="searchname" type="text" name="keyword" maxlength="15" autofocus="autofocus" placeholder="{if $keywords}{$keywords}{else}商品/店铺搜索{/if}" style="padding-left:3rem"/>
+                <input class="j-input-text"  id="searchname" type="text" name="keyword" maxlength="15" autofocus="autofocus" placeholder="{if $keywords}{$keywords}{else}商品検索{/if}" style="padding-left:3rem"/>
                 <input type="hidden" name="type_select" value="2" />
                 <input type="hidden" name="isself" value="{$isself}" />
                 <input type="hidden" name="brand" value="{$brand_id}" />
@@ -18,12 +18,12 @@
                 <input type="hidden" name="price_max" value="{$price_max}" />
                 <input type="hidden" name="filter_attr" value="{$filter_attr}"/>
             </div>
-            <a type="button" class="btn-submit search-btn" onclick="$('#search-form').submit()">搜索</a>
+            <a type="button" class="btn-submit search-btn" onclick="$('#search-form').submit()">検索</a>
         </div>
         </form>
     </section>
     <div class="search-nav-section history-search  bg-white swiper-scrollbar" style="bottom:0;top:5rem;z-index: 49;">
-        <div class="f-04 col-7  padding-tb wallet-bt j-store-search"><i class="iconfont icon-dianpu f-06 color-red mr-small"></i>搜索“<em class="col-3 result"></em>”店铺</div>
+        <div class="f-04 col-7  padding-tb wallet-bt j-store-search"><i class="iconfont icon-dianpu f-06 color-red mr-small"></i>検索“<em class="col-3 result"></em>”商品</div>
         <div class="other-keywords">
         </div>
     </div>
@@ -32,7 +32,7 @@
            <!-- <div class="swiper-wrapper">
                 <div class="swiper-slide">-->
                     <p>
-                        <label class="fl">热门搜索</label>
+                        <label class="fl">人気検索</label>
                     </p>
                     <ul class="hot-search a-text-more a-text-more-btn">
                         {foreach $hot_keywords as $v}
@@ -40,7 +40,7 @@
                         {/foreach}
                     </ul>
                     <p class="hos-search">
-                        <label class="fl">最近搜索</label>
+                        <label class="fl">最近の検索</label>
                         <span class="fr clear_history"><i class="iconfont icon-xiao10"></i></span>
                     </p>
                     {if $history_keywords}
@@ -53,7 +53,7 @@
                     </ul>
                     {else}
                     <div class="no-div-message">
-                        <h6 class="f-04 col-9">暂无搜索记录</h6>
+                        <h6 class="f-04 col-9">検索レコードがありません</h6>
                     </div>
                     {/if}
                 <!--</div>
@@ -62,7 +62,7 @@
         </div>
     </section>
     <div class="other-login search-footer">
-            <h4 class="title-hrbg"><a href="javascript:history.go(-1);"><span class="col-6">点击关闭搜索</span></a>
+            <h4 class="title-hrbg"><a href="javascript:history.go(-1);"><span class="col-6">クリックして検索を閉じる</span></a>
                 <hr>
             </h4>
     </div>
@@ -105,7 +105,7 @@
                 $.get("{url('category/index/clear_history')}", '', function(data){
                     if(data.status){
                         $("#search-con").remove();
-                        var no = '<div class="no-div-message"><p>暂无搜索记录</p></div>';
+                        var no = '<div class="no-div-message"><p>検索レコードがありません</p></div>';
                         $(".hos-search").after(no);
                     }
                 }, 'json');

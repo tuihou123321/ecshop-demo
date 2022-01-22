@@ -663,11 +663,26 @@ if (!$smarty->is_cached('goods.dwt', $cache_id)) {
 	}
 
 	$goods = get_goods_info($goods_id, $region_id, $area_id);
-
+/* 关键字替换 By zhangyh */
+	$sql="select * from ". $GLOBALS['ecs']->table('content_key') ;
+	$res_k=$GLOBALS['db']->query($sql);
+	while ($row_k=$GLOBALS['db']->fetchRow($res_k))
+	{
+			if($row_k['replace_num'])
+			{
+				$goods['goods_desc']=preg_replace('/(?!<[^>]*)'.$row_k['key_name'].'(?![^<]*>)/i', '<a href="' . $row_k['key_url'] . '" target="_blank" >'.$row_k['key_name']."</a>", $goods['goods_desc'], $row_k['replace_num']);
+			}
+			else
+			{
+				$goods['goods_desc']=preg_replace('/(?!<[^>]*)'.$row_k['key_name'].'(?![^<]*>)/i', '<a href="' . $row_k['key_url'] . '" target="_blank" >'.$row_k['key_name']."</a>", $goods['goods_desc']);
+			}
+			$goods['goods_desc']=preg_replace('/(?!<[^>]*)'.$row_k['key_name'].'(?![^<]*>)/i', '' . $row_k['key_name'] . '', $goods['goods_desc'],1 );
+	}
 	if ($goods === false) {
 		ecs_header("Location: ./\n");
 		exit();
 	}
+
 	else {
 		assign_template('c');
 		$smarty->assign('keywords', !empty($goods['keywords']) ? htmlspecialchars($goods['keywords']) : htmlspecialchars($_CFG['shop_keywords']));

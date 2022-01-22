@@ -25,11 +25,8 @@
                 <li class="div1 box-flex swiper-slide active position-rel swiper-slide-active" category="1">
                     <a class="product-div-link j-goods-shop" href="javascript:;"></a>商品</li>
                 <li class="div3 box-flex swiper-slide position-rel swiper-slide-next" category="3">
-                    <a class="product-div-link j-goods-detail" href="javascript:;"></a>详情</li>
-                <li class="div4 box-flex swiper-slide position-rel" category="4">
-                    <a class="product-div-link" href="{url('goods/index/comment', array('id'=>$goods.goods_id))}"></a>评论</li>
-                <a class="box-flex right j-sharing" href="javascript:;"><i class="iconfont icon-fenxiang col-7"></i></a>
-            </ul>
+                    <a class="product-div-link j-goods-detail" href="javascript:;"></a>詳細</li>
+                          </ul>
         </nav>
     </h3>
 </header>
@@ -87,7 +84,6 @@
                                     <section class="goods-title b-color-f padding-all">
                                         <h3>
                                             {if empty($goods.user_id)}
-                                            <em class="em-promotion">自营</em>
                                             {/if}
                                             {$goods.goods_style_name}
                                         </h3>
@@ -108,12 +104,12 @@
                                             {/if}
                                         </p>
                                         <p class=" dis-box g-p-tthree m-top06">
-                                            <span class="box-flex text-left">销量 {if $goods.setting_sales}{$goods.setting_sales}{$goods.measure_unit}{else}{$goods.sales_volume}{$goods.measure_unit}{/if}</span>
+                                            <span class="box-flex text-left">売上高 {if $goods.setting_sales}{$goods.setting_sales}{$goods.measure_unit}{else}{$goods.sales_volume}{$goods.measure_unit}{/if}</span>
                                             {if $goods.user_id}
                                             <span class="box-flex text-center">{$basic_info.province}{$basic_info.city}</span>
                                             {/if}
                                             {if $cfg.show_goodsnumber && $cfg.use_storage}
-                                            <span class="box-flex text-right" >当前库存 <font class="goods_attr_num">{$goods.goods_number}</font><span id="measure_unit" >{$goods.measure_unit}</span></span>
+                                            <span class="box-flex text-right" >在庫量 <font class="goods_attr_num">{$goods.goods_number}</font><span id="measure_unit" >{$goods.measure_unit}</span></span>
                                             {/if}
                                             <!--     {if $goods.integral>0}
                                                 <span class="box-flex text-right" >可用积分:<font>{$goods.integral}</font>
@@ -124,9 +120,9 @@
                                     <section class=" b-color-f m-top08 n-goods-box">
                                         <!--address-start-->
                                         <div class="dis-box padding-all b-color-f   j-price-ladder">
-                                            <label class="t-remark g-t-temark">价格阶梯</label>
+                                            <label class="t-remark g-t-temark">価格ステップ</label>
                                             <div class="box-flex"></div>
-                                            <div class="t-goods1"><span class="t-jiantou">更多<i class="iconfont icon-jiantou tf-180"></i></span></div>
+                                            <div class="t-goods1"><span class="t-jiantou">more>>><i class="iconfont icon-jiantou tf-180"></i></span></div>
                                         </div>
                                         <!--address-end-->
                                         <div class="t-price-ladder">
@@ -191,7 +187,7 @@
                                     <section class="m-top1px padding-all b-color-f goods-coupon j-show-div j-coupons">
                                         <div class="dis-box  b-color-f p-r">
                                             <div class="goods-coupons-icon"><img src="__TPL__/img/youhuiquan.jpg" class="img"></div>
-                                            <div class="box-flex f-04 goods-coupons-title">领取优惠券({count($coupons_list)})</div>
+                                            <div class="box-flex f-04 goods-coupons-title">クーポンを受け取る({count($coupons_list)})</div>
                                             <div class="f-04"><span class="t-jiantou"><i class="iconfont icon-jiantou tf-180"></i></span></div>
                                         </div>
                                     </section>
@@ -205,7 +201,7 @@
                                             <input type="hidden" value="{if $district_row.region_id}{$district_row.region_id}{else}0{/if}" id="district_id" name="district_region_id">
                                             <input type="hidden" value="{$goods_id}" id="good_id" name="good_id">
                                             <div class="address-box" id="selectAddressBtn" region-data="">
-                                                <label class="fl t-remark g-t-temark">送至：</label>
+                                                <label class="fl t-remark g-t-temark">配送先：</label>
                                                 <span class="fl text-all-span f-04" id="addressLabelId">{$province_row.region_name}{$city_row.region_name}{$district_row.region_name}{$town_row.region_name}{$village_row.region_name}</span>
                                                 <span class="t-jiantou fr"><i class="iconfont icon-jiantou tf-180"></i></span>
                                             </div>
@@ -214,11 +210,11 @@
                                     </section>
                                     <section class="m-top1px padding-all b-color-f goods-attr">
                                         <div class="dis-box">
-                                            <label class="t-remark g-t-temark">运费：</label>
+                                            <label class="t-remark g-t-temark">送料：</label>
                                             {if $shippingFee.is_shipping == 1}
                                             <span class="box-flex t-goods1 text-all-span">{$shippingFee.shipping_fee_formated} {if $shippingFee.shipping_title}<em style="color:#ff0000; font-style: normal">{$shippingFee.shipping_title}</em>{/if}</span>
                                             {else}
-                                            <span class="box-flex t-goods1 text-all-span">该地区不支持配送</span>
+                                            <span class="box-flex t-goods1 text-all-span">この地域では配送はサポートされていません</span>
                                             {/if}
                                         </div>
                                     </section>
@@ -233,7 +229,7 @@
                                     {/if}
                                     <section class="m-top08 b-color-f goods-attr j-goods-attr j-show-div j-property">
                                         <div class="dis-box padding-all b-color-f">
-                                            <label class="t-remark g-t-temark">已选：</label>
+                                            <label class="t-remark g-t-temark">選択：</label>
                                             <div class="box-flex t-goods1">{$default_spe}</div>
                                             <div class="f-04"><span class="t-jiantou"><i class="iconfont icon-jiantou tf-180"></i></span></div>
                                         </div>
@@ -257,47 +253,8 @@
                                     </section>
                                     {/if}
                                     {if $is_reality.is_reality==1 || $is_reality.is_return==1 || $is_reality.is_fast==1}
-                                    <section class="m-top1px padding-all b-color-f goods-service j-show-div j-service">
-                                        <div class="dis-box">
-                                            <label class="t-remark g-t-temark">服务</label>
-                                            <div class="box-flex">
-                                                <div class="dis-box">
-                                                    <p class="box-flex t-goods1">
-                                                        {if $goods.user_id > 0}
-                                                        由{$goods.rz_shopName}发货并提供售后服务。
-                                                        {else}
-                                                        由{$basic_info.shop_name}发货并提供售后服务。
-                                                        {/if}</p>
-                                                    <i class="iconfont icon-102 goods-min-icon"></i>
-
-                                                </div>
-                                                <div class="dis-box m-top08 g-r-rule">
-                                                    {if $is_reality.is_reality==1 }
-                                                    <p class="box-flex t-remark3">
-                                                        <em class="fl em-promotion"><i class="iconfont icon-daifukuan"></i></em><span class="fl">正品保证</span></p>
-                                                    {/if}
-                                                    {if $is_reality.is_return==1 }
-                                                    <p class="box-flex t-remark3">
-                                                        <em class="fl em-promotion"><i class="iconfont icon-7tianwuliyoutuihuo"></i></em><span class="fl">包退服务</span></p>
-                                                    {/if}
-                                                    {if $is_reality.is_fast==1 }
-                                                    <p class="box-flex t-remark3">
-                                                        <em class="fl em-promotion"><i class="iconfont icon-tixingnaozhong"></i></em><span class="fl">闪速配送</span></p>
-                                                    {/if}
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </section>
-                                    {/if}
-                                    <section class="m-top08 b-color-f">
-                                        <a href="{url('community/post/index', array('goods_id' => $goods.goods_id))}">
-                                            <div class="dis-box padding-all b-color-f">
-                                                <label class="t-remark g-t-temark">网友讨论圈</label>
-                                                <div class="box-flex"></div>
-                                                <div class="f-04"><span class="t-jiantou"><i class="iconfont icon-jiantou tf-180"></i></span></div>
-                                            </div>
-                                        </a>
-                                    </section>
+                                                                        {/if}
+                                    
                                     {if C('shop.is_illegal')==1}
                                     <section class="m-top08 goods-evaluation">
                                         <a href="{url('user/index/goods_report', array('id'=>$goods.goods_id))}">
@@ -401,7 +358,7 @@
                                     </section>
                                     {/if}
                                     <div class="goods_load_more m-top08 b-color-f j-goods-detail-img">
-                                        <i class="iconfont icon-fanhui tf-90"></i><span>上拉查看图文详情</span>
+                                        <i class="iconfont icon-fanhui tf-90"></i><span>商品の詳細を上へ引く</span>
                                     </div>
                                 </div>
                         </div>
@@ -416,12 +373,12 @@
                     <div class="swiper-slide goods-swiper-slide">
                         <div class="goods-info of-hidden ect-tab  j-goods-info j-ect-tab ts-3" style="padding-top:0">
                             <div class="goods_load_more">
-                                <i class="iconfont icon-fanhui icon-fanhui-detail tf-90-1"></i><span>下拉回到商品信息</span>
+                                <i class="iconfont icon-fanhui icon-fanhui-detail tf-90-1"></i><span>下へ引っ張れ,商品情報に戻る</span>
                             </div>
                             <div class="hd j-tab-title tab-title b-color-f of-hidden" style="position:static">
                                 <ul class="dis-box">
-                                    <li class="box-flex active">商品详情</li>
-                                    <li class="box-flex">规格参数</li>
+                                    <li class="box-flex active">商品の詳細</li>
+                                    <li class="box-flex">規格パラメータ</li>
                                 </ul>
                             </div>
                             <div id="j-tab-con" class="goods-detail-cont">
@@ -434,14 +391,14 @@
                                         {else}
                                         <div class="no-div-message">
                                             <i class="iconfont icon-biaoqingleiben"></i>
-                                            <p>亲，此处没有内容～！</p>
+                                            <p>ここには内容がありません～！</p>
                                         </div>
                                         {/if}
                                         {if $new_goods}
                                         <div class="goods-recommend">
                                             <div class="padding-lr ">
                                               <h5 class="title-hrbg" style="margin-top:1rem">
-                                                <span><strong>猜你喜欢</strong></span>
+                                                <span><strong>好きかもしれない商品</strong></span>
                                                 <hr class="hr"></hr>
                                               </h5>
                                             </div>
@@ -485,7 +442,7 @@
                                         {else}
                                         <div class="no-div-message">
                                             <i class="iconfont icon-biaoqingleiben"></i>
-                                            <p>亲，此处没有内容～！</p>
+                                            <p>ここには内容がありません～！</p>
                                         </div>
                                         {/if}
                                     </section>
@@ -510,7 +467,7 @@
                     <i class="iconfont icon-guanbi2 show-div-guanbi"></i>
                 </div>
                 <div><span class="f-06 t-first" id="ECS_GOODS_AMOUNT"></span></div>
-                <span class="box-flex f-02 col-9">库存:<font class="goods_attr_num"></font>{$goods.measure_unit}</span>
+                <span class="box-flex f-02 col-9">在庫量:<font class="goods_attr_num"></font>{$goods.measure_unit}</span>
             </div>
         </div>
     </section>
@@ -592,7 +549,7 @@
         <input type="hidden" value="{$goods_id}" id="goods_id" name="good_id">
         <input type="hidden" value="{$user_id}" id="user_id" name="user_id">
         <input type="hidden" value="{$area_id}" id="area_id" name="area_id">
-        <a class="btn-disab box-flex quehuo" href="javascript:;" {if $goods.review_status> 2}style="display:none"{/if}>{if $goods.review_status == 1}暂时下架{else}暂时缺货{/if}</a>
+        <a class="btn-disab box-flex quehuo" href="javascript:;" {if $goods.review_status> 2}style="display:none"{/if}>{if $goods.review_status == 1}当分在庫がない{else}しばらく品切れになる{/if}</a>
         <a class="btn-cart box-flex add-to-cart" href="javascript:;" onclick="checkAdd({$goods.goods_id}, 2)" {if $goods.review_status <=2 }style="display:none" {/if}>立即购买</a>
         <a class="btn-submit box-flex add-to-cart" href="javascript:;" onclick="addToCart_quick({$goods.goods_id})" {if $goods.review_status <=2 }style="display:none" {/if}>加入购物车</a>
     </section>
@@ -610,7 +567,7 @@
                     <i class="iconfont icon-guanbi2 show-div-guanbi"></i>
                 </div>
                 <div><span class="f-06 t-first" id="ECS_GOODS_AMOUNT_2"></span></div>
-                <span class="box-flex f-02 col-9">库存:<font class="goods_attr_num"></font>{$goods.measure_unit}</span>
+                <span class="box-flex f-02 col-9">在庫量:<font class="goods_attr_num"></font>{$goods.measure_unit}</span>
             </div>
         </div>
     </section>
@@ -684,7 +641,7 @@
         <div class="swiper-scrollbar"></div>
     </section>
     <section class="ect-button-more dis-box">
-        <a class="btn-disab box-flex store_quehuo" href="javascript:;" {if $goods.review_status> 2}style="display:none"{/if}>{if $goods.review_status == 1}暂时下架{else}暂时缺货{/if}</a>
+        <a class="btn-disab box-flex store_quehuo" href="javascript:;" {if $goods.review_status> 2}style="display:none"{/if}>{if $goods.review_status == 1}当分在庫がない{else}しばらく品切れになる{/if}</a>
         <a class="btn-submit box-flex j-store-button" href="javascript:;" {if $goods.review_status <=2 }style="display:none" {/if} >确认</a>
     </section>
 </div>
@@ -698,48 +655,15 @@
 
 <!--悬浮btn star-->
 <section class="filter-btn dis-box">
-    {if $customer_service == 0}
-    {if $kefu}
-    <a class="filter-btn-kefu heart" href="{url('chat/index/index')}"><i class="kefu"></i><em>客服</em></a>
-    {else}
-        {if $basic_info.is_im == 1 || $basic_info.is_dsc}
-        <a class="filter-btn-kefu heart" href="{url('chat/yunwang/index', array('goods_id'=> $goods.goods_id))}"><i class="kefu"></i><em>客服</em></a>
-        {elseif isset($basic_info.meiqia) && !empty($basic_info.meiqia)}
-        <a class="filter-btn-kefu heart" href="javascript:void(0);" onclick="meiqia_chat();" ><i class="kefu"></i><em>客服</em></a>
-        {else}
-            {if $basic_info.kf_type}
-            <a class="filter-btn-kefu heart" href="http://www.taobao.com/webww/ww.php?ver=3&touid={$basic_info.kf_ww}&siteid=cntaobao&status=1&charset=utf-8"><i class="kefu"></i><em>客服</em></a>
-            {else}
-            <a class="filter-btn-kefu heart" href="http://wpa.qq.com/msgrd?v=3&uin={$basic_info.kf_qq}&site=qq&menu=yes"><i class="kefu"></i><em>客服</em></a>
-            {/if}
-        {/if}
-    {/if}
-    {else}
-    {if $kefu}
-    <a class="filter-btn-kefu heart" href="{url('chat/index/index', array('goods_id'=> $goods.goods_id))}"><i class="kefu"></i><em>客服</em></a>
-    {else}
-        {if $basic_info.is_im == 1 || $basic_info.is_dsc}
-        <a class="filter-btn-kefu heart" href="{url('chat/yunwang/index', array('goods_id'=> $goods.goods_id))}"><i class="kefu"></i><em>客服</em></a>
-        {elseif isset($basic_info.meiqia) && !empty($basic_info.meiqia)}
-        <a class="filter-btn-kefu heart" href="javascript:void(0);" onclick="meiqia_chat();" ><i class="kefu"></i><em>客服</em></a>
-        {else}
-            {if $basic_info.kf_type}
-            <a class="filter-btn-kefu heart" href="http://www.taobao.com/webww/ww.php?ver=3&touid={$basic_info.kf_ww}&siteid=cntaobao&status=1&charset=utf-8"><i class="kefu"></i><em>客服</em></a>
-            {else}
-            <a class="filter-btn-kefu heart" href="http://wpa.qq.com/msgrd?v=3&uin={$basic_info.kf_qq}&site=qq&menu=yes"><i class="kefu"></i><em>客服</em></a>
-            {/if}
-        {/if}
-    {/if}
-    {/if}
-    <a class="filter-btn-flow  heart j-heart {if $goods_collect}active{/if}" onclick="collect({$goods.goods_id})" id="ECS_COLLECT">
+      <a class="filter-btn-flow  heart j-heart {if $goods_collect}active{/if}" onclick="collect({$goods.goods_id})" id="ECS_COLLECT">
         <i class="shoucang ts-2"></i>
-        <em>收藏</em>
+        <em>コレクション</em>
     </a>
 
     <a  href="{url('cart/index/index')}" class="filter-btn-flow heart">
         <i class="flow"></i>
         <sup class="b-color cart-num">{$cart_num}</sup>
-        <em>购物车</em>
+        <em>ショッピングカート</em>
     </a>
      <!--飞入购物车位置s-->
     <span class="quick_links" id="shopCart"></span>
@@ -749,12 +673,12 @@
         <i class="dianpu ts-2"></i><em>店铺</em></a>
     {/if}
 
-    <a class="btn-disab box-flex quehuo" href="javascript:;" {if $goods.review_status > 2}style="display:none"{/if}>{if $goods.review_status == 1}暂时下架{else}暂时缺货{/if}</a>
+    <a class="btn-disab box-flex quehuo" href="javascript:;" {if $goods.review_status > 2}style="display:none"{/if}>{if $goods.review_status == 1}当分在庫がない{else}しばらく品切れになる{/if}</a>
     {if $isdrp==1 && $drp>0 && $goods.is_distribution == 1}
     <a class="btn-cart box-flex add-to-cart" href="javascript:;" onclick="checkDrp()" {if $goods.review_status <= 2}style="display:none"{/if}>我要{$custom}</a>
-    <a class="btn-submit box-flex add-to-cart {if $add_type == 0}btnCart{/if}" href="javascript:;" onclick="checkAdd({$goods.goods_id},{$add_type})" {if $goods.review_status <= 2}style="display:none"{/if}>加入购物车</a>
+    <a class="btn-submit box-flex add-to-cart {if $add_type == 0}btnCart{/if}" href="javascript:;" onclick="checkAdd({$goods.goods_id},{$add_type})" {if $goods.review_status <= 2}style="display:none"{/if}>カートに入れる</a>
     {else}
-    <a class="btn-submit box-flex add-to-cart {if $add_type == 0}btnCart{/if}" href="javascript:;" onclick="checkAdd({$goods.goods_id},{$add_type})" {if $goods.review_status <= 2}style="display:none"{/if}>加入购物车</a>
+    <a class="btn-submit box-flex add-to-cart {if $add_type == 0}btnCart{/if}" href="javascript:;" onclick="checkAdd({$goods.goods_id},{$add_type})" {if $goods.review_status <= 2}style="display:none"{/if}>カートに入れる</a>
     {/if}
     <!--<a class="btn-submit box-flex click-show-attr add-to-cart" href="javascript:;" {if $goods.review_status <= 2}style="display:none"{/if}>立即购买</a>-->
 </section>
@@ -826,7 +750,7 @@
 <!--领取优惠券star-->
 <div class="show-goods-coupon j-filter-show-div ts-3 b-color-1 coupons-box">
     <section class="goods-show-title of-hidden padding-all b-color-f">
-        <h3 class="fl g-c-title-h3">领取优惠券 ({count($coupons_list)})</h3>
+        <h3 class="fl g-c-title-h3">クーポンを受け取る ({count($coupons_list)})</h3>
         <i class="iconfont icon-guanbi2 show-div-guanbi fr"></i>
     </section>
     <section class="goods-show-con padding-all swiper-scroll" id="goods-show-con">
@@ -840,21 +764,21 @@
                                 <div class="b-r-a-price">
                                     <em>¥</em><strong class="coupons-money">{$coupons.cou_money}</strong>
                                     <div class="couons-text text-left color-dark"  style="float:none;padding-top: 2rem;">
-                                        <span class="f-02">满{$coupons.cou_man}元可用</span>
+                                        <span class="f-02">{$coupons.cou_man}円以上で利用可能</span>
                                     </div>
                                 </div>
                                 <div class="b-r-a-con text-left ">
                                     <div class="range-item">{$coupons.cou_title}</div>
-                                    <div class="range-item col-7">{$coupons.cou_start_time} 至 {$coupons.cou_end_time}</div>
+                                    <div class="range-item col-7">{$coupons.cou_start_time} -- {$coupons.cou_end_time}</div>
                                 </div>
                             </div>
                             <b class="semi-circle"></b>
                             <!-- <div class="print-img"><img src="{elixir('img/coupons-print.png')}" /></div> -->
                         </div>
                         {if $coupons.ling == 1}
-                            <a class="b-r-a-btn b-color-f temark-3-text tb-lr-center" href="javascript:;" onclick="receivebonus('{$coupons.cou_id}')">立即<br />领取</a>
+                            <a class="b-r-a-btn b-color-f temark-3-text tb-lr-center" href="javascript:;" onclick="receivebonus('{$coupons.cou_id}')"><br />受け取る</a>
                         {else}
-                            <a class="b-r-a-btn b-color-f temark-3-text tb-lr-center" style="background: #a09898">无法<br />领取</a>
+                            <a class="b-r-a-btn b-color-f temark-3-text tb-lr-center" style="background: #a09898">受領<br />済み</a>
                         {/if}
 
                     </li>
@@ -1043,13 +967,11 @@
                                     <div class="dis-box">
                                         <div class="product-div box-flex">
                                             <div class="img-box">
-                                                <img class="product-list-img" src="http://192.168.7.99/dsc1/images/201703/goods_img/_P_1490147293202.jpg" />
                                             </div>
                                         </div>
                                         <div class="suit-jia p-r"><em class="p-a f-03 col-7">+</em></div>
                                         <div class="product-div box-flex">
                                             <div class="img-box">
-                                                <img class="product-list-img" src="http://192.168.7.99/dsc1/images/201703/goods_img/_P_1490147293202.jpg" />
                                             </idv>
                                         </div>
                                     </div>

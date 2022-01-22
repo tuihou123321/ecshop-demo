@@ -35,7 +35,7 @@
                 <div class="value">
                     <textarea name="content" class="textarea" id="textarea" cols="30" rows="10" size="10" placeholder="{$lang.Experience_one}" onKeyUp="figure()" maxlength="500"></textarea> 
                     <div class="clear"></div>
-                    <div class="error">您还可以输入<span id="sp">500</span>字</div>
+                    <div class="error">入力可能<span id="sp">500</span>文字</div>
                 </div>
             </div>
         <!--{else}-->
@@ -54,31 +54,7 @@
                 <div class="value"><span class="txt">{$item.comment.content}</span></div>
             </div>
         <!--{/if}-->
-        <div class="item">
-            <div class="label">{$lang.single_comment}：</div>
-            <div class="value">
-                <div class="upload-img-box">
-                    <div class="img-lists">
-                        <ul class="img-list-ul" ectype="imglist">
-                            <!-- {foreach from=$item.comment.img_list item=img} -->
-                            <li><img width="78" height="78" alt="" src="{$img.img_thumb}"><div class="del hide"><em value="{$lang.drop}">X</em></div></li>
-                            <!--{/foreach}-->
-                        </ul>
-                        <!--{if !$item.comment.img_list}-->
-                        <div class="upload-btn">
-                            <div id="file_upload{$smarty.foreach.foo.iteration}" class="uploadify">
-                                <a href="javascript:void(0);" id="uploadbutton" class="uploadbutton"><i class="iconfont icon-digital"></i></a>
-                            </div>
-                        </div>
-                        <!--{/if}-->
-                        
-                        <!--{if !$item.comment.img_list}-->
-                        <div class="img-utips">共<em ectype="num">0</em>张,还能上传<span id="img_number" ectype="ima_number">10</span>张</div>
-                        <!--{/if}-->
-                    </div>
-                </div>
-            </div>
-        </div>
+      
         <!--{if !$item.comment.img_list}-->
         <!--{if $enabled_captcha}-->
         <div class="item">

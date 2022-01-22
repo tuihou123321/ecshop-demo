@@ -73,6 +73,7 @@ Utils.isEmail = function( email )
 
 Utils.isTel = function ( tel )
 {
+	return true;
   var reg = /^[\d|\-|\s|\_]+$/; //只允许使用数字-空格等
 
   return reg.test( tel );
@@ -128,7 +129,7 @@ Utils.$ = function(name)
 
 Utils.isPhone = function ( mobile_phone )
 {
-  var reg = /^(((13[0-9]{1})|(14[0-9]{1})|(15[0-9]{1})|(16[0-9]{1})|(17[0-9]{1})|(18[0-9]{1})|(19[0-9]{1}))+\d{8})$/;
+  var reg = /^[\d|\-|\s|\_]+$/;
 
   return reg.test( mobile_phone );
 }

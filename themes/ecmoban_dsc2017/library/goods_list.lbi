@@ -41,24 +41,7 @@
                                 <div class="p-num">{$lang.existing}<em>{$goods.sales_volume}</em>预约</div>
                             </div>
                             <div class="p-name"><a href="{$goods.purl}" title="{$goods.goods_name|escape:html}" target="_blank">{if $script_name eq 'search'}{$goods.goods_name_keyword}{else}{$goods.goods_name}{/if}</a></div>
-                            <div class="p-store">
-                                {if $goods.user_id eq 0}
-                                <a href="javascript:;" title="{$goods.rz_shopName}" class="store">{$goods.rz_shopName}</a>
-                                {else}
-                                <a href="{$goods.store_url}" title="{$goods.rz_shopName}" class="store" target="_blank">{$goods.rz_shopName}</a>
-                                {/if}
-                                <!--start 在线客服 -->
-                                {if $goods.is_IM eq 1 || $goods.is_dsc}
-                                <a href="javascript:;" id="IM" onclick="openWin(this)" ru_id="{$goods.user_id}" class="p-kefu{if $goods.user_id eq 0} p-c-violet{/if}"><i class="iconfont icon-kefu"></i></a>
-                                {else}
-                                    {if $goods.kf_type eq 1}
-                                    <a href="http://www.taobao.com/webww/ww.php?ver=3&touid={$goods.kf_ww}&siteid=cntaobao&status=1&charset=utf-8" class="p-kefu{if $goods.user_id eq 0} p-c-violet{/if}" target="_blank"><i class="iconfont icon-kefu"></i></a>
-                                    {else}
-                                    <a href="http://wpa.qq.com/msgrd?v=3&uin={$goods.kf_qq}&site=qq&menu=yes" class="p-kefu{if $goods.user_id eq 0} p-c-violet{/if}" target="_blank"><i class="iconfont icon-kefu"></i></a>
-                                    {/if}
-                                {/if}
-                                <!--end 在线客服 -->
-                            </div>
+                            
                             {if $goods.is_new || $goods.is_hot || $goods.is_best || $goods.is_shipping || $goods.self_run || $goods.user_id eq 0}
                             <div class="p-activity">
                                 {if $goods.act_id}
@@ -159,24 +142,7 @@
                                 <div class="p-num">{$lang.Sold}<em>{$goods.sales_volume}</em>件</div>
                             </div>
                             <div class="p-name"><a href="{$goods.url}" title="{$goods.goods_name|escape:html}" target="_blank">{if $script_name eq 'search'}{$goods.goods_name_keyword}{else}{$goods.goods_name}{/if}</a></div>
-                            <div class="p-store">
-                                {if $goods.user_id eq 0}
-                                <a href="javascript:;" title="{$goods.rz_shopName}" class="store">{$goods.rz_shopName}</a>
-                                {else}
-                                <a href="{$goods.store_url}" title="{$goods.rz_shopName}" class="store" target="_blank">{$goods.rz_shopName}</a>
-                                {/if}
-                                <!--start 在线客服 -->
-                                {if $goods.is_IM eq 1 || $goods.is_dsc}
-                                <a href="javascript:;" id="IM" onclick="openWin(this)" ru_id="{$goods.user_id}" class="p-kefu{if $goods.user_id eq 0} p-c-violet{/if}"><i class="iconfont icon-kefu"></i></a>
-                                {else}
-                                    {if $goods.kf_type eq 1}
-                                    <a href="http://www.taobao.com/webww/ww.php?ver=3&touid={$goods.kf_ww}&siteid=cntaobao&status=1&charset=utf-8" class="p-kefu{if $goods.user_id eq 0} p-c-violet{/if}" target="_blank"><i class="iconfont icon-kefu"></i></a>
-                                    {else}
-                                    <a href="http://wpa.qq.com/msgrd?v=3&uin={$goods.kf_qq}&site=qq&menu=yes" class="p-kefu{if $goods.user_id eq 0} p-c-violet{/if}" target="_blank"><i class="iconfont icon-kefu"></i></a>
-                                    {/if}
-                                {/if}
-                                <!--end 在线客服 -->
-                            </div>
+                           
                             {if $goods.is_new || $goods.is_hot || $goods.is_best || $goods.is_shipping || $goods.self_run || $goods.user_id eq 0}
                             <div class="p-activity">
                                 {if $goods.is_new}
@@ -274,29 +240,11 @@
                                 <div class="p-name"><a href="{$goods.url}" title="{$goods.goods_name|escape:html}" target="_blank">{$goods.goods_name}</a></div>
                                 <div class="p-lie">
                                     <div class="p-num">{$lang.sales_volume}：{$goods.sales_volume}</div>
-                                    <div class="p-comm">{$lang.comments_rank}：{$goods.review_count}{if $filename neq 'category'}+{/if}</div>
                                 </div>
                             </div>
                         </div>
                         <div class="col col-2">
-                            <div class="p-store">
-                            {if $goods.user_id eq 0}
-                            <a href="javascript:;" title="{$goods.rz_shopName}" class="store">{$goods.rz_shopName}</a>
-                            {else}
-                            <a href="{$goods.store_url}" title="{$goods.rz_shopName}" class="store" target="_blank">{$goods.rz_shopName}</a>
-                            {/if}
-                            <!--start 在线客服 -->
-                            {if $goods.is_IM eq 1 || $goods.is_dsc}
-                            <a href="javascript:;" id="IM" onclick="openWin(this)" ru_id="{$goods.user_id}" class="p-kefu"><i class="iconfont icon-kefu"></i></a>
-                            {else}
-                                {if $goods.kf_type eq 1}
-                                <a href="http://www.taobao.com/webww/ww.php?ver=3&touid={$goods.kf_ww}&siteid=cntaobao&status=1&charset=utf-8" class="p-kefu" target="_blank"><i class="iconfont icon-kefu"></i></a>
-                                {else}
-                                <a href="http://wpa.qq.com/msgrd?v=3&uin={$goods.kf_qq}&site=qq&menu=yes" class="p-kefu" target="_blank"><i class="iconfont icon-kefu"></i></a>
-                                {/if}
-                            {/if}
-                            <!--end 在线客服 -->
-                            </div>
+                   
                         </div>
                         <div class="col col-3">
                             <div class="p-price">
@@ -307,16 +255,11 @@
                                         {$goods.shop_price}
                                     {/if}
                                 </div>
-                                <div class="original-price">{$goods.market_price}</div>
                             </div>
                         </div>
                         <div class="col col-4">
                             <div class="p-operate">
-                                <a href="javascript:void(0);" id="compareLink"{if $script_name eq 'search' && $goods.type eq 0} title="没有设置属性类型无法对比" class="not_compareLink"{/if}>
-                                <input id="duibi_{$goods.goods_id}" type="checkbox" name="duibi" class="ui-checkbox"{if $script_name neq 'search' || $goods.type neq 0} onClick="Compare.add(this, {$goods.goods_id},'{$goods.goods_name|escape:"html"}','{$goods.type}', '{$goods.goods_thumb}', '{$goods.shop_price}', '{$goods.market_price}')"{/if}>
-                                <label class="ui-label" {if $script_name neq 'search' || $goods.type neq 0}for="duibi_{$goods.goods_id}"{/if}>{$lang.compare}</label>
-                            </a>
-                            <a href="javascript:collect({$goods.goods_id});" class="choose-btn-coll{if $goods.is_collect} selected{/if}"><i class="iconfont{if $goods.is_collect} icon-zan-alts{else} icon-zan-alt{/if}"></i>{$lang.btn_collect}</a>
+                                                         <a href="javascript:collect({$goods.goods_id});" class="choose-btn-coll{if $goods.is_collect} selected{/if}"><i class="iconfont{if $goods.is_collect} icon-zan-alts{else} icon-zan-alt{/if}"></i>{$lang.btn_collect}</a>
                             {if $goods.prod eq 1}
                                 {if $goods.goods_number > 0}
                                 <a href="javascript:void(0);" onClick="javascript:addToCart({$goods.goods_id},0,event,this,'flyItem2');" rev="{$goods.goods_thumb}" data-dialog="addCart_dialog" data-id="" data-divid="addCartLog" data-url="" data-title="{$lang.select_attr}" class="addcart">

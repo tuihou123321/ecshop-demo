@@ -13,7 +13,7 @@
  * $Id: calendar.php 17217 2011-01-19 06:29:08Z liubo $
 */
 $_LANG['activity_error'] = "活动不存在";
-$_LANG['shiping_prompt'] = "暂不支持配送";
+$_LANG['shiping_prompt'] = "配送は当分サポートしておりません";
 $_LANG['shelves_goods'] = "该商品已下架";
 $_LANG['purchasing_prompt'] = "该商品购买已达到限购条件,无法再购买";
 $_LANG['purchasing_prompt_two'] = "该商品已经累计超过限购数量";

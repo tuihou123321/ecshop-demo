@@ -57,19 +57,14 @@
             </div>
             <div class="account">
                 <div class="item clearfix">
-                    <div class="item-name">账户资料：</div>
+                    <div class="item-name">ユーザー情報：</div>
                     <div class="item-main">
                         <b class="integrity"><em style="width: {$security_rating.Percentage}%;"></em></b><span>{$security_rating.Percentage}%</span>
                     </div>
                 </div>
                 <div class="item clearfix">
-                    <div class="item-name">账户安全：</div>
-                    <div class="item-main safe">
-                        <a href="user.php?act=account_safe" class="iconfont icon-email {if $validate.email_validate}active{/if}"><span class="tip">{if $validate.email_validate}邮箱已验证{else}邮箱未验证{/if}</span></a>
-                        <a href="user.php?act=account_safe" class="iconfont icon-see {if $validate.real_id}active{/if}"><span class="tip">{if $validate.real_id}实名认证已完成{else}实名认证未完成{/if}</span></a>
-                        <a href="user.php?act=account_safe" class="iconfont icon-password active"><span class="tip">密码已设置</span></a>
-                        <a href="user.php?act=account_safe" class="iconfont icon-mobile-phone {if $validate.mobile_phone}active{/if}"><span class="tip">{if $validate.mobile_phone}手机已验证{else}手机未验证{/if}</span></a>
-                    </div>
+                    <div class="item-name"></div>
+                    <div class="item-main safe"></div>
                 </div>
             </div>
         </div>
@@ -80,7 +75,7 @@
     </div>
     <div class="user-main" ectype="userMain" data-action="{if $action eq 'default'}default{else}noDefault{/if}">
         <!-- {if $action neq 'default'} -->
-        <div class="user-crumbs hide">
+<div class="user-crumbs hide">
             <!-- #BeginLibraryItem "/library/ur_here.lbi" --><!-- #EndLibraryItem -->
         </div>
         <!--{/if}-->
@@ -106,15 +101,7 @@
                 </div>
                 </a>
             </li>
-            <li>
-                <a href="user.php?act=comment_list">
-                <div class="circle"><i class="iconfont icon-edit"></i></div>
-                <div class="info">
-                    <p>{$lang.comment_not}</p>
-                    <div class="num">{$signNum}</div>
-                </div>
-                </a>
-            </li>
+    
             <li>
                 <a href="user.php?act=order_list&order_type=toBe_finished">
                 <div class="circle"><i class="iconfont icon-complete"></i></div>
@@ -140,27 +127,13 @@
                 </div>
             </li>
             <li>
-                <div class="words"></div>
-                <div class="info">
-                    <a href="user.php?act=coupons">优惠券（<span class="red">{$coupons.num}</span>）</a><br>
-                    <div class="num"><a href="coupons.php?act=coupons_index" target="_blank" class="line">领券</a></div>
-                </div>
-            </li>
-            <li>
-                <div class="words"></div>
-                <div class="info info-line">
-                    <a href="user.php?act=value_card">储值卡（<span class="red">{$value_card.num}</span>）</a>
-                </div>
-            </li>
-            <li>
-                <div class="words"></div>
-                <div class="info info-line"><a href="user.php?act=account_log">{$info.integral}</a></div>
-            </li>
+             
+               
         </ul>
         <div class="user-mod">
             <div class="user-section">
                 <div class="user-title">
-                    <h2>我的订单</h2>
+                    <h2>私の注文書</h2>
                     <a href="user.php?act=order_list" class="more">{$lang.see_all_order}</a>
                 </div>
                 <div class="user-index-order-list">
@@ -195,7 +168,7 @@
                         <div class="td td-name">{$order.consignee}</div>
                         <div class="td td-statu">{$order.order_status}</div>
                         <div class="td td-handle">
-                            <a href="user.php?act=order_detail&order_id={$order.order_id}" class="sc-btn">{$lang.order_detail}</a>
+                            <a href="user.php?act=order_detail&order_id={$order.order_id}" class="sc-btn sc-red-btn">{$lang.order_detail}</a>
                         </div>
                     </div>
                     {foreachelse}
@@ -204,7 +177,7 @@
                         <div class="no_info no_info_line">
                             <h3>{insert name='get_page_no_records' filename=$filename act=$action}</h3>
                             <div class="no_btn">
-                                <a href="index.php" class="sc-btn sc-red-btn">去逛商城</a>
+                                <a href="index.php" class="sc-btn sc-red-btn">トップページ</a>
                             </div>
                         </div>
                     </div>
@@ -232,24 +205,15 @@
                             {/if}
                         </div>
                         <div class="td td-shop">
-                            <a href="{$goods.shop_url}" class="name">{$goods.shop_name}</a>
-                            {if $goods.is_IM eq 1 || $goods.is_dsc}
-                            <a id="IM" onclick="openWin(this)" href="javascript:;" goods_id="{$goods.goods_id}" class="iconfont icon-kefu user-shop-kefu"></a>
-                            {else}
-                                {if $goods.kf_type eq 1}
-                                <a href="http://www.taobao.com/webww/ww.php?ver=3&touid={$order.kf_ww}&siteid=cntaobao&status=1&charset=utf-8" class="iconfont icon-kefu user-shop-kefu" target="_blank"></a>
-                                {else}
-                                <a href="http://wpa.qq.com/msgrd?v=3&uin={$order.kf_qq}&site=qq&menu=yes" class="iconfont icon-kefu user-shop-kefu" target="_blank"></a>
-                                {/if}
-                            {/if}
+                      
                         </div>
-                        <div class="td td-handle"><a href="{$goods.url}" class="sc-btn">立即购买</a></div>
+                        <div class="td td-handle"><a href="{$goods.url}" class="sc-btn">カート [購入する] </a></div>
                     </div>
                     {foreachelse}
                     <div class="no_records">
                         <i class="no_icon"></i>
                         <div class="no_info">
-                            <h3>主人，您近期还没有收藏商品呦~</h3>
+                            <h3>ご主人様、近いうちに商品をコレクションしていませんよ。</h3>
                         </div>
                     </div>
                     {/foreach}
@@ -274,14 +238,7 @@
             {/if}
             {if $helpart_list}
             <div class="user-section">
-                <div class="user-title">
-                    <h2>{$lang.calendar_help}</h2>
-                </div>
-                <ul class="user-help-list clearfix">
-                    {foreach from=$helpart_list item=help}
-                    <li><a href="{$help.url}" class="ftx-05" target="_blank">{$help.title}</a></li>
-                    {/foreach}
-                </ul>
+           
             </div>
             {/if}
         </div>
@@ -299,16 +256,16 @@
                 <dl class="item">
                     <dt class="item-t">
                         <div class="t-handle">
-                            <a href="javascript:void(0);" ectype="goods_del_booking" data-url="user.php?act=act_del_booking&id={$item.rec_id}" class="sc-btn">取消订购</a>
+                            <a href="javascript:void(0);" ectype="goods_del_booking" data-url="user.php?act=act_del_booking&id={$item.rec_id}" class="sc-btn">注文を取り消す</a>
                         </div>
                         <a href="{$item.url}" class="t-img"><img src="{$item.goods_thumb}" alt=""></a>
                         <div class="t-info">
                             <div class="info-name"><a href="{$item.url}">{$item.goods_name}</a></div>
-                            <p class="info-num">订购数量：<span class="red">{$item.goods_number}</span></p>
+                            <p class="info-num">注文数量：<span class="red">{$item.goods_number}</span></p>
                         </div>
                     </dt>
                     <dd class="item-c">
-                        <div class="fl">处理备注：<span class="ftx-05">{$item.dispose_note}</span></div>
+                        <div class="fl">返信の処理：<span class="ftx-05">{$item.dispose_note}</span></div>
                         <div class="fr">{$item.booking_time}</div>
                     </dd>
                 </dl>
@@ -376,11 +333,9 @@
         <!--{if $action eq 'collection_list' ||  $action eq 'store_list'||  $action eq 'focus_brand'}-->
         <div class="user-mod">
             <div class="user-title">
-                <h2>我的收藏</h2>
+                <h2>私のコレクション</h2>
                 <ul class="tabs">
                     <li {if $action eq 'collection_list'}class="active"{/if}><a href="user.php?act=collection_list">{$lang.Collection_goods}</a></li>
-                    <li {if $action eq 'store_list'}class="active"{/if}><a href="user.php?act=store_list">{$lang.store_list}</a></li>
-                    <li {if $action eq 'focus_brand'}class="active"{/if}><a href="user.php?act=focus_brand">关注品牌</a></li>
                 </ul>
             </div>
             <div class="collection-list-warp clearfix c-tab-box-ajax">
@@ -768,13 +723,13 @@
                         <div class="no_info no_info_line">
                             {if $smarty.get.sign eq 0}
                                 <h3>{insert name='get_page_no_records' filename=$filename act='comment_list_0'}</h3>
-                                <div class="no_btn"><a href="index.php" class="sc-btn">去逛商城</a></div>
+                                <div class="no_btn"><a href="index.php" class="sc-btn">トップページ</a></div>
                             {elseif $smarty.get.sign eq 1}
                                 <h3>{insert name='get_page_no_records' filename=$filename act='comment_list_1'}</h3>
-                                <div class="no_btn"><a href="user.php?act=comment_list" class="sc-btn">全部评价/晒单</a></div>
+                                <div class="no_btn"><a href="user.php?act=comment_list" class="sc-btn">すべての評価</a></div>
                             {elseif $smarty.get.sign eq 2}
                                 <h3>{insert name='get_page_no_records' filename=$filename act='comment_list_2'}</h3>
-                                <div class="no_btn"><a href="user.php?act=comment_list" class="sc-btn">全部评价/晒单</a></div>
+                                <div class="no_btn"><a href="user.php?act=comment_list" class="sc-btn">すべての評価</a></div>
                             {/if}
                         </div>
                     </div>
@@ -1071,7 +1026,7 @@
 								{else}
 								<a href="user.php?act=complaint_apply&complaint_id={$order.is_complaint}" class="sc-btn">查看详情</a>
 								{if $order.complaint_state eq 4}
-								<a href="javascript:void();" ectype="del_compalint" data-id="{$order.is_complaint}" class="sc-btn">删除</a>
+								<a href="javascript:void();" ectype="del_compalint" data-id="{$order.is_complaint}" class="sc-btn">削除</a>
 								{/if}
 								{/if}
 							</div>
@@ -1149,16 +1104,7 @@
                                 <span class="info-item">{$order.order_time}</span>
                                 <span class="info-item">{$order.consignee}</span>
                                 <span class="info-item">
-                                    <a href="{$order.shop_url}" class="user-shop-link">{$order.shop_name}</a>
-                                    {if $order.is_IM eq 1 || $order.is_dsc}
-									<a id="IM" onclick="openWin(this)" href="javascript:;" ru_id="{$order.ru_id}"  class="iconfont icon-kefu user-shop-kefu"></a>
-									{else}
-									{if $order.kf_type eq 1}
-									<a href="http://www.taobao.com/webww/ww.php?ver=3&touid={$order.kf_ww}&siteid=cntaobao&status=1&charset=utf-8" class="iconfont icon-kefu user-shop-kefu" target="_blank"></a>
-									{else}
-									<a href="http://wpa.qq.com/msgrd?v=3&uin={$order.kf_qq}&site=qq&menu=yes" class="iconfont icon-kefu user-shop-kefu" target="_blank"></a>
-									{/if}
-									{/if}
+                             
                                 </span>
                             </div>
 							<div class="t-price">{$order.total_fee}</div>
@@ -1449,7 +1395,7 @@
                             <div class="c-handle">
 								<a href="user.php?act=goods_report&report_id={$report.report_id}" class="sc-btn">查看</a>
 								{if $report.report_state eq 0}<a href="#" class="sc-btn" ectype="cancel_report" data-type="1" data-state="2" data-id="{$report.report_id}">取消</a>{/if}
-								{if $report.handle_type gt 0 || $report.report_state eq 2}<a href="#" class="sc-btn" ectype="cancel_report" data-type="1" data-state="3" data-id="{$report.report_id}">删除</a>{/if}
+								{if $report.handle_type gt 0 || $report.report_state eq 2}<a href="#" class="sc-btn" ectype="cancel_report" data-type="1" data-state="3" data-id="{$report.report_id}">削除</a>{/if}
 							</div>
                         </dd>
                     </dl>
@@ -1600,7 +1546,7 @@
 											<input type="button" name="button"  class="sc-btn sc-redBg-btn" value="取消举报" ectype="cancel_report" data-type="0" data-state="2" data-id="{$goods_report_info.report_id}">
 										{/if}
 										{if $goods_report_info.handle_type gt 0 || $goods_report_info.report_state eq 2}
-											<input type="button" class="sc-btn sc-redBg-btn" value="删除" ectype="cancel_report" data-type="0" data-state="3" data-id="{$goods_report_info.report_id}">
+											<input type="button" class="sc-btn sc-redBg-btn" value="削除" ectype="cancel_report" data-type="0" data-state="3" data-id="{$goods_report_info.report_id}">
 										{/if}
 									{/if}
 								</div>
@@ -1671,8 +1617,8 @@
                             <div class="iis-state-info">
                                 <div class="tit">{if $audit_status eq 0}您的增票资质已提交，等待审核。{elseif $audit_status eq 1}恭喜！您的增票资质信息审核通过。{elseif $audit_status eq 2}抱歉！您的增票资质信息错误，审核不通过。{/if}</div>
                                 <div class="iis-btn">
-                                    <a href="user.php?act=vat_update&vat_id={$vat_id}" class="sc-btn">修改</a>
-                                    <a href="user.php?act=vat_remove&vat_id={$vat_id}" class="sc-btn">删除</a>
+                                    <a href="user.php?act=vat_update&vat_id={$vat_id}" class="sc-btn">変更</a>
+                                    <a href="user.php?act=vat_remove&vat_id={$vat_id}" class="sc-btn">削除</a>
                                 </div>
                             </div>						
                         </div>
@@ -1691,7 +1637,7 @@
                     <div class="ii-section iis-ticket last-child">
                         <div class="title">票据收件信息
 						{if $vat_info.consignee_name || $vat_info.consignee_address || $vat_info.consignee_mobile_phone || $vat_info.consignee_province}
-						<a href="user.php?act=vat_consignee&vat_id={$vat_id}" class="ftx-01">修改</a>
+						<a href="user.php?act=vat_consignee&vat_id={$vat_id}" class="ftx-01">変更</a>
 						{/if}
 						</div>
                         <div class="info">
@@ -1798,8 +1744,8 @@
                                 <div class="tit">抱歉！您的增票资质信息错误，审核不通过。</div>						
 							{/if}
                                 <div class="iis-btn">
-                                    <a href="user.php?act=vat_update&vat_id={$vat_id}" class="sc-btn">修改</a>
-                                    <a href="user.php?act=vat_remove&vat_id={$vat_id}" class="sc-btn">删除</a>
+                                    <a href="user.php?act=vat_update&vat_id={$vat_id}" class="sc-btn">変更</a>
+                                    <a href="user.php?act=vat_remove&vat_id={$vat_id}" class="sc-btn">削除</a>
                                 </div>
                             </div>								
                         </div>

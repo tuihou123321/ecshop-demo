@@ -20,7 +20,6 @@
             <!-- {/if} -->
             <!--{if $navigator_list.top}-->
             <li class="li_dorpdown" data-ectype="dorpdown">
-                <div class="dt dsc-cm">{$lang.Site_navigation}<i class="iconfont icon-down"></i></div>
                 <div class="dd dorpdown-layer">
                     <dl class="fore1">
                         <dt>特色主题</dt>

@@ -115,7 +115,7 @@ class IndexController extends \App\Modules\Base\Controllers\FrontendController
 			$this->assign('cart_value', $cart_goods['total']['cart_value']);
 			$this->assign('relation', $this->relation_goods($this->region_id, $this->area_info['region_id']));
 			$this->assign('currency_format', sub_str(strip_tags($GLOBALS['_CFG']['currency_format']), 1, false));
-			$this->assign('page_title', '购物车');
+			$this->assign('page_title', 'ショッピングカート');
 		}
 
 		$this->display();

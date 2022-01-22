@@ -94,7 +94,7 @@ class paypal
         $data_notify_url    = return_url(basename(__FILE__, '.php'));
         $cancel_return      = $GLOBALS['ecs']->url();
 
-        $def_url  = '<form style="text-align:center;" action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_blank">' .   // 不能省略
+        $def_url  = '<form style="text-align:center;" action="https://www.paypal.com/jp/cgi-bin/webscr" method="post" target="_blank">' .   // 不能省略
             "<input type='hidden' name='cmd' value='_xclick'>" .                             // 不能省略
             "<input type='hidden' name='business' value='$data_pay_account'>" .                 // 贝宝帐号
             "<input type='hidden' name='item_name' value='$order[order_sn]'>" .                 // payment for

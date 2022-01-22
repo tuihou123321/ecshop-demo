@@ -154,7 +154,7 @@ $_LANG['no_ads_id'] = '没有指定广告的ID以及跳转的URL地址!';
 $_LANG['remove_collection_confirm'] = '您确定要从收藏夹中删除选定的商品吗？';
 $_LANG['err_change_attr'] = '没有找到指定的商品或者没有找到指定的商品属性。';
 
-$_LANG['collect_goods'] = '收藏商品';
+$_LANG['collect_goods'] = 'コレクション商品';
 $_LANG['plus'] = '加';
 $_LANG['minus'] = '减';
 $_LANG['yes'] = '是';

@@ -110,7 +110,7 @@
         <div class="hd-tit">母婴玩具</div>        <div class="hd-tags">
             <ul>
                 <li class="first current">
-                    <span>新品推荐</span>
+                    <span>新着商品</span>
                     <i class="arrowImg"></i>
                 </li>
                                                                 <li data-catgoods="" class="first" ectype="floor_cat_content" data-flooreveval="0" data-visualhome="1" data-floornum="4" data-id="491">
@@ -201,7 +201,7 @@
         <div class="hd-tit">化妆</div>        <div class="hd-tags">
             <ul>
                 <li class="first current">
-                    <span>新品推荐</span>
+                    <span>新着商品</span>
                     <i class="arrowImg"></i>
                 </li>
                                                                 <li data-catgoods="" class="first" ectype="floor_cat_content" data-flooreveval="0" data-visualhome="1" data-floornum="4" data-id="876">
@@ -294,7 +294,7 @@
         <div class="hd-tit">家具家居</div>        <div class="hd-tags">
             <ul>
                 <li class="first current">
-                    <span>新品推荐</span>
+                    <span>新着商品</span>
                     <i class="arrowImg"></i>
                 </li>
                                                                 <li data-catgoods="722,721,720,659" class="first" ectype="floor_cat_content" data-flooreveval="0" data-visualhome="1" data-floornum="4" data-id="143">
@@ -376,7 +376,7 @@
         <div class="hd-tit">图书</div>        <div class="hd-tags">
             <ul>
                 <li class="first current">
-                    <span>新品推荐</span>
+                    <span>新着商品</span>
                     <i class="arrowImg"></i>
                 </li>
                                                                 <li data-catgoods="" class="first" ectype="floor_cat_content" data-flooreveval="0" data-visualhome="1" data-floornum="4" data-id="18">
@@ -460,7 +460,7 @@
         <div class="hd-tit">手机数码</div>        <div class="hd-tags">
             <ul>
                 <li class="first current">
-                    <span>新品推荐</span>
+                    <span>新着商品</span>
                     <i class="arrowImg"></i>
                 </li>
                                                                 <li data-catgoods="" class="first" ectype="floor_cat_content" data-flooreveval="0" data-visualhome="1" data-floornum="4" data-id="33">
@@ -533,7 +533,7 @@
         <div class="hd-tit">电脑</div>        <div class="hd-tags">
             <ul>
                 <li class="first current">
-                    <span>新品推荐</span>
+                    <span>新着商品</span>
                     <i class="arrowImg"></i>
                 </li>
                                                                 <li data-catgoods="" class="first" ectype="floor_cat_content" data-flooreveval="0" data-visualhome="1" data-floornum="4" data-id="132">

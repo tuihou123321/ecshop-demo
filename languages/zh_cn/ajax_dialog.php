@@ -48,7 +48,7 @@ $_LANG['add_invoice'] = '新增单位发票';
 $_LANG['invoice_desc_one'] = '温馨提示：发票的开票金额不包括消费卡、优惠券和支付部分';
 $_LANG['invoice_desc_two'] = '发票信息相关问题';
 $_LANG['label_coupons'] = '使用优惠券';
-$_LANG['submit_order'] ='提交订单';
+$_LANG['submit_order'] ='注文する';
 $_LANG['rmb_pay'] = "RMB支付";
 $_LANG['integral_pay'] = '积分支付';
 $_LANG['choose'] = "已选择";
@@ -66,7 +66,7 @@ $_LANG['people_time'] = "收货人/下单日期";
 $_LANG['Ious_staging'] = "白条分期";
 $_LANG['order_number'] = '订单号';
 $_LANG['Sub_order'] = "子订单";
-$_LANG['reduction'] = "还原";
+$_LANG['reduction'] = "元に戻す";
 $_LANG['order_user_desc'] = "尊敬的客户，由于您的商品有可能在不同商家，所以您的订单被拆分为多个子订单分开配送，给您带来的不便还请谅解。";
 
 $_LANG['js_languages']['invoice_desc_number'] = '您最多可以添加3个公司发票！';

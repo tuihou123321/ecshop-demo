@@ -48,9 +48,7 @@
                 {foreach $goods_list as $ru}
                 <section class="m-top10">
                     <section class="flow-checkout-pro j-flow-checkout-pro {if $ru.goods_count < 2} active{/if}">
-                        <header class="b-color-f padding-all">
-                            {$ru.ru_name}
-                        </header>
+                       
                         <div class="product-list-small m-top1px b-color-f dis-box">
                             {if $ru.goods_count > 1}
                             <ul class="flow-checkout-smallpic box-flex">
@@ -169,7 +167,7 @@
                                         {if $sh.shipping_fee}
                                         {$sh.format_shipping_fee}
                                         {else}
-                                        免运费
+                                        送料無料
                                         {/if}
                                     </em>
                                     {/if}
@@ -179,7 +177,7 @@
                                     {/foreach}
 
                                     {if empty($ru.shipping)}
-                                    <span>该地区不支持配送</span>
+                                    <span>この地域では配送はサポートされていません</span>
                                     {/if}
                                 </div>
                                 <!--<span class="t-jiantou"><i class="iconfont icon-jiantou tf-180"></i></span>-->
@@ -207,7 +205,7 @@
                                                                     {if $sh.shipping_fee}
                                                                     {$sh.format_shipping_fee}
                                                                     {else}
-                                                                    免运费
+                                                                    送料無料
                                                                     {/if}
                                                                 </em>
                                                             </dd>
@@ -367,13 +365,13 @@
                         {/if}
                         {/if}
                         <li class="dis-box padding-all">
-                            <label class="t-remark g-t-temark">买家留言</label>
+                            <label class="t-remark g-t-temark">伝言</label>
                             <div class="box-flex t-goods1 flow-check-input">
-                                <input name="postscript[]" class="f-04" style="line-height: normal;" maxlength="50" placeholder="选填(50)"/>
+                                <input name="postscript[]" class="f-04" style="line-height: normal;" maxlength="50" placeholder="記入可能(50)"/>
                             </div>
                         </li>
                     </ul>
-                    <p class="padding-all f-05 text-right t-remark">共 {if $goods.extension_code != 'package_buy'}{$ru.goods_count} {else} {$ru.package_goods_num} {/if}件商品，合计：<span class="t-first" id="ru_amount{$ru.ru_id}">{$ru.amount}</span>
+                    <p class="padding-all f-05 text-right t-remark"> {if $goods.extension_code != 'package_buy'}{$ru.goods_count} {else} {$ru.package_goods_num} {/if}件の商品，合計：<span class="t-first" id="ru_amount{$ru.ru_id}">{$ru.amount}</span>
                     </p>
                     <input type="hidden" id="amount{$ru.ru_id}" value="{$ru.amount}">
                     <input type="hidden" id="goods_price_amount{$ru.ru_id}" value="{$ru.goods_price_amount}">
@@ -385,20 +383,20 @@
                     <ul>
                         {if $is_exchange_goods != 1 || $total.real_goods_count != 0}
                         <li class="dis-box padding-all-n m-top1px b-color-f j-show-div" id="payment">
-                            <label class="t-remark g-t-temark">支付方式</label>
+                            <label class="t-remark g-t-temark">支払い方法</label>
                             <div class="box-flex t-goods1 text-right onelist-hidden" id="payment_info">
                                 {if $payment_selected.pay_name}
-                                <span>{$payment_selected.pay_name}{if $payment_selected.pay_fee} <em class="t-remark">[手续费]</em>{/if}</span>
+                                <span>{$payment_selected.pay_name}{if $payment_selected.pay_fee} <em class="t-remark">[手数料]</em>{/if}</span>
                                 {if $payment_selected.pay_fee}<em class="t-first">{$payment_selected.format_pay_fee}</em>{/if}
                                 {else}
-                                <span>请选择</span>
+                                <span>選択してください</span>
                                 {/if}
                             </div>
                             <div class="t-goods1"><span class="t-jiantou"><i class="iconfont icon-jiantou tf-180"></i></span></div>
                             <!--支付方式star-->
                             <div class="show-goods-dist ts-3 b-color-1 j-show-goods-text j-filter-show-div">
                                 <section class="goods-show-title of-hidden padding-all-n b-color-f">
-                                    <h3 class="fl g-c-title-h3">支付方式</h3>
+                                    <h3 class="fl g-c-title-h3">支払い方法</h3>
                                     <i class="iconfont icon-guanbi2 show-div-guanbi fr"></i>
                                 </section>
                                 <section class="s-g-list-con swiper-scroll">
@@ -409,7 +407,7 @@
                                                 <li class="ect-select goods-site" onclick="selectPayment({$payment.pay_id})" date-code="{$payment.pay_code}">
                                                     <label class="ts-1 {if $order.pay_id == $payment.pay_id}active{/if}">
                                                         <dd>
-                                                            <span>{$payment.pay_name}{if $payment.pay_fee}<em class="t-remark">[手续费]</em>{/if}</span>
+                                                            <span>{$payment.pay_name}{if $payment.pay_fee}<em class="t-remark">[手数料]</em>{/if}</span>
                                                             {if $payment.pay_fee}<em class="t-first">{$payment.format_pay_fee}</em>{/if}
                                                         </dd>
                                                         <i class="fr iconfont icon-gou ts-1"></i>
@@ -533,13 +531,13 @@
                         {/if}
                         {if $allow_use_bonus && $user_bonus_count > 0}
                         <li class="dis-box padding-all-n m-top1px b-color-f f-c-s-coupon j-f-c-s-coupon">
-                            <label class="t-remark g-t-temark">红包({$user_bonus_count}张)</label>
+                            <label class="t-remark g-t-temark">代金券({$user_bonus_count}件)</label>
                             <div class="box-flex t-goods1 text-right onelist-hidden">
                                 {if $order_bonus}
-                                <span class="coupon-text">优惠金额</span>
+                                <span class="coupon-text">割引金額</span>
                                 <em class="t-first coupon-price">{$order_bonus.type_money_format}</em>
                                 {else}
-                                <span class="coupon-text">不使用红包</span>
+                                <span class="coupon-text">代金券を使用しない </span>
                                 <em class="t-first coupon-price"></em>
                                 {/if}
                             </div>
@@ -559,7 +557,7 @@
                                                         <p class="f-02 col-9 m-top02"><%bonus.shop_name%></p>
                                                     </div>
                                                 </div>
-                                                <div class="time b-color-f col-7 f-02">使用期限：<%bonus.use_start_date%> 至 <%bonus.use_end_date%></div>
+                                                <div class="time b-color-f col-7 f-02">使用期間：<%bonus.use_start_date%> から <%bonus.use_end_date%></div>
                                                 <div class="ect-select fl" >
                                                     <label data-bonus="<%bonus.bonus_id%>" data-money="<%bonus.type_money%>" <%if {$order.bonus_id} == bonus.bonus_id%> class="active" <%/if%> >
                                                     </label>
@@ -573,7 +571,7 @@
                                     </ul>
                                 </div>
                                 <div class="ect-button-more dis-box n-ect-btn j-coupon-submit flow-coupon">
-                                    <button class="btn-submit box-flex c-btn-submit comment-btn-height" name="shoppingList">确定</button>
+                                    <button class="btn-submit box-flex c-btn-submit comment-btn-height" name="shoppingList">確認</button>
                                 </div>
                             </div>
                             <input type="hidden" name="bonus" value="{$order.bonus_id}" id="ECS_BONUS"/>
@@ -581,13 +579,13 @@
                         {/if}
                         {if $user_coupons > 0}
                         <li class="dis-box padding-all-n m-top1px b-color-f f-c-s-coupon j-f-c-s-coupon-1">
-                            <label class="t-remark g-t-temark">优惠券({$user_coupons}张)</label>
+                            <label class="t-remark g-t-temark">クーポン({$user_coupons}件)</label>
                             <div class="box-flex t-goods1 text-right onelist-hidden">
                                 {if $order.cou_id > 0}
-                                <span class="coupon-text">优惠金额</span>
+                                <span class="coupon-text">割引金額</span>
                                 <em class="t-first coupon-price">{$order_coupont.type_cou_money}</em>
                                 {else}
-                                <span class="coupon-text">不使用优惠券</span>
+                                <span class="coupon-text">クーポンはご利用いただけません</span>
                                 <em class="t-first coupon-price"></em>
                                 {/if}
                             </div>
@@ -602,7 +600,7 @@
                                                     <div class="q-type">
                                                         <div class="b-r-a-price">
                                                             <%if order.cou_type == 5 %>
-																<strong class="coupons-money">免邮</strong>
+																<strong class="coupons-money">送料無料</strong>
 																<%else%>
 																<em>¥</em>
 																<%if order.uc_money > 0 %>
@@ -612,12 +610,12 @@
 																<%/if%>
                                                             <%/if%>
                                                             <div class="couons-text text-left color-dark"  style="float:none;padding-top: 1.1rem;">
-                                                                <span>满<%order.cou_man%>元</span>
+                                                                <span>を満たす<%order.cou_man%>円</span>
                                                             </div>
                                                         </div>
                                                         <div class="b-r-a-con text-left ">
-                                                            <div class="range-item"><%order.uc_money%>范围：[<%order.cou_type_name%>][<%order.cou_goods_name%>]</div>
-                                                            <div class="range-item col-7">有效期至<%order.cou_end_time%></div>
+                                                            <div class="range-item"><%order.uc_money%>範囲：[<%order.cou_type_name%>][<%order.cou_goods_name%>]</div>
+                                                            <div class="range-item col-7">有効期間<%order.cou_end_time%></div>
                                                         </div>
                                                     </div>
                                                     <!-- <b class="semi-circle"></b> -->
@@ -763,10 +761,12 @@
         <input type="hidden" name='store_mobile' value="{$store_cart.store_mobile}"/>
         <input type="hidden" name='take_time' value="{$store_cart.take_time}"/>
 
-        <span class="box-flex t-remark">实付款 {if $total.exchange_integral}<em class="t-first">{$total.exchange_integral}积分 + </em>{/if}<em class="t-first" id="amount">{$total.amount_formated}</em></span>
-        {if $isStoreOrder == 1}<div><a href="{url('category/index/index')}" class="btn-submit" style="background:#fff;color:#444">继续购物</a></div>{/if}
+        <span class="box-flex t-remark">支払金額 {if $total.exchange_integral}<em class="t-first">{$total.exchange_integral}積分 + </em>{/if}<em class="t-first" id="amount">{$total.amount_formated}</em></span>
+        {if $isStoreOrder == 1}<div><a href="{url('category/index/index')}" class="btn-submit" style="background:#fff;color:#444">注文の続行</a></div>{/if}
         <div>
-            <button name="submit" type="submit" class="btn-submit">{if $total.exchange_integral}确认兑换{else}提交订单{/if}</button>
+            <button class="btn-submit" onclick="
+                window.location.href=`/mobile/paypal.php?value={$total.amount_formated}`
+        ">{if $total.exchange_integral}両替の確認{else}注文書を出す{/if}</button>
         </div>
     </section>
 </form>

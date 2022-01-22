@@ -20,7 +20,6 @@
             <!-- {/if} -->
             <!--{if $navigator_list.top}-->
             <li class="li_dorpdown" data-ectype="dorpdown">
-                <div class="dt dsc-cm">{$lang.Site_navigation}<i class="iconfont icon-down"></i></div>
                 <div class="dd dorpdown-layer">
                     <dl class="fore1">
                         <dt>特色主题</dt>
@@ -56,7 +55,7 @@
         </div>
         <div class="settled-header-right">
             <ul class="settled-nav">
-                <li class="curr"><a href="merchants.php">首页</a></li>
+                <li class="curr"><a href="merchants.php">トップページ</a></li>
                 <li><a href="javascript:void(0);" ectype="merchants_article">入驻流程</a></li>
                 <li><a href="javascript:void(0);" ectype="merchants_article">入驻协议</a></li>
                 <li><a href="javascript:void(0);" ectype="merchants_article">入驻帮助</a></li>

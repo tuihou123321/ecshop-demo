@@ -2,10 +2,10 @@
 	<div class="letter">
 		<ul>
 			<li><a href="javascript:void(0);" data-letter="">全部品牌</a></li>
-			<?php $_from = $this->_var['letter']; if (!is_array($_from) && !is_object($_from)) { settype($_from, 'array'); }; $this->push_vars('', 'letter_0_02057700_1524749458');if (count($_from)):
-    foreach ($_from AS $this->_var['letter_0_02057700_1524749458']):
+			<?php $_from = $this->_var['letter']; if (!is_array($_from) && !is_object($_from)) { settype($_from, 'array'); }; $this->push_vars('', 'letter_0_16604800_1642430659');if (count($_from)):
+    foreach ($_from AS $this->_var['letter_0_16604800_1642430659']):
 ?>
-            <li><a href="javascript:void(0);" data-letter="<?php echo $this->_var['letter_0_02057700_1524749458']; ?>"><?php echo $this->_var['letter_0_02057700_1524749458']; ?></a></li>
+            <li><a href="javascript:void(0);" data-letter="<?php echo $this->_var['letter_0_16604800_1642430659']; ?>"><?php echo $this->_var['letter_0_16604800_1642430659']; ?></a></li>
             <?php endforeach; endif; unset($_from); ?><?php $this->pop_vars();; ?>
 			<li><a href="javascript:void(0);" data-letter="QT">其他</a></li>
 		</ul>

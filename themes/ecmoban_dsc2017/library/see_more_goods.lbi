@@ -2,7 +2,7 @@
 
 {if $see_more_goods.goods_list}
 <div class="track_warp">
-    <div class="track-tit"><h3>看了又看</h3><span></span></div>
+    <div class="track-tit"><h3>ブラウズ</h3><span></span></div>
     <div class="track-con">
         <ul>
             <!--{foreach from=$see_more_goods.goods_list item=goods name=goods}-->

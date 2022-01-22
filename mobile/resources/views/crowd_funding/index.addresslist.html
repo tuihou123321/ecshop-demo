@@ -8,7 +8,7 @@
                 <div class="f-h-adr-title dis-box">
                   <div class="box-flex"><label>{$consignee.consignee}</label>
                      {if $consignee.address_id==$defulte_id }
-                         <span class="t-first margin-lr f-05">默认地址</span>
+                         <span class="t-first margin-lr f-05">黙認する</span>
                      {/if}
                   </div>
                   <div class="box-flex"><div class="fr"><span class="f-05">{$consignee.mobile}</span></div></div>
@@ -21,19 +21,19 @@
                 <i class="select-btn active-i"></i>
               </label>
             </div>
-            <div class="fr" ><a href="{url('edit_address',array('address_id'=>$consignee.address_id))}"><i class="iconfont icon-bianji"></i>编辑</a><a onclick="del({$consignee.address_id})"><i class="iconfont icon-xiao10" ></i>删除</a></div>
+            <div class="fr" ><a href="{url('edit_address',array('address_id'=>$consignee.address_id))}"><i class="iconfont icon-bianji"></i>編集</a><a onclick="del({$consignee.address_id})"><i class="iconfont icon-xiao10" ></i>削除</a></div>
           </div>
 				</section>
          {/foreach}
 				<div class="ect-button-more dis-box filter-btn">
-					<a href="{url('add_address')}" class="btn-submit box-flex">新增收货人信息</a>
+					<a href="{url('add_address')}" class="btn-submit box-flex">受取人情報の追加</a>
 				</div>
 			</div>
       {else}
       <div class="no-div-message">
         <i class="iconfont icon-biaoqingleiben"></i>
-        <p>亲，还没有收货地址哦～！</p>
-        <a href="{url('add_address')}" class="t-first">点击添加一个收货地址</a>
+        <p>まだ受取人の住所がありませんよ～！</p>
+        <a href="{url('add_address')}" class="t-first">クリックして受取人の住所を追加します</a>
       </div>
       {/if} 
 		</div>
@@ -54,7 +54,7 @@
         </script>
        <script>
         function del(address_id){
-           var returnVal = window.confirm("您确定要删除收货地址吗？ \n是否删除");
+           var returnVal = window.confirm("受取人の住所を削除しますか? \n削除するかどうか");
            if (returnVal) {
                $("#list"+address_id).hide();
                $.get("{url('address_list')}",{address_id:address_id},function(){});

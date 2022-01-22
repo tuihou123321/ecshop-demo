@@ -25,8 +25,7 @@
 					<a class="product-div-link j-goods-shop" href="javascript:;"></a>商品</li>
 				<li class="div3 box-flex swiper-slide position-rel swiper-slide-next" category="3">
 					<a class="product-div-link j-goods-detail" href="javascript:;"></a>详情</li>
-				<li class="div4 box-flex swiper-slide position-rel" category="4">
-					<a class="product-div-link" href="{url('team/goods/comment', array('id'=>$goods.goods_id))}"></a>评论</li>
+				
 			</ul>
 		</nav>
 		</h3>
@@ -566,7 +565,7 @@
 				<input type="hidden" value="{$goods_id}" id="goods_id" name="good_id">
 			</section>
 			<section class="dis-box goods-btn-box">
-				<a class="btn-disab box-flex quehuo" href="javascript:;" {if $goods.review_status> 2}style="display:none"{/if}>{if $goods.review_status == 1}暂时下架{else}暂时缺货{/if}</a>
+				<a class="btn-disab box-flex quehuo" href="javascript:;" {if $goods.review_status> 2}style="display:none"{/if}>{if $goods.review_status == 1}当分在庫がない{else}しばらく品切れになる{/if}</a>
 				<a class="btn-p btn-cart box-flex add-to-cart" href="javascript:;" onclick="addToCart_quick({$goods.goods_id})" {if $goods.review_status <=2 }style="display:none" {/if}>加入购物车</a>
 				<a class="btn-p btn-submit box-flex add-to-cart" href="javascript:;" onclick="addToCart({$goods.goods_id})" {if $goods.review_status <=2 }style="display:none" {/if}>立即购买</a>
 			</section>
@@ -632,7 +631,7 @@
 			</section>
 
 			<section class="dis-box goods-btn-box">
-				<a class="btn-disab box-flex team_quehuo" href="javascript:;" {if $goods.review_status> 2}style="display:none"{/if}>{if $goods.review_status == 1}暂时下架{else}暂时缺货{/if}</a>
+				<a class="btn-disab box-flex team_quehuo" href="javascript:;" {if $goods.review_status> 2}style="display:none"{/if}>{if $goods.review_status == 1}当分在庫がない{else}しばらく品切れになる{/if}</a>
 				<input type="submit" class="btn-p btn-submit box-flex team_add-to-cart" value="确定" {if $goods.review_status <=2 }style="display:none" {/if}>
 			</section>
 		</form>

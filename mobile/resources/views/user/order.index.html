@@ -3,9 +3,9 @@
     <div class="goods-info user-order of-hidden ts-3" style="padding-top:4rem">
         <nav class="tab-title b-color-f of-hidden" style="position:fixed">
             <ul class="dis-box">
-                <li class="box-flex {if empty($status)}active{/if}"><a status="0" >全部订单({$order_num.all_order})</a></li>
-                <li class="box-flex {if $status ==1}active{/if}"><a status="1" >待付款({$order_num.pay_count})</a></li>
-                <li class="box-flex {if $status == 2}active{/if}"><a status="2" >待收货({$order_num.confirmed_count})</a></li>
+                <li class="box-flex {if empty($status)}active{/if}"><a status="0" >全注文書({$order_num.all_order})</a></li>
+                <li class="box-flex {if $status ==1}active{/if}"><a status="1" >支払い待ち({$order_num.pay_count})</a></li>
+                <li class="box-flex {if $status == 2}active{/if}"><a status="2" >受取待ち({$order_num.confirmed_count})</a></li>
             </ul>
         </nav>
         <section class="store_info">
@@ -15,11 +15,7 @@
                 <section class="flow-checkout-pro  m-top08">
                     <header class="b-color-f dis-box padding-all">
                         <span class=" box-flex">
-                            <%if order.user_name%>
-                            <%order.user_name%>
-                            <%else%>
-                            <%order.shop_name%>
-                            <%/if%>
+                          
                         </span>
                         <em class="j-goods-coupon t-first f-04"><%order.order_status%></em>
                     </header>
@@ -27,7 +23,7 @@
                         <a class="product-div-link" href="<%order.order_url%>"></a>
 
                         <h4 class="t-remark2">
-                            <label class="t-remark">订单号：</label><%order.order_sn%>
+                            <label class="t-remark">注文書番号：</label><%order.order_sn%>
                             <!--拼团标识-->
                             <%if order.team_id > 0%>
                             <em class="em-promotion b-tag">拼团订单</em>
@@ -55,10 +51,10 @@
                             <%/each%>
                         </ul>
                         <span class="t-jiantou">
-                            <span class="f-c-a-count">共 <%order.order_goods_num%>款</span><i class="iconfont icon-jiantou tf-180"></i>
+                            <span class="f-c-a-count"> 計<%order.order_goods_num%>ペン</span><i class="iconfont icon-jiantou tf-180"></i>
                         </span>
                     </div>
-					<div class="padding-all f-05 user-order-money b-color-f">共<%order.order_goods_num%>款商品 合计：<em class="t-first"><%#order.total_fee%></em></div>
+					<div class="padding-all f-05 user-order-money b-color-f"><%order.order_goods_num%>件商品 合計：<em class="t-first"><%#order.total_fee%></em></div>
                     <footer class="padding-all b-color-f m-top1px of-hidden dis-box">
                         <h4 class="t-remark2 box-flex"></h4>
                         <p class="ect-button-more ect-button-more-dete n-br-5">
@@ -66,20 +62,19 @@
                             <a class="btn-default-new br-5 min-btn delay-order"data-item="<%order.order_id%>">延迟收货</a>
                             <%/if%>
                             <%if order.handler_return && order.pay_status == 2%>
-                            <a class="btn-default-new br-5 min-btn" href="<%order.handler_return%>">申请售后</a>
                             <%/if%>
                             <%if !order.handler%>
-                            <a class="btn-default-new br-5 min-btn" href="<%order.order_url%>">查看订单</a>
+                            <a class="btn-default-new br-5 min-btn" href="<%order.order_url%>">注文書の表示</a>
                             <%/if%>
                             <%if order.delete_yes == 1%>
                             <!--<a class="btn-default">删除</a>-->
                             <%/if%>
 
                             <%if order.order_del%>
-                             <button class="btn-default-new br-5 min-btn del-order" data-item="<%order.order_id%>">删除</button>
+                             <button class="btn-default-new br-5 min-btn del-order" data-item="<%order.order_id%>">削除</button>
                             <%/if%>
                             <%if order.online_pay%>
-                            <a class="btn-default-new br-5 min-btn" href="<%#order.online_pay%>">立即支付</a>
+                            <a class="btn-default-new br-5 min-btn" href="<%#order.online_pay%>">支払い</a>
                             <%/if%>
                             <%#order.handler%>
                         </p>
@@ -89,7 +84,7 @@
                 <%else%>
                 <div class="no-div-message">
                     <i class="iconfont icon-biaoqingleiben"></i>
-                    <p>亲，还没有订单哦～！</p>
+                    <p>まだ注文してないよ～！</p>
                 </div>
                 <%/if%>
             </script>
@@ -139,8 +134,8 @@
             var order_id = $(this).attr('data-item');
             var url='{url("user/order/delorder")}';
             layer.open({
-                content: '是否删除此订单',
-                btn: ['确定', '取消'],
+                content: 'このオーダーを削除するかどうか',
+                btn: ['確認', 'キャンセル'],
                 shadeClose: false,
                 yes: function() {
                     $.post(url, {order_id:order_id}, function(result) {
@@ -177,8 +172,8 @@
             var order_id = $(this).attr('data-item');
             var url = "{url('user/order/cancel')}";
             layer.open({
-                content: '确定要取消该订单吗？取消后将视为无效订单',
-                btn: ['取消订单', '再考虑下'],
+                content: '本当にこの注文をキャンセルしますか?キャンセル後は無効なオーダーとみなされます',
+                btn: ['注文書を取り消す', '再考する'],
                 shadeClose: false,
                 yes: function() {
                     $.post(url, {order_id:order_id}, function(result) {

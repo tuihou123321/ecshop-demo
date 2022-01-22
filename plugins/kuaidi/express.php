@@ -119,8 +119,8 @@ if (($result['status'] == 1) || ($result['status'] == 200)) {
 }
 else {
 	$exp_http = $express->exp_http();
-	$site_dir = $exp_http . 'www.kuaidi100.com/chaxun?com=' . $postcom . '&nu=' . $express_no;
-	$express_info = '<span style="font-size:14px;">很抱歉，暂时无法查询此订单信息！请尝试跳转到网页查询</span>&nbsp;&nbsp;&nbsp;<a href="' . $site_dir . '" target="_blank"><span style="color:red;">点击跳转</span></a>';
+	$site_dir = $exp_http . 't.17track.net/ja#nums=' . $postcom .  $express_no;
+	$express_info = '<span style="font-size:14px;">申し訳ございませんが、この注文情報はしばらく照会できません。Web検索を試してください</span>&nbsp;&nbsp;&nbsp;<a href="' . $site_dir . '" target="_blank"><span style="color:red;">検索をクリック</span></a>';
 }
 
 echo $express_info;

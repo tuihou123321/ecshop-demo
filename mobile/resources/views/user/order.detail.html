@@ -27,11 +27,11 @@
         <section class="m-top10">
 
             <section class="flow-checkout-pro j-flow-checkout-pro">
-                <header class="b-color-f padding-all">{$order.shop_name}</header>
+                <header class="b-color-f padding-all">RUSH 專門店</header>
                 <div class="f-c-p-orderid padding-all m-top1px b-color-f">
 
                     <h4 class="t-remark2">
-                        <label class="t-remark">订单号：</label>{$order.order_sn}
+                        <label class="t-remark">注文書番号：</label>{$order.order_sn}
                         <!--拼团标识-->
                         {if $team}
                         {if $order.failure > 0}
@@ -229,7 +229,7 @@
                     {/if}
                     {if $order.postscript}
                     <div class="padding-all">
-                        <label class="t-remark g-t-temark">买家留言</label>
+                        <label class="t-remark g-t-temark">伝言</label>
 
                         <p class="f-04 m-top04">{$order.postscript}</p>
                     </div>
@@ -242,17 +242,17 @@
             <ul>
                 {if $order.extension_code!='wholesale'}
                 <li class="dis-box padding-all m-top1px b-color-f " id="payment">
-                    <label class="t-remark g-t-temark">支付方式</label>
+                    <label class="t-remark g-t-temark">支払い方法</label>
 
                     <div class="box-flex t-goods1 text-right onelist-hidden">
-                        <span>{$order.pay_name}</span> {if $order.pay_fee > 0}<em class="t-first">{$order.formated_pay_fee}手续费</em>{/if}
+                        <span>{$order.pay_name}</span> {if $order.pay_fee > 0}<em class="t-first">{$order.formated_pay_fee}手数料</em>{/if}
                     </div>
                     {if $payment_list}
 
                     <!--支付方式star-->
                     <div class="show-goods-dist ts-3 b-color-1 j-show-goods-text j-filter-show-div">
                         <section class="goods-show-title of-hidden padding-all b-color-f">
-                            <h3 class="fl g-c-title-h3">切换支付方式</h3>
+                            <h3 class="fl g-c-title-h3">支払方法の切り替え</h3>
                             <i class="iconfont icon-guanbi1 show-div-guanbi fr"></i>
                         </section>
                         <section class="s-g-list-con swiper-scroll">
@@ -263,7 +263,7 @@
                                         <li class="ect-select goods-site" date-payid="{$payment.pay_id}">
                                             <label class="ts-1 {if $order.pay_id == $payment.pay_id}active{/if}">
                                                 <dd>
-                                                    <span>{$payment.pay_name}{if $payment.pay_fee}<em class="t-remark">[手续费]</em>{/if}</span>
+                                                    <span>{$payment.pay_name}{if $payment.pay_fee}<em class="t-remark">[手数料]</em>{/if}</span>
                                                     {if $payment.pay_fee}<em
                                                         class="t-first">{$payment.format_pay_fee}</em>{/if}
                                                 </dd>
@@ -301,23 +301,23 @@
                 {/if}
                 {if $order.bonus_id}
                 <li class="dis-box padding-all m-top1px b-color-f">
-                    <label class="t-remark g-t-temark">红包</label>
+                    <label class="t-remark g-t-temark">代金券</label>
 
                     <div class="box-flex t-goods1 text-right onelist-hidden">
-                        <span>红包金额</span> <em class="t-first">{$order.formated_bonus}</em>
+                        <span>代金券金額</span> <em class="t-first">{$order.formated_bonus}</em>
                     </div>
                 </li>
                 {/if}
                 {if $order.coupons}
                 {foreach $order.coupons as $val}
                 <li class="dis-box padding-all m-top1px b-color-f">
-                    <label class="t-remark g-t-temark">优惠券</label>
+                    <label class="t-remark g-t-temark">クーポン</label>
 
                     <div class="box-flex t-goods1 text-right onelist-hidden">
                         {if $val.cou_type == 5}
-                        <span class="fr ">免邮券</span>
+                        <span class="fr ">送料無料券</span>
                         {else}
-                        <span>优惠券金额</span> <em class="t-first">-{$val.cou_money}</em>
+                        <span>クーポン金額</span> <em class="t-first">-{$val.cou_money}</em>
                         {/if}
                     </div>
                 </li>
@@ -328,18 +328,18 @@
         <section class="m-top10">
             <section class="flow-checkout-tprice">
                 <header class="b-color-f padding-all">
-                    商品金额<span class="t-first fr">{$order.formated_goods_amount}</span>
+                    商品代金<span class="t-first fr">{$order.formated_goods_amount}</span>
                 </header>
                 <ul class="m-top1px b-color-f">
                     {if $order.discount > 0}
                     <li class="padding-all of-hidden">
-                        <label class="t-remark g-t-temark fl">商品优惠</label>
+                        <label class="t-remark g-t-temark fl">商品の特恵</label>
                         <span class="t-first fr">-{$order.formated_discount}</span>
                     </li>
                     {/if}
                     {if $order.shipping_fee > 0 && empty($order.point)}
                     <li class="padding-all of-hidden">
-                        <label class="t-remark g-t-temark fl">运费</label>
+                        <label class="t-remark g-t-temark fl">送料</label>
                         <span class="t-first fr">+{$order.formated_shipping_fee}</span>
                     </li>
                     {/if}
@@ -351,7 +351,7 @@
                     {/if}
                     {if $order.bonus>0}
                     <li class="padding-all of-hidden">
-                        <label class="t-remark g-t-temark fl">使用红包</label>
+                        <label class="t-remark g-t-temark fl">金券を使う</label>
                         <span class="fr t-first">-{$order.formated_bonus}</span>
                     </li>
                     {/if}
@@ -365,9 +365,9 @@
                     {if $order.coupons>0}
                     {foreach $order.coupons as $val}
                     <li class="padding-all of-hidden">
-                        <label class="t-remark g-t-temark fl">使用优惠券</label>
+                        <label class="t-remark g-t-temark fl">クーポンの使用</label>
                         {if $val.cou_type == 5}
-                        <span class="fr t-first">减免运费</span>
+                        <span class="fr t-first">送料の減免</span>
                         {else}
                         <span class="fr t-first">-{$val.cou_money}</span>
                         {/if}
@@ -384,7 +384,7 @@
             {if $order.delay == 1}
             <section class="flow-checkout-tprice">
                 <header class="delay-order b-color-f padding-all" data-item="{$order.order_id}">
-                    延迟收货<span class="t-first fr">{$order.delay_type}</span>
+                    受取時間を延長する<span class="t-first fr">{$order.delay_type}</span>
                 </header>
             </section>
             {/if}
@@ -403,17 +403,17 @@
 <!--悬浮btn star-->
 <div class="filter-btn f-checkout-filter-btn checkout-order-btn  dis-box">
     <p class="u-o-checkout-price t-remark text-left box-flex padding-all">
-        应付总额：<span class="t-first">{$order.formated_order_amount}</span>
+        合計：<span class="t-first">{$order.formated_order_amount}</span>
     </p>
     {if $team && $order.failure > 0}
     <div class="n-right-width">
-        <button class="btn-default btn-submit min-two-btn" type="button">订单过期</button>
+        <button class="btn-default btn-submit min-two-btn" type="button">注文書の期限切れ</button>
     </div>
     {else}
     {if $order.order_amount > 0 && empty($order.hidden_pay_button)}
     <div class="n-right-width">
 
-        <a type="button" class="box-flex btn-submit min-two-btn" href="{$order.pay_online}">立即付款</a>
+        <a type="button" class="box-flex btn-submit min-two-btn" href="{$order.pay_online}">即時支払</a>
     </div>
     {/if}
     {/if}
@@ -434,7 +434,7 @@
 <li>
     <a href="{url('user/order/index',array('status'=>'0'))}">
         <i class="iconfont icon-dingdan"></i>
-        <p>我的订单</p>
+        <p>私の注文書</p>
     </a>
 </li>
 {include file="float_nav_footer"}
@@ -475,8 +475,8 @@
             var order_id = $(this).attr('data-item');
             var url='{url("user/order/delay")}';
             layer.open({
-                content: '是否延迟收货此订单',
-                btn: ['确定', '取消'],
+                content: 'この注文を受け取る時間を延長しますか?',
+                btn: ['確認', 'キャンセル'],
                 shadeClose: false,
                 yes: function() {
                     $.post(url, {order_id:order_id}, function(result) {
@@ -500,8 +500,8 @@
             var order_id = $(this).attr('data-item');
             var url = "{url('user/order/affirmreceived')}";
             layer.open({
-                content: '你确认已经收到货物了吗？',
-                btn: ['确定', '取消'],
+                content: '商品を受け取ったことを確認しましたか?',
+                btn: ['確認', 'キャンセル'],
                 shadeClose: false,
                 yes: function () {
                     $.post(url, {order_id: order_id},function (result) {
@@ -519,8 +519,8 @@
             var order_id = $(this).attr('data-item');
             var url = "{url('user/order/cancel')}";
             layer.open({
-                content: '确定要取消该订单吗？取消后将视为无效订单',
-                btn: ['取消订单', '再考虑下'],
+                content: '本当にこの注文をキャンセルしますか?キャンセル後は無効なオーダーとみなされます',
+                btn: ['注文書を取り消す', '再考する'],
                 shadeClose: false,
                 yes: function() {
                     $.post(url, {order_id:order_id}, function(result) {

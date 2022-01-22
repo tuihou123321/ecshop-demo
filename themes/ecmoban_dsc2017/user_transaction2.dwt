@@ -2697,8 +2697,7 @@ var load_cart_info = '<img src="themes/<?php echo $GLOBALS['_CFG']['template']; 
 			<!-- {if $action eq 'address_list'} -->
 			<div class="user-mod">
 				<div class="user-title">
-					<h2>收货地址</h2>
-					<h3>您已创建<span class="red">{$count_consignee}</span>个收货地址，最多可创建<span class="red">5</span>个</h3>
+					<h2>受取人住所</h2>
 				</div>
 				<ul class="cosignee-list">
 					{if $count_consignee < 5}
@@ -2733,7 +2732,7 @@ var load_cart_info = '<img src="themes/<?php echo $GLOBALS['_CFG']['template']; 
 										{$consignee.city_name}
 									<!-- {/if}  -->
 									</span>
-									{if $consignee.address_id eq $address && $address > 0}<span class="tag">默认地址</span>{/if}
+									{if $consignee.address_id eq $address && $address > 0}<span class="tag">デフォルトアドレス</span>{/if}
 								</div>
 							</div>
 							<div class="body">
@@ -4734,12 +4733,11 @@ var load_cart_info = '<img src="themes/<?php echo $GLOBALS['_CFG']['template']; 
 					<!-- {if $bonus2.useup_list} -->
                         <!--{foreach from=$bonus2.useup_list item=item name=useup_list}-->
                         <div class="item item-disabled{if $smarty.foreach.useup_list.iteration % 3 == 0} item-last{/if}">
-                            <div class="b-price">{$item.type_money}</div>
                             <div class="b-i-bot">
-                                <p>卡号：{$item.bonus_sn|default:N/A} - 订单限额：{$item.min_goods_amount}</p>
+                                <p>注文書使用額：{$item.min_goods_amount}</p>
                                 <p>{$item.use_startdate} ~ {$item.use_enddate}</p>
                             </div>
-                            <i class="i-soon">已经使用</i>
+                            <i class="i-soon">使用済み</i>
                         </div>
                         <!--{/foreach}-->
                     <!--{else}-->

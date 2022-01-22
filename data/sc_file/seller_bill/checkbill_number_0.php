@@ -1,6 +1,6 @@
 <?php
 $data = array (
-  '2018-03-28' => 
+  '2022-01-19' => 
   array (
     'checkbill_number' => 1,
     0 => 
@@ -8,7 +8,21 @@ $data = array (
       'checkbill_number' => 10,
     ),
   ),
-  '2018-04-26' => 
+  '2022-01-20' => 
+  array (
+    0 => 
+    array (
+      'checkbill_number' => 10,
+    ),
+  ),
+  '2022-01-21' => 
+  array (
+    0 => 
+    array (
+      'checkbill_number' => 10,
+    ),
+  ),
+  '2022-01-22' => 
   array (
     0 => 
     array (

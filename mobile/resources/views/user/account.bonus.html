@@ -4,8 +4,8 @@
 		<div class="hd tab-title j-tab-title  b-color-f nav-header">
 			<ul class="dis-box">
 				<li class="box-flex active"><a href="#">未使用({$status.one})</a></li>
-				<li class="box-flex"><a href="#">已使用({$status.two})</a></li>
-				<li class="box-flex"><a href="#">已过期({$status.three})</a></li>
+				<li class="box-flex"><a href="#">使用済み({$status.two})</a></li>
+				<li class="box-flex"><a href="#">期限切れ({$status.three})</a></li>
 			</ul>
 		</div>
 		<div id="j-tab-con">
@@ -25,24 +25,24 @@
                                 </div>
                                 <div class="box-flex">
                                     <p class="f-05 m-top02"><strong><%bonus.type_name%></strong></p>
-                                    <p class="f-01 col-9 m-top02">满<%bonus.min_goods_amount%>元可用</p>
+                                    <p class="f-01 col-9 m-top02">ショッピング<%bonus.min_goods_amount%>円使用可能</p>
                                     <p class="f-02 col-9 m-top02"><%bonus.shop_name%></p>
                                 </div>
                                 <%if bonus.bonus_status == 0 %>
                                 <div class="coupont-right padding-all">
                                     <a href="javascript:;" class="to_use">
-                                        <span class="">去使用</span>
+                                        <span class="">使用</span>
                                     </a>
                                 </div>
                                 <%else if bonus.bonus_status == 1 %>
                                     <div class="coupont-right padding-all">
                                         <a href="<%bonus.order_url%>" class="to_look">
-                                            <span class="">查看订单</span>
+                                            <span class="">注文書の表示</span>
                                         </a>
                                     </div>
                                 <%/if%>
                             </div>
-                            <div class="time b-color-f col-7 f-02">使用期限：<%bonus.use_startdate%> 至 <%bonus.use_enddate%></div>
+                            <div class="time b-color-f col-7 f-02">使用期間：<%bonus.use_startdate%> - <%bonus.use_enddate%></div>
                             <img class="bonus_tag_end icon_box" src="{elixir('img/coupons-print_end.png')}" />
                             <img class="bonus_data_end icon_box" src="{elixir('img/coupons-print_dataend.png')}" />
                         </section>
@@ -50,7 +50,7 @@
                     <%else%>
                         <div class="no-div-message">
                             <i class="iconfont icon-biaoqingleiben"></i>
-                            <p>亲，还没有红包哦～！</p>
+                            <p>まだ金券持ってないよ～！</p>
                         </div>
                     <%/if%>
 				    </script>
@@ -59,7 +59,7 @@
 			</div>
         </div>
         <div class="user-coupon-add  filter-btn">
-            <a href="{url('add_bonus')}" type="button" class="btn-submit">兑换红包</a>
+            <a href="{url('add_bonus')}" type="button" class="btn-submit">代金券に両替する</a>
         </div>
     </div>
 </div>
@@ -67,10 +67,7 @@
     <!--快捷导航-->
     {include file="float_nav"}
                 <li>
-                    <a href="{url('user/account/index')}">
-                         <i class="iconfont icon-money"></i>
-                         <p>资金管理</p>
-                    </a>
+               
                 </li>
     {include file="float_nav_footer"}
 	<script>

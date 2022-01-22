@@ -11,6 +11,21 @@ function get_article_info($article_id)
 		if (empty($row['author']) || $row['author'] == '_SHOPHELP') {
 			$row['author'] = $GLOBALS['_CFG']['shop_name'];
 		}
+/* 关键字替换 By zhangyh */
+		$sql="select * from ". $GLOBALS['ecs']->table('content_key') ;
+		$res_k=$GLOBALS['db']->query($sql);
+		while ($row_k=$GLOBALS['db']->fetchRow($res_k))
+		{
+			if($row_k['replace_num'])
+			{
+				$row['content']=preg_replace('/(?!<[^>]*)'.$row_k['key_name'].'(?![^<]*>)/i', '<a href="' . $row_k['key_url'] . '" target="_blank" >'.$row_k['key_name']."</a>", $row['content'], $row_k['replace_num']);
+			}
+			else
+			{
+				$row['content']=preg_replace('/(?!<[^>]*)'.$row_k['key_name'].'(?![^<]*>)/i', '<a href="' . $row_k['key_url'] . '" target="_blank" >'.$row_k['key_name']."</a>", $row['content']);
+			}
+			$row['content']=preg_replace('/(?!<[^>]*)'.$row_k['key_name'].'(?![^<]*>)/i', '' . $row_k['key_name'] . '', $row['content'],1 );
+		}
 
 		$row['file_url'] = get_image_path(0, $row['file_url']);
 

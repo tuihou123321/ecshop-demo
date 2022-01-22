@@ -580,7 +580,7 @@ class IndexController extends \App\Modules\Base\Controllers\FrontendController
 		$this->assign('province_list', $province_list);
 		$this->assign('city_list', $city_list);
 		$this->assign('district_list', $district_list);
-		$this->assign('page_title', '收货地址');
+		$this->assign('page_title', '受取人住所');
 		$this->display();
 	}
 

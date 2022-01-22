@@ -164,7 +164,7 @@
                                         {if $sh.shipping_fee}
                                         {$sh.format_shipping_fee}
                                         {else}
-                                        免运费
+                                        送料無料
                                         {/if}
                                     </em>
                                     {elseif $sh.shipping_code == 'cac' && $ru.tmp_shipping_id == $sh.shipping_id}
@@ -172,7 +172,7 @@
                                     {/if}
                                     {/foreach}
                                     {if empty($ru.shipping)}
-                                    <span>该地区不支持配送</span>
+                                    <span>この地域では配送はサポートされていません</span>
                                     {/if}
                                 </div>
                                 <div class="f-04"><span class="t-jiantou"><i class="iconfont icon-jiantou tf-180"></i></span></div>
@@ -199,7 +199,7 @@
                                                                     {if $sh.shipping_fee}
                                                                     {$sh.format_shipping_fee}
                                                                     {else}
-                                                                    免运费
+                                                                    送料無料
                                                                     {/if}
                                                                 </em>
                                                             </dd>

@@ -410,7 +410,7 @@
             </section>
 
             <section class="dis-box goods-btn-box">
-                <a class="btn-disab box-flex team_quehuo" href="javascript:;" {if $goods.review_status> 2}style="display:none"{/if}>{if $goods.review_status == 1}暂时下架{else}暂时缺货{/if}</a>
+                <a class="btn-disab box-flex team_quehuo" href="javascript:;" {if $goods.review_status> 2}style="display:none"{/if}>{if $goods.review_status == 1}当分在庫がない{else}しばらく品切れになる{/if}</a>
                 <input type="submit" class="btn-p btn-submit box-flex team_add-to-cart" value="立即参与" {if $goods.review_status <=2 }style="display:none" {/if}>
             </section>
         </form>

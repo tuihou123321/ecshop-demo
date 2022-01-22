@@ -29,51 +29,46 @@
                     <div class="summary">
                         <div class="summary-basic-info">
                             <div class="summary-item">
-                            	<div class="si-tit">商品名称</div>
+                            	<div class="si-tit">商品名</div>
                                 <div class="si-warp">
 								{$goods.goods_name}
                                 </div>
                             </div>		
                             <div class="summary-item">
-                            	<div class="si-tit">商品编号</div>
+                            	<div class="si-tit">商品品番</div>
                                 <div class="si-warp">
 								{$goods.goods_sn}
                                 </div>
                             </div>
 							{if $goods.goods_attr}
                             <div class="summary-item">
-                            	<div class="si-tit">属性</div>
+                            	<div class="si-tit">规格</div>
                                 <div class="si-warp">
 								{$goods.goods_attr}
                                 </div>
                             </div>	
 							{/if}							
                             <div class="summary-item">
-                            	<div class="si-tit">价格</div>
+                            	<div class="si-tit">販売価格</div>
                                 <div class="si-warp">
 								{$goods.shop_price}
                                 </div>
                             </div>
                             <div class="summary-item">
-                            	<div class="si-tit">数量</div>
+                            	<div class="si-tit">購入数量</div>
                                 <div class="si-warp">
 								{$goods.goods_number}
                                 </div>
                             </div>	
                             <div class="summary-item">
-                            	<div class="si-tit">运费</div>
+                            	<div class="si-tit">送料</div>
                                 <div class="si-warp">
 								{$goods.shipping_fee}
                                 </div>
                             </div>									
-                            <div class="summary-item is-service">
-                            	<div class="si-tit">服务</div>
-                                <div class="si-warp">
-									由 <a href="{$goods.shop_url}" class="link-red" target="_blank">{$goods.rz_shopName}</a> 发货并提供售后服务
-								</div>
-                            </div>	
+                          	
                             <div class="summary-item">
-                            	<div class="si-tit">快照时间</div>
+                            	<div class="si-tit">スナップショット時間</div>
                                 <div class="si-warp">
 									{$goods.snapshot_time}
 								</div>
@@ -84,18 +79,7 @@
                 </div>
 				{if $goods.ru_id}
 				<div class="seller-pop">
-					<div class="seller-info">
-						<a href="{$goods.shop_url}" title="{$goods.rz_shopName}" target="_blank" class="name">{$goods.rz_shopName}</a>
-						{if $shop_information.is_IM eq 1 || $shop_information.is_dsc}
-							<a id="IM" href="javascript:;" onclick="openWin(this)" goods_id="{$goods.goods_id}"><i class="icon i-kefu"></i></a>
-						{else}
-							{if $basic_info.kf_type eq 1}
-							<a href="http://www.taobao.com/webww/ww.php?ver=3&touid={$basic_info.kf_ww}&siteid=cntaobao&status=1&charset=utf-8" target="_blank"><i class="icon i-kefu"></i></a>
-							{else}
-							<a href="http://wpa.qq.com/msgrd?v=3&uin={$basic_info.kf_qq}&site=qq&menu=yes" target="_blank"><i class="icon i-kefu"></i></a>
-							{/if}
-						{/if}
-					</div>
+					
 					<div class="seller-pop-box">
 						<div class="s-score">
 							<span class="score-icon"><span class="score-icon-bg" style="width:{$merch_cmt.cmt.all_zconments.allReview}%;"></span></span>
@@ -104,15 +88,15 @@
 						</div>
 						<div class="g-s-parts">
 							<div class="parts-item parts-goods">
-								<span class="col1">商品评价</span>
+								<span class="col1">商品評価</span>
 								<span class="col2 {if $merch_cmt.cmt.commentRank.zconments.is_status eq 1}ftx-02{elseif $merch_cmt.cmt.commentRank.zconments.is_status eq 2}average{else}ftx-01{/if}">{$merch_cmt.cmt.commentRank.zconments.score}<i class="iconfont icon-arrow-{if $merch_cmt.cmt.commentRank.zconments.is_status eq 1}up{elseif $merch_cmt.cmt.commentRank.zconments.is_status eq 2}average{else}down{/if}"></i></span>
 							</div>
 							<div class="parts-item parts-goods">
-								<span class="col1">服务态度</span>
+								<span class="col1">サービス態度</span>
 								<span class="col2 {if $merch_cmt.cmt.commentServer.zconments.is_status eq 1}ftx-02{elseif $merch_cmt.cmt.commentServer.zconments.is_status eq 2}average{else}ftx-01{/if}">{$merch_cmt.cmt.commentServer.zconments.score}<i class="iconfont icon-arrow-{if $merch_cmt.cmt.commentServer.zconments.is_status eq 1}up{elseif $merch_cmt.cmt.commentServer.zconments.is_status eq 2}average{else}down{/if}"></i></span>
 							</div>
 							<div class="parts-item parts-goods">
-								<span class="col1">发货速度</span>
+								<span class="col1">出荷速度</span>
 								<span class="col2 {if $merch_cmt.cmt.commentDelivery.zconments.is_status eq 1}ftx-02{elseif $merch_cmt.cmt.commentDelivery.zconments.is_status eq 2}average{else}ftx-01{/if}">{$merch_cmt.cmt.commentDelivery.zconments.score}<i class="iconfont icon-arrow-{if $merch_cmt.cmt.commentDelivery.zconments.is_status eq 1}up{elseif $merch_cmt.cmt.commentDelivery.zconments.is_status eq 2}average{else}down{/if}"></i></span>
 							</div>
 						</div>
@@ -127,8 +111,8 @@
                 <div class="g-m-detail">
                 	<div class="gm-tabbox" ectype="gm-tabs">
                     	<ul class="gm-tab">
-                            <li>规格参数</li>
-							<li>商品详情</li>
+                            <li>规格パラメータ</li>
+							<li>商品の詳細</li>
                         </ul>
                         <div class="gm-tab-qp-bort" ectype="qp-bort"></div>
                     </div>
@@ -137,8 +121,7 @@
                         
                             <dl class="goods-para">
                                 <dd class="column"><span>{$lang.goods_name}：{$goods.goods_name|escape:html}</span></dd>
-                                <dd class="column"><span>商品编号：{$goods.goods_sn}</span></dd>
-                                <dd class="column"><span>{$lang.seller_store}：<a href="{$goods.store_url}" title="{$goods.rz_shopName}" target="_blank">{$goods.rz_shopName}</a></span></dd>
+                                <dd class="column"><span>商品品番：{$goods.goods_sn}</span></dd>
                                 <!-- {if $cfg.show_goodsweight} 商品重量-->
                                 <dd class="column"><span>{$lang.weight}：{$goods.goods_weight}</span></dd>
                                 <!-- {/if} -->
@@ -166,7 +149,7 @@
                         </div>
                         <div class="gm-f-item gm-f-details" ectype="gm-item">
                         	<div class="gm-title">
-                            	<h3>商品详情</h3>
+                            	<h3>商品の詳細</h3>
                             </div>
                             {$goods.goods_desc}
                         </div>

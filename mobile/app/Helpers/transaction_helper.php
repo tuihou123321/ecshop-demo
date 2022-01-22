@@ -376,7 +376,6 @@ function get_user_orders($user_id, $num = 10, $page = 1, $status = 0)
 			else {
 				$sign = '';
 				$sign_url = url('user/index/comment_list');
-				$row['handler'] = '<a href="' . $sign_url . '" class="btn-submit1  n-return-btn br-5">晒单评价</a>';
 			}
 		}
 		else {
@@ -929,7 +928,7 @@ function get_user_bouns_list($user_id, $type = 0, $num = 10, $start = 0)
 			$row['shop_name'] = sprintf(L('use_limit'), get_shop_name($row['user_id'], 1));
 		}
 		else {
-			$row['shop_name'] = '全场通用';
+			$row['shop_name'] = '満場共通';
 		}
 
 		$arr[] = $row;

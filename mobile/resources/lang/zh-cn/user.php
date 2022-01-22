@@ -46,30 +46,30 @@ $_LANG['pay_who_order'] = '支付批发订单';
 //退换货 end
 
 /* 用户菜单 */
-$_LANG['user'] = '个人中心';
+$_LANG['user'] = 'ユーザーセンター';
 $_LANG['commentList'] = '待评价';
-$_LANG['label_welcome'] = '欢迎页';
-$_LANG['label_profile'] = '用户信息';
-$_LANG['label_order'] = '我的订单';
-$_LANG['label_address'] = '收货地址';
-$_LANG['label_message'] = '我的留言';
-$_LANG['label_tag'] = '我的标签';
-$_LANG['label_collection'] = '我的收藏';
-$_LANG['label_bonus'] = '我的优惠券';
-$_LANG['label_comment'] = '我的评论';
+$_LANG['label_welcome'] = 'ウェルカムページ';
+$_LANG['label_profile'] = 'ユーザー情報';
+$_LANG['label_order'] = '私の注文書';
+$_LANG['label_address'] = '受取人住所';
+$_LANG['label_message'] = '私の伝言';
+$_LANG['label_tag'] = 'マイラベル';
+$_LANG['label_collection'] = '私のコレクション';
+$_LANG['label_bonus'] = '私のクーポン';
+$_LANG['label_comment'] = '私の評価';
 $_LANG['label_affiliate'] = '我的推荐';
 $_LANG['label_group_buy'] = '我的团购';
-$_LANG['label_booking'] = '缺货登记';
-$_LANG['label_user_surplus'] = '资金管理';
-$_LANG['label_track_packages'] = '跟踪包裹';
+$_LANG['label_booking'] = '欠品登録';
+$_LANG['label_user_surplus'] = '代金券管理';
+$_LANG['label_track_packages'] = '宅配便を追跡する';
 $_LANG['label_transform_points'] = '积分兑换';
 $_LANG['label_logout'] = '退出';
-$_LANG['account_details'] = '详情';
-$_LANG['user_center'] = '会员中心';
-$_LANG['log_pwd_six'] = '密码不能小于6位';
-$_LANG['history'] = '浏览记录';
+$_LANG['account_details'] = '詳細';
+$_LANG['user_center'] = '会員センター';
+$_LANG['log_pwd_six'] = 'パスワードは6ビット未満ではいけません';
+$_LANG['history'] = 'ブラウズレコード';
 $_LANG['user_real'] = '请先实名认证';
-$_LANG['msg_auth_code_error'] = '您输入的验证码有误';
+$_LANG['msg_auth_code_error'] = '入力した認証コードにエラーがあります';
 
 /* 会员余额(预付款) */
 $_LANG['add_surplus_log'] = '查看帐户明细';
@@ -86,7 +86,7 @@ $_LANG['submit_request'] = '提交申请';
 $_LANG['process_time'] = '操作时间';
 $_LANG['use_time'] = '使用时间';
 $_LANG['is_paid'] = '状态';
-$_LANG['is_confirm'] = '已完成';
+$_LANG['is_confirm'] = '完了';
 $_LANG['un_confirm'] = '未确认';
 $_LANG['pay'] = '付款';
 $_LANG['is_cancel'] = '取消';
@@ -178,7 +178,7 @@ $_LANG['edit_sucsess'] = '修改成功';
 $_LANG['edit_error'] = '修改失败';
 $_LANG['edit_mobile'] = '验证手机';
 $_LANG['log_mobile_verify_error'] = '短信验证码不正确';
-$_LANG['profile'] = '个人资料';
+$_LANG['profile'] = 'ユーザー資料';
 
 
 $_LANG['user_yet_register'] = '用户名已注册';
@@ -193,7 +193,7 @@ $_LANG['bonus_sn_not_exist'] = '此优惠券号码不存在！';
 $_LANG['add_bonus_sucess'] = '添加新的优惠券操作成功！';
 $_LANG['add_bonus_false'] = '添加新的优惠券操作失败！';
 
-$_LANG['account_discount_list'] = '我的红包';
+$_LANG['account_discount_list'] = '私の代金券';
 
 
 $_LANG['not_login'] = '用户未登录。无法完成操作';
@@ -324,7 +324,7 @@ $_LANG['bonus_add_expire'] = '该优惠券已经过期！';
 $_LANG['bonus_use_expire'] = '该优惠券已经过了使用期！';
 
 /* 会员订单 */
-$_LANG['order_list_lnk'] = '我的订单';
+$_LANG['order_list_lnk'] = '私の注文書';
 $_LANG['order_number'] = '订单编号';
 $_LANG['order_addtime'] = '下单时间';
 $_LANG['order_money'] = '订单总金额';
@@ -334,11 +334,11 @@ $_LANG['second_order'] = '从订单';
 $_LANG['merge_order'] = '合并订单';
 $_LANG['no_priv'] = '你没有权限操作他人订单';
 $_LANG['buyer_cancel'] = '用户取消';
-$_LANG['cancel'] = '取消订单';
+$_LANG['cancel'] = '注文書を取り消す';
 $_LANG['pay_money'] = '付款';
 $_LANG['view_order'] = '查看订单';
-$_LANG['received'] = '确认收货';
-$_LANG['ss_received'] = '已完成';
+$_LANG['received'] = '受入確認';
+$_LANG['ss_received'] = '完了';
 $_LANG['confirm_cancel'] = '您确认要取消该订单吗？取消后此订单将视为无效订单';
 $_LANG['merge_ok'] = '订单合并成功！';
 $_LANG['merge_invalid_order'] = '对不起，您选择合并的订单不允许进行合并的操作。';
@@ -357,28 +357,28 @@ $_LANG['return_surplus_on_cancel'] = '取消订单 %s，退回支付订单时使
 $_LANG['return_integral_on_cancel'] = '取消订单 %s，退回支付订单时使用的积分';
 
 /* 订单状态 */
-$_LANG['os'][OS_UNCONFIRMED] = '未确认';
-$_LANG['os'][OS_CONFIRMED] = '已确认';
-$_LANG['os'][OS_SPLITED] = '已确认';
-$_LANG['os'][OS_SPLITING_PART] = '已确认';
-$_LANG['os'][OS_CANCELED] = '已取消';
-$_LANG['os'][OS_INVALID] = '无效';
-$_LANG['os'][OS_RETURNED] = '退货';
-$_LANG['os'][OS_ONLY_REFOUND] = '仅退款';
-$_LANG['os'][OS_RETURNED_PART] = '部分已退货';
+$_LANG['os'][OS_UNCONFIRMED] = '未確認';
+$_LANG['os'][OS_CONFIRMED] = '確認済み';
+$_LANG['os'][OS_SPLITED] = '確認済み';
+$_LANG['os'][OS_SPLITING_PART] = '確認済み';
+$_LANG['os'][OS_CANCELED] = 'キャンセル済み';
+$_LANG['os'][OS_INVALID] = '無効';
+$_LANG['os'][OS_RETURNED] = '返品';
+$_LANG['os'][OS_ONLY_REFOUND] = '払い戻しのみ';
+$_LANG['os'][OS_RETURNED_PART] = '一部返品済み';
 
-$_LANG['ss'][SS_UNSHIPPED] = '未发货';
-$_LANG['ss'][SS_PREPARING] = '配货中';
-$_LANG['ss'][SS_SHIPPED] = '已发货';
-$_LANG['ss'][SS_RECEIVED] = '收货确认';
-$_LANG['ss'][SS_SHIPPED_PART] = '已发货(部分商品)';
-$_LANG['ss'][SS_SHIPPED_ING] = '配货中'; // 已分单
+$_LANG['ss'][SS_UNSHIPPED] = '未出荷';
+$_LANG['ss'][SS_PREPARING] = '配送中';
+$_LANG['ss'][SS_SHIPPED] = '出荷済み';
+$_LANG['ss'][SS_RECEIVED] = '受入確認';
+$_LANG['ss'][SS_SHIPPED_PART] = '出荷済み(一部の商品)';
+$_LANG['ss'][SS_SHIPPED_ING] = '配送中'; // 已分单
 
-$_LANG['ps'][PS_UNPAYED] = '未付款';
-$_LANG['ps'][PS_PAYING] = '付款中';
-$_LANG['ps'][PS_PAYED] = '已付款';
-$_LANG['ps'][PS_PAYED_PART] = '部分付款(定金)';
-$_LANG['ps'][PS_REFOUND] = '已退款';
+$_LANG['ps'][PS_UNPAYED] = '未金を払う ';
+$_LANG['ps'][PS_PAYING] = '支払中';
+$_LANG['ps'][PS_PAYED] = '支払済';
+$_LANG['ps'][PS_PAYED_PART] = '部分支払(手付金)';
+$_LANG['ps'][PS_REFOUND] = '返金済み';
 
 //预售
 $_LANG['presale_tip_1'] = '尾款支付时间: %s 至 %s';
@@ -410,7 +410,7 @@ $_LANG['goods_price'] = '商品价格';
 $_LANG['goods_attr'] = '属性';
 $_LANG['use_balance'] = '使用余额';
 $_LANG['order_postscript'] = '订单附言';
-$_LANG['order_number'] = '订单号';
+$_LANG['order_number'] = '注文書番号';
 $_LANG['consignment'] = '发货单';
 $_LANG['shopping_money'] = '商品总价';
 $_LANG['invalid_order_id'] = '订单号错误';
@@ -425,18 +425,18 @@ $_LANG['accessories'] = '配件';
 $_LANG['largess'] = '赠品';
 $_LANG['use_more_surplus'] = '追加使用余额';
 $_LANG['max_surplus'] = '（您的帐户余额：%s）';
-$_LANG['button_submit'] = '确定';
+$_LANG['button_submit'] = '確認';
 $_LANG['order_detail'] = '订单详情';
 $_LANG['error_surplus_invalid'] = '您输入的数字不正确！';
 $_LANG['error_order_is_paid'] = '该订单不需要付款！';
 $_LANG['error_surplus_not_enough'] = '您的帐户余额不足！';
 
 /* 订单状态 */
-$_LANG['detail_order_sn'] = '订单号';
+$_LANG['detail_order_sn'] = '注文書番号';
 $_LANG['detail_order_status'] = '订单状态';
 $_LANG['detail_pay_status'] = '付款状态';
 $_LANG['detail_shipping_status'] = '配送状态';
-$_LANG['detail_order_sn'] = '订单号';
+$_LANG['detail_order_sn'] = '注文書番号';
 $_LANG['detail_to_buyer'] = '卖家留言';
 
 $_LANG['confirm_time'] = '确认于 %s';
@@ -456,17 +456,17 @@ $_LANG['get_password_by_mail'] = '注册邮件找回密码';
 $_LANG['back_retry_answer'] = '返回重试';
 
 /* 登录 注册 */
-$_LANG['label_username'] = '用户名';
+$_LANG['label_username'] = 'ユーザー名';
 $_LANG['label_email'] = 'email';
-$_LANG['label_password'] = '密码';
-$_LANG['label_confirm_password'] = '确认密码';
-$_LANG['label_password_intensity'] = '密码强度';
-$_LANG['want_login'] = '已注册直接登录';
+$_LANG['label_password'] = 'パスワード';
+$_LANG['label_confirm_password'] = 'パスワードの確認';
+$_LANG['label_password_intensity'] = 'パスワードの強度';
+$_LANG['want_login'] = 'ログイン済み';
 $_LANG['other_msn'] = 'MSN';
 $_LANG['other_qq'] = 'QQ';
-$_LANG['other_office_phone'] = '办公电话';
-$_LANG['other_home_phone'] = '家庭电话';
-$_LANG['other_mobile_phone'] = '手机';
+$_LANG['other_office_phone'] = 'オフィス電話';
+$_LANG['other_home_phone'] = '電話番号';
+$_LANG['other_mobile_phone'] = '携帯番号';
 $_LANG['remember'] = '请保存我这次的登录信息。';
 
 $_LANG['msg_un_blank'] = '用户名不能为空';
@@ -480,7 +480,7 @@ $_LANG['msg_email_format'] = '邮件地址不合法';
 $_LANG['msg_register_fail'] = '注册失败';
 
 $_LANG['edit_email'] = '修改邮箱';
-$_LANG['registered_user'] = '新用户注册';
+$_LANG['registered_user'] = '新規取得(無料)';
 $_LANG['login_success'] = '登录成功';
 $_LANG['confirm_login'] = '确认登录';
 $_LANG['profile_lnk'] = '查看我的个人信息';
@@ -524,7 +524,7 @@ $_LANG['your_account'] = '您的账户';
 $_LANG['your_notice'] = '用户提醒';
 $_LANG['your_surplus'] = '余额';
 $_LANG['credit_line'] = '信用额度';
-$_LANG['your_bonus'] = '优惠券';
+$_LANG['your_bonus'] = 'クーポン';
 $_LANG['your_message'] = '留言';
 $_LANG['your_order'] = '订单';
 $_LANG['your_integral'] = '积分';
@@ -814,7 +814,7 @@ $_LANG['already_attention_check_shop'] = '已关注选中商品';
 $_LANG['cancel_attention'] = '已取消关注';
 
 /* 分类 category */
-$_LANG['all_category'] = '全部分类';
+$_LANG['all_category'] = 'すべての分類';
 
 /* 社区  community */
 $_LANG['community_my'] = '我的帖子';
@@ -827,7 +827,7 @@ $_LANG['post_detail'] = '帖子详情';
 $_LANG['write_answer'] = '请填写回复内容';
 $_LANG['reply_me'] = '回复我的';
 //优惠券
-$_LANG['coupont_list'] = '优惠券';
+$_LANG['coupont_list'] = 'クーポン';
 
 //微筹
 $_LANG['crowd_user'] = '微筹中心';

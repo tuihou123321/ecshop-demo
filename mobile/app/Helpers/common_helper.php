@@ -55,7 +55,7 @@ function is_mobile($mobile)
 		return false;
 	}
 
-	return preg_match('/^1(3[0-9]|4[0-9]|5[0-35-9]|6[6]|7[01345678]|8[0-9]|9[89])\\d{8}$/', $mobile) ? true : false;
+	return preg_match('/^[\d|\-|\s|\_]+$/', $mobile) ? true : false;
 }
 
 function is_time($time)
@@ -742,7 +742,7 @@ function price_format($price, $change_price = true)
 	if ($change_price && defined('ECS_ADMIN') === false) {
 		switch ($GLOBALS['_CFG']['price_format']) {
 		case 0:
-			$price = number_format($price, 2, '.', '');
+			$price = number_format($price, 0, '.', '');
 			break;
 
 		case 1:
@@ -772,7 +772,7 @@ function price_format($price, $change_price = true)
 		}
 	}
 	else {
-		@$price = number_format($price, 2, '.', '');
+		@$price = number_format($price, 0, '.', '');
 	}
 
 	return sprintf($GLOBALS['_CFG']['currency_format'], $price);
@@ -3644,7 +3644,7 @@ function friendlyDate($sTime, $type = 'normal', $alt = 'false')
 		}
 		else {
 			if ($dYear == 0 && $dDay == 0) {
-				return '今天' . date('H:i', $sTime);
+				return '今日' . date('H:i', $sTime);
 			}
 			else if ($dYear == 0) {
 				return date('m月d日 H:i', $sTime);

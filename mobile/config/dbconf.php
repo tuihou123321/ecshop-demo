@@ -11,7 +11,7 @@ try {
 
     $db_hosts = explode(':', $db_host);
     $db_host = isset($db_hosts[0]) ? $db_hosts[0] : 'localhost';
-    $db_port = isset($db_hosts[1]) ? $db_hosts[1] : '3307';
+    $db_port = isset($db_hosts[1]) ? $db_hosts[1] : '3306';
 
     return [
         'db_type' => 'mysql',

@@ -25,15 +25,15 @@
                 <div class="cart-filter">
                     <div class="cart-stepflex">
                         <div class="cart-step-item curr">
-                            <span>1.我的购物车</span>
+                            <span>1.私のショッピングカート</span>
                             <i class="iconfont icon-arrow-right-alt"></i>
                         </div>
                         <div class="cart-step-item">
-                            <span>2.填写订单信息</span>
+                            <span>2.発注書情報の記入</span>
                             <i class="iconfont icon-arrow-right-alt"></i>
                         </div>
                         <div class="cart-step-item">
-                            <span>3.成功提交订单</span>
+                            <span>3.注文書の作成</span>
                         </div>
                     </div>
                     <div class="sp-area store-selector">
@@ -69,28 +69,7 @@
                         <!-- {foreach from=$goods_list item=goodsRu} -->
                         <div class="cart-item" ectype="shopItem">
                             <div class="shop">
-                                <div class="cart-checkbox" ectype="ckList">
-                                    <input type="checkbox" id="shopid_{$goodsRu.ru_id}" name="checkShop" class="ui-checkbox CheckBoxShop" ectype="ckShopAll" />
-                                    <label for="shopid_{$goodsRu.ru_id}" class="ui-label-14">&nbsp;</label>
-                                </div>
-                                <div class="shop-txt">
-									{if $goodsRu.ru_id eq 0}
-									<a href="javascript:;" class="shop-name self-shop-name">{$goodsRu.ru_name}</a>
-									{else}
-                                    <a href="{$goodsRu.url}" class="shop-name" target="_blank"><strong>{$goodsRu.ru_name}</strong></a>
-									{/if}
-                                    <!--start 在线客服 -->
-                                    {if $goodsRu.is_IM eq 1 || $goodsRu.is_dsc}
-                                    	<a href="javascript:;" id="IM" onclick="openWin(this)" ru_id="{$goodsRu.ru_id}" class="p-kefu{if $goodsRu.ru_id eq 0} p-c-violet{/if}"><i class="iconfont icon-kefu"></i></a>
-                                    {else}
-                                        {if $goodsRu.kf_type eq 1}
-                                        <a href="http://www.taobao.com/webww/ww.php?ver=3&touid={$goodsRu.kf_ww}&siteid=cntaobao&status=1&charset=utf-8" class="p-kefu" target="_blank"><i class="iconfont icon-kefu"></i></a>
-                                        {else}
-                                        <a href="http://wpa.qq.com/msgrd?v=3&uin={$goodsRu.kf_qq}&site=qq&menu=yes" class="p-kefu" target="_blank"><i class="iconfont icon-kefu"></i></a>
-                                        {/if}
-                                    {/if}
-                                    <!--end 在线客服 -->
-                                </div>
+                                                               
                             </div>
                             <div class="item-list" ectype="itemList">
                                 <!-- {foreach from=$goodsRu.new_list item=activity key=key} 活动-->
@@ -464,10 +443,10 @@
             <!--{else} 购物车为空-->
             <div class="cart-empty">
                 <div class="cart-message">
-                    <div class="txt">购物车快饿瘪了，主人快给我挑点宝贝吧</div>
+                    <div class="txt">ショッピングカートには何も入っていないので、好きな商品を選びましょう!</div>
                     <div class="info">
-                        <a href="./index.php" class="btn sc-redBg-btn">马上去逛逛</a>
-                        {if !$user_id}<a href="javascript:void(0);" id="go_pay" data-url="flow.php" class="login">去登录</a>{/if}
+                        <a href="./index.php" class="cart_go_btn">すぐに商品を選びに行きます</a>
+                        {if !$user_id}<a href="javascript:void(0);" id="go_pay" data-url="flow.php" class="login">ログイン</a>{/if}
                     </div>
                 </div>
             </div>
@@ -482,7 +461,6 @@
                             <div class="p-img"><a href="{$goods.url}" target="_blank"><img src="{$goods.goods_thumb}" width="190" height="190"></a></div>
                             <div class="p-price">{$goods.shop_price}</div>
                             <div class="p-name"><a href="{$goods.url}" title="{$goods.short_name|escape:html}" target="_blank">{$goods.short_name}</a></div>
-                            <div class="p-num">已售<em>{$goods.sales_volume}</em>件</div>
                         </li>
                         <!--{/if}-->
                         <!--{/foreach}-->
@@ -500,7 +478,7 @@
                 <div class="ck-step" id="consignee_list">
                 	<div class="ck-step-tit">
                         <h3>{$lang.consignee_info}</h3>
-                        <a href="user.php?act=address_list" class="extra-r" target="_blank">管理收货人地址</a>
+                        <a href="user.php?act=address_list" class="extra-r" target="_blank">受取人住所の管理</a>
                     </div>
                     <div class="ck-step-cont" id="consignee-addr">
                     <!-- #BeginLibraryItem "/library/consignee_flow.lbi" --><!-- #EndLibraryItem -->
@@ -764,9 +742,9 @@
                 <!--{if $value_card_list && $is_value_cart neq 0 || $user_coupons || $coupons_list || $bonus_list || $no_bonuslist}-->
                 <div class="ck-step ck-step-other">
                 	<div class="ck-step-tit ck-toggle ck-toggle-off" ectype="ck-toggle">
-                    	<h3>{$lang.preferential}/{$lang.value_card}/{$lang.bonus}</h3>
+                    	<h3>{$lang.preferential}/{$lang.bonus}</h3>
                         <i class="iconfont icon-down"></i>
-                        <!--{if $user_coupons || $value_card_list && $is_value_cart eq 1 || $bonus_list}--><span class="tag">有可用</span><!--{/if}-->
+                        <!--{if $user_coupons || $value_card_list && $is_value_cart eq 1 || $bonus_list}--><span class="tag">利用可能</span><!--{/if}-->
                     </div>
                     <div class="ck-step-cont" style="display:none;">
                     	<div class="order-virtual-tabs">
@@ -870,12 +848,12 @@
             <div class="payOrder-warp" id="pay_main">
                 <div class="payOrder-desc">
                     <div class="pay-top">
-                        <h3>{if $order.order_amount gt 0}订单提交成功，去付款咯！{else}订单提交成功！{/if}</h3>
+                        <h3>{if $order.order_amount gt 0}注文書の提出に成功しました。支払いに行きますよ。{else}注文書の提出に成功しました。{/if}</h3>
                         <div class="pay-total">
-                            <span>应付{$stages_info.stages_qishu}总额：</span>
-                            <div class="pay-price">￥{$order.order_amount}</div>
-                        </div>
-                    </div>
+                            <span>金を払う{$stages_info.stages_qishu}合計：</span>
+                          <div class="pay-price">￥{$total.amount_formated}</div>
+                      </div>
+                  </div>
                     <div class="pay-txt">
                         <p>{$lang.order_number}：<em id="nku">{$order.order_sn}</em></p>
                         <p>{$lang.Select_payment}：<span id="paymode">{$order.pay_name}</span></p>
@@ -884,10 +862,10 @@
                         <!--{else}-->
                         	{if $child_order eq 0}
                             <!--{if $order.shipping_name && $order.shipping_isarr eq 0}-->
-                            <p>配送方式: <span id="express">{$order.shipping_name}</span></p>
+                            <p>配送方法: <span id="express">{$order.shipping_name}</span></p>
                             <!--{/if}-->
                             {else}
-                            <p><span class="txt">{$lang.checkout_success_six}<em>{$child_order}</em>{$lang.checkout_success_three}：</span></p>
+                      <p><span class="txt">{$lang.checkout_success_six}<em>{$child_order}</em>{$lang.checkout_success_three}：</span></p>
                             {/if}
                         <!--{/if}-->
                     </div>
@@ -900,7 +878,7 @@
                         </div>
                     </div>
                     {/if}
-                    <a href="flow.php?step=pdf&order={$order.order_id}" target="_blank" class="orderPrint ftx-05">{$lang.orders_print}</a>&nbsp;&nbsp;
+                   &nbsp;&nbsp;
                     <a href="index.php" target="_blank" class="orderPrint ftx-05">{$lang.pay_qt}</a>
                 </div>
                 
@@ -914,11 +892,11 @@
                             <p>{$lang.order_number}：<em class="nku" id="nku">{$c_order.order_sn}</em></p>
                             
                             {if $c_order.order_amount > 0}
-                            <p>应付金额：<em>{$c_order.amount_formated}</em></p>
+                            <p>支払金額：<em>{$c_order.amount_formated}</em></p>
                             {/if}
                             
                             {if $c_order.pay_total > 0}
-                            <p>已付金额：<em>{$c_order.total_formated}</em></p>
+                          <p>支払済金額：<em>{$c_order.total_formated}</em></p>
                             {/if}
                         
                             {if !$is_group_buy}
@@ -927,8 +905,8 @@
                             <!--{if $stores_info}-->
                             <p>{$lang.store_name}：<em>{$stores_info.stores_name}</em></p>
                             <!--{else}-->
-                            <p>收货人：<span id="username">{$order.consignee}</span><span id="tel" class="ml20">{$order.mobile}</span></p>
-                            <p>寄送至：<span id="address">{$address_info}&nbsp;{$order.address}</span></p>
+                            <p>受取人：<span id="username">{$order.consignee}</span><span id="tel" class="ml20">{$order.mobile}</span></p>
+                            <p>配送先：<span id="address">{$address_info}&nbsp;{$order.address}</span></p>
                             <!--{/if}-->
                         </div>
                         {/foreach}
@@ -957,7 +935,7 @@
                     {else}
                         <div class="payOrder-list">
                             <div class="p-mode-tit">
-                                <h3>在线支付</h3>
+                                <h3>オンライン決済</h3>
                             </div>
                             <div class="p-mode-list">
                                 {if $is_presale_goods}
@@ -1014,7 +992,7 @@
                             	{if $order.pay_code eq 'balance'}
                                 {$lang.payment_Success}
                                 {else}
-                                您选择在线支付，请查看订单继续完成支付订单    
+                                オンライン決済を選択した場合は、受注を確認して受注の支払いを続行します。    
                                 {/if}
                             {/if}
                             </h3>
@@ -1027,11 +1005,11 @@
                         <p>{$lang.order_number}：<em class="nku" id="nku">{$c_order.order_sn}</em></p>
                         
                         {if $c_order.order_amount > 0}
-                        <p>应付金额：<em>{$c_order.amount_formated}</em></p>
+                        <p>支払金額：<em>{$c_order.amount_formated}</em></p>
                         {/if}
                         
                         {if $c_order.pay_total > 0}
-                        <p>已付金额：<em>{$c_order.total_formated}</em></p>
+                      <p>支払済金額：<em>{$c_order.total_formated}</em></p>
                         {/if}
                         
                         {if !$is_group_buy}
@@ -1040,8 +1018,8 @@
                         <!--{if $stores_info}-->
                         <p>{$lang.store_name}：<em>{$stores_info.stores_name}</em></p>
                         <!--{else}-->
-                        <p>收货人：<span id="username">{$order.consignee}</span><span id="tel" class="ml20">{$order.mobile}</span></p>
-                        <p>寄送至：<span id="address">{$address_info}&nbsp;{$order.address}</span></p>
+                        <p>受取人：<span id="username">{$order.consignee}</span><span id="tel" class="ml20">{$order.mobile}</span></p>
+                        <p>配送先：<span id="address">{$address_info}&nbsp;{$order.address}</span></p>
                         <!--{/if}-->
                     </div>
                     {/foreach}
@@ -1051,8 +1029,8 @@
                     {/if}
                     <div class="clear"></div>
                     <div class="s-i-btn">
-                        <a href="{if $is_zc_order}user.php?act=crowdfunding{else}user.php?act=order_list{/if}" class="btn sc-redBg-btn">查看订单</a>
-                        <a href="index.php" class="btn sc-red-btn">返回首页</a>
+                        <a href="{if $is_zc_order}user.php?act=crowdfunding{else}user.php?act=order_list{/if}" class="btn sc-redBg-btn">注文書の表示</a>
+                        <a href="index.php" class="btn sc-red-btn">トップページに戻る</a>
                     </div>
                 </div>
                 {else}
@@ -1083,8 +1061,8 @@
                             <p>{$lang.freight}：<em>{$order.format_shipping_fee}</em></p>
                             {/if}
                             <p>{$lang.Total_amount_payable}：<em>{$order.format_order_amount}</em></p>
-                            <p>收货人：<span id="username">{$order.consignee}</span><span id="tel" class="ml20">{$order.mobile}</span></p>
-                            <p>寄送至： <span id="address">{$address_info}&nbsp;{$order.address}</span></p>
+                            <p>受取人：<span id="username">{$order.consignee}</span><span id="tel" class="ml20">{$order.mobile}</span></p>
+                            <p>配送先： <span id="address">{$address_info}&nbsp;{$order.address}</span></p>
                             <!--{/if}-->
                         </div>
                         {if $order.pay_code eq 'bank'}
@@ -1092,11 +1070,11 @@
                         {/if}
                         <div class="s-i-btn">
                             {if $is_zc_order}
-                            <a href="user.php?act=crowdfunding" class="btn sc-redBg-btn">查看订单</a>
+                            <a href="user.php?act=crowdfunding" class="btn sc-redBg-btn">注文書の表示</a>
                             {else}
-                            <a href="user.php?act=order_list" class="btn sc-redBg-btn">查看订单</a>
+                            <a href="user.php?act=order_list" class="btn sc-redBg-btn">注文書の表示</a>
                             {/if}
-                            <a href="index.php" class="btn sc-red-btn">返回首页</a>
+                            <a href="index.php" class="btn sc-red-btn">トップページに戻る</a>
                         </div>
                     </div>
                 </div>
@@ -1106,7 +1084,7 @@
             
             {if $goods_buy_list}
             <div class="p-panel-main c-history">
-                <div class="ftit ftit-delr"><h3>继续剁手</h3></div>
+                <div class="ftit ftit-delr"><h3>注文を続ける</h3></div>
                 <div class="gl-list clearfix">
                     <ul class="clearfix">
                         {foreach from=$goods_buy_list item=goods name=goodsbuy}
@@ -1122,7 +1100,6 @@
                                 {/if}
                             </div>
                             <div class="p-name"><a href="{$goods.url}" title="{$goods.goods_name|escape:html}" target="_blank">{$goods.goods_name}</a></div>
-                            <div class="p-num">已售<em>{$goods.sales_volume}</em>件</div>
                         </li>
 						{/if}
                         {/if}
@@ -1183,8 +1160,8 @@
                 <!--{if $stores_info}-->
                 <p>{$lang.store_name}：<em>{$stores_info.stores_name}</em></p>
                 <!--{else}-->
-                <p>收货人：<span id="username">{$order.consignee}</span><span id="tel" class="ml20">{$order.mobile}</span></p>
-                <p>寄送至：<span id="address">{$address_info}&nbsp;{$order.address}</span></p>
+                <p>受取人：<span id="username">{$order.consignee}</span><span id="tel" class="ml20">{$order.mobile}</span></p>
+                <p>配送先：<span id="address">{$address_info}&nbsp;{$order.address}</span></p>
                 <!--{/if}-->
             </div>
             {/foreach}
@@ -1192,11 +1169,11 @@
             <div class="clear"></div>
             <div class="s-i-btn">
                 {if $is_zc_order}
-                <a href="user.php?act=crowdfunding" class="btn sc-redBg-btn">查看订单</a>
+                <a href="user.php?act=crowdfunding" class="btn sc-redBg-btn">注文書の表示</a>
                 {else}
-                <a href="user.php?act=order_list" class="btn sc-redBg-btn">查看订单</a>
+                <a href="user.php?act=order_list" class="btn sc-redBg-btn">注文書の表示</a>
                 {/if}
-                <a href="index.php" class="btn sc-red-btn">返回首页</a>
+                <a href="index.php" class="btn sc-red-btn">トップページに戻る</a>
             </div>
         </div>
         {else}
@@ -1215,17 +1192,17 @@
                     <p>{$lang.shipping_method}：<em>{$order.shipping_name}</em></p>
                     <p>{$lang.freight}：<em>￥{$order.shipping_fee}</em></p>
                     {/if}
-                    <p>收货人：<span id="username">{$order.consignee}</span><span id="tel" class="ml20">{$order.mobile}</span></p>
-                    <p>寄送至： <span id="address">{$address_info}&nbsp;{$order.address}</span></p>
+                    <p>受取人：<span id="username">{$order.consignee}</span><span id="tel" class="ml20">{$order.mobile}</span></p>
+                    <p>配送先： <span id="address">{$address_info}&nbsp;{$order.address}</span></p>
                     <!--{/if}-->
                 </div>
                 <div class="s-i-btn">
                     {if $is_zc_order}
-                    <a href="user.php?act=crowdfunding" class="btn sc-redBg-btn">查看订单</a>
+                    <a href="user.php?act=crowdfunding" class="btn sc-redBg-btn">注文書の表示</a>
                     {else}
-                    <a href="user.php?act=order_list" class="btn sc-redBg-btn">查看订单</a>
+                    <a href="user.php?act=order_list" class="btn sc-redBg-btn">注文書の表示</a>
                     {/if}
-                    <a href="index.php" class="btn sc-red-btn">返回首页</a>
+                    <a href="index.php" class="btn sc-red-btn">トップページに戻る</a>
                 </div>
             </div>
         </div>
@@ -1233,7 +1210,7 @@
         
         {if $goods_buy_list}
         <div class="p-panel-main c-history">
-            <div class="ftit ftit-delr"><h3>继续剁手</h3></div>
+            <div class="ftit ftit-delr"><h3>注文を続ける</h3></div>
             <div class="gl-list clearfix">
                 <ul class="clearfix">
                     {foreach from=$goods_buy_list item=goods name=goodsbuy}
@@ -1248,7 +1225,6 @@
                             {/if}
                         </div>
                         <div class="p-name"><a href="{$goods.url}" title="{$goods.goods_name|escape:html}" target="_blank">{$goods.goods_name}</a></div>
-                        <div class="p-num">已售<em>{$goods.sales_volume}</em>件</div>
                     </li>
                     {/if}
                     {/foreach}

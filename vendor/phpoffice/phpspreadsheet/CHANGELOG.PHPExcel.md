@@ -1352,7 +1352,7 @@ documentation for more information on entering dates into a cell.
 - Create clickable links (hyperlinks) - @MarkBaker [CodePlex #3543](https://phpexcel.codeplex.com/workitem/3543)
 - Additional page setup parameters - @MarkBaker [CodePlex #3241](https://phpexcel.codeplex.com/workitem/3241)
 - Make temporary file path configurable (Excel5) - @MarkBaker [CodePlex #3300](https://phpexcel.codeplex.com/workitem/3300)
-- Small addition to applyFromArray for font - @MarkBaker [CodePlex #3307](https://phpexcel.codeplex.com/workitem/3307)
+- Small addition to applyFromArray for font - @MarkBaker [CodePlex #3306](https://phpexcel.codeplex.com/workitem/3306)
 
 ### Bugfixes
 

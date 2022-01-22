@@ -358,7 +358,7 @@
                     <!-- {if $goods_related_cat} 相关分类-->
                     <div class="g-main">
                     	<div class="mt">
-                            <h3>相关分类</h3>
+                            <h3>関連分類</h3>
                         </div>
                         <div class="mc">
                             <div class="mc-warp">

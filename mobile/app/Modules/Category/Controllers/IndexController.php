@@ -143,7 +143,7 @@ class IndexController extends \App\Modules\Base\Controllers\FrontendController
 		$cat_goods = get_cagtegory_goods($this->keywords, $this->cat_id, $this->sort, $this->order, 1);
 		$cat_goods = reset($cat_goods);
 		$share_img = !empty($cat_goods['goods_img']) ? $cat_goods['goods_img'] : $cat_info['cat_icon'];
-		$page_title = !empty($this->keyword) ? '搜索商品_' . $this->keyword : (isset($cat_info['cat_name']) ? $cat_info['cat_name'] : '搜索商品');
+		$page_title = !empty($this->keyword) ? '商品を検索する_' . $this->keyword : (isset($cat_info['cat_name']) ? $cat_info['cat_name'] : '商品を検索する');
 		$description = !empty($this->keyword) ? (isset($cat_goods['goods_name']) ? $cat_goods['goods_name'] : $cat_info['cat_desc']) : '';
 		$share_data = array('title' => $page_title, 'desc' => $description, 'link' => '', 'img' => $share_img);
 		$this->assign('share_data', $this->get_wechat_share_content($share_data));

@@ -91,7 +91,7 @@ $_LANG['amend_amount'] = '修改数量';
 $_LANG['end'] = '结束';
 $_LANG['require_field'] = '(必填)';
 $_LANG['search_result'] = '搜索结果';
-$_LANG['order_number'] = '订单号';
+$_LANG['order_number'] = '注文書番号';
 $_LANG['consignment'] = '发货单';
 $_LANG['activities'] = '商品正在进行的活动';
 $_LANG['remark_package'] = '超值礼包';
@@ -329,7 +329,7 @@ $_LANG['order_payed_sms'] = '订单 %s 付款了，收货人：%s 电话：%s'; 
 
 /* 缺货处理 */
 $_LANG['oos'][OOS_WAIT] = '等待所有商品备齐后再发';
-$_LANG['oos'][OOS_CANCEL] = '取消订单';
+$_LANG['oos'][OOS_CANCEL] = '注文書を取り消す';
 $_LANG['oos'][OOS_CONSULT] = '与店主协商';
 
 /* 评论部分 */

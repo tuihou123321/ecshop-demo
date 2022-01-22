@@ -213,7 +213,7 @@ UE.I18N['zh-cn'] = {
     'unset':'尚未设置语言文件',
     't_row':'行',
     't_col':'列',
-    'more':'更多',
+    'more':'more>>>',
     'pasteOpt':'粘贴选项',
     'pasteSourceFormat':"保留源格式",
     'tagFormat':'只保留标签',

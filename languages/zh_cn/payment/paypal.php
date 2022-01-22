@@ -1,4 +1,4 @@
-<?php
+﻿<?php
 
 /**
  * ECSHOP 支付宝语言文件
@@ -28,7 +28,7 @@ $_LANG['paypal_currency_range']['GBP'] = '英镑';
 $_LANG['paypal_currency_range']['JPY'] = '日元';
 $_LANG['paypal_currency_range']['USD'] = '美元';
 $_LANG['paypal_currency_range']['HKD'] = '港元';
-$_LANG['paypal_button']                = '立即使用 paypal 支付';
+$_LANG['paypal_button']                = 'PayPalクレジットカードで決済';
 $_LANG['paypal_txn_id']                = 'paypal 交易号';
 
 ?>

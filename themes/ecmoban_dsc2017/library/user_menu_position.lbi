@@ -42,20 +42,7 @@
                             <i class="icon_arrow_right_black"></i>
                         </div>
                     </li>
-                    <li>
-                        <a href="javascript:void(0);" class="mpbtn_yhq"><i class="yhq"></i></a>
-                        <div class="mp_tooltip">
-                            <font id="mpbtn_money" style="font-size:12px; cursor:pointer;">{$lang.preferential}</font>
-                            <i class="icon_arrow_right_black"></i>
-                        </div>
-                    </li>
-                    <li>
-                        <a href="javascript:void(0);" class="mpbtn_total"><i class="view"></i></a>
-                        <div class="mp_tooltip" style=" visibility:hidden;">
-                            <font id="mpbtn_myMoney" style="font-size:12px; cursor:pointer;">{$lang.My_assets}</font>
-                            <i class="icon_arrow_right_black"></i>
-                        </div>
-                    </li>
+                  
                     <li>
                         <a href="javascript:void(0);" class="mpbtn_history"><i class="zuji"></i></a>
                         <div class="mp_tooltip">
@@ -70,38 +57,10 @@
                             <i class="icon_arrow_right_black"></i>
                         </div>
                     </li>
-                    <li>
-                        <a href="javascript:void(0);" class="mpbtn_email"><i class="email"></i></a>
-                        <div class="mp_tooltip">
-                            <font id="mpbtn_email" style="font-size:12px; cursor:pointer;">{$lang.Email_subscription}</font>
-                            <i class="icon_arrow_right_black"></i>
-                        </div>
-                    </li>
+                
                 </ul>
             </div>
-            <div class="quick_toggle">
-            	<ul>
-                    <li>
-                        <!--start 在线客服 bylu-->
-                        {if $kf_im_switch}
-
-                        <a id="IM" IM_type="dsc" onclick="openWin(this)" href="javascript:;"><i class="kfzx"></i></a>
-                        {else}
-                            {if $basic_info.kf_type eq 1}
-                            <a href="http://www.taobao.com/webww/ww.php?ver=3&touid={$basic_info.kf_ww}&siteid=cntaobao&status=1&charset=utf-8" class="seller-btn" target="_blank"><i class="icon" style="left: 10px;top: 10px;"></i>{$lang.con_cus_service}</a>
-                            {else}
-                            <a href="http://wpa.qq.com/msgrd?v=3&uin={$basic_info.kf_qq}&site=qq&menu=yes" class="seller-btn" target="_blank"><i class="icon" style="left: 10px;top: 10px;"></i>{$lang.con_cus_service}</a>
-                            {/if}
-                        {/if}
-                        <div class="mp_tooltip">{$lang.Customer_service_center}<i class="icon_arrow_right_black"></i></div>
-                        <!--end 在线客服 bylu-->
-                    </li>
-                    <li class="returnTop">
-                        <a href="javascript:void(0);" class="return_top"><i class="top"></i></a>
-                    </li>
-                </ul>
-
-            </div>
+           
         </div>
         <div id="quick_links_pop" class="quick_links_pop"></div>
     </div>

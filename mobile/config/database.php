@@ -56,7 +56,7 @@ return [
         'mysql' => [
             'driver'    => 'mysql',
             'host'      => $dbconf['db_host'], // env('DB_HOST', 'localhost'),
-            'port'      => $dbconf['db_port'], // env('DB_PORT', 3307),
+            'port'      => $dbconf['db_port'], // env('DB_PORT', 3306),
             'database'  => $dbconf['db_name'], // env('DB_DATABASE', 'forge'),
             'username'  => $dbconf['db_user'], // env('DB_USERNAME', 'forge'),
             'password'  => $dbconf['db_pwd'], // env('DB_PASSWORD', ''),

@@ -3,7 +3,7 @@
 <div class="order-summary">
     <div class="statistic">
         <div class="list">
-            <span><em>{$cart_goods_number}</em> 件商品，总商品金额：</span>
+            <span><em>{$cart_goods_number}</em> 件商品 合計：</span>
             <em class="price" id="warePriceId">{$total.goods_price_formated}</em>
         </div>
         <!-- {if $total.dis_amount gt 0} 商品优惠 -->
@@ -81,7 +81,7 @@
             <!-- {/if} -->
         <!-- {/if} 使用余额或积分或红包或优惠券 -->
         <div class="list">
-            <span>应付总额：</span>
+            <span>支払合計：</span>
             <em class="price-total">{$total.amount_formated}</em>
         </div>
         <!--{if $total.exchange_integral }消耗积分-->

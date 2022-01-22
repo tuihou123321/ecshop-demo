@@ -348,7 +348,7 @@ if (!function_exists('price_format')) {
 		if ($change_price && defined('ECS_ADMIN') === false) {
 			switch ($priceFormat) {
 			case 0:
-				$price = number_format($price, 2, '.', '');
+				$price = number_format($price, 0, '.', '');
 				break;
 
 			case 1:
@@ -378,7 +378,7 @@ if (!function_exists('price_format')) {
 			}
 		}
 		else {
-			@$price = number_format($price, 2, '.', '');
+			@$price = number_format($price, 0, '.', '');
 		}
 
 		return sprintf($currencyFormat, $price);

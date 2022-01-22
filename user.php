@@ -2243,13 +2243,12 @@ else if ($action == 'act_edit_profile') {
 		show_message($_LANG['passport_js']['msn_invalid']);
 	}
 
-	if (!empty($qq) && !preg_match('/^\\d+$/', $qq)) {
-		show_message($_LANG['passport_js']['qq_invalid']);
-	}
 
-	if (!empty($mobile_phone) && !preg_match('/^13[\\d]{9}$|^14[5,7]{1}\\d{8}$|^15[^4]{1}\\d{8}$|^17[0,6,7,8]{1}\\d{8}$|^18[\\d]{9}$/', $mobile_phone)) {
-		show_message($_LANG['passport_js']['mobile_phone_invalid']);
-	}
+
+	//if (!empty($mobile_phone) && !preg_match('/^13[\\d]{9}$|^14[5,7]{1}\\d{8}$|^15[^4]{1}\\d{8}$|^17[0,6,7,8]{1}\\d{8}$|^18[\\d]{9}$/', $mobile_phone)) { //
+		//show_message($_LANG['passport_js']['mobile_phone_invalid']); //
+//	} //
+
 
 	$profile = array('user_id' => $user_id, 'email' => isset($_POST['email']) ? trim($_POST['email']) : '', 'mobile_phone' => $mobile_phone, 'mobile_code' => $mobile_code, 'sex' => isset($_POST['sex']) ? intval($_POST['sex']) : 0, 'birthday' => $birthday, 'other' => isset($other) ? $other : array());
 

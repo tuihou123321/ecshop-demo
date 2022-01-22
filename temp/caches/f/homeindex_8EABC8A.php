@@ -1,4 +1,4 @@
-<?php exit;?>a:3:{s:8:"template";a:4:{i:0;s:66:"C:/my/phpstudy_pro/WWW/ecshop/themes/ecmoban_dsc2017/homeindex.dwt";i:1;s:81:"C:/my/phpstudy_pro/WWW/ecshop/themes/ecmoban_dsc2017/library/js_languages_new.lbi";i:2;s:83:"C:/my/phpstudy_pro/WWW/ecshop/themes/ecmoban_dsc2017/library/page_header_common.lbi";i:3;s:76:"C:/my/phpstudy_pro/WWW/ecshop/themes/ecmoban_dsc2017/library/page_footer.lbi";}s:7:"expires";i:1641918265;s:8:"maketime";i:1641914665;}<!doctype html>
+<?php exit;?>a:3:{s:8:"template";a:4:{i:0;s:66:"C:/my/phpstudy_pro/WWW/ecshop/themes/ecmoban_dsc2017/homeindex.dwt";i:1;s:81:"C:/my/phpstudy_pro/WWW/ecshop/themes/ecmoban_dsc2017/library/js_languages_new.lbi";i:2;s:83:"C:/my/phpstudy_pro/WWW/ecshop/themes/ecmoban_dsc2017/library/page_header_common.lbi";i:3;s:76:"C:/my/phpstudy_pro/WWW/ecshop/themes/ecmoban_dsc2017/library/page_footer.lbi";}s:7:"expires";i:1642863209;s:8:"maketime";i:1642859609;}<!doctype html>
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
@@ -1854,7 +1854,7 @@ var load_icon = '<img src="themes/ecmoban_dsc2017/images/load/load.gif" width="2
             }
 			
 			function ajax_Homeindex_Bonusadv(){
-				var cfg_bonus_adv = "1";//是否开启首页弹出广告
+				var cfg_bonus_adv = "0";//是否开启首页弹出广告
 				var suffix = "backup_tpl_1";
 				
 				if(cfg_bonus_adv == 1 && suffix){

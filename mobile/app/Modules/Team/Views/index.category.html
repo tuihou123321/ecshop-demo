@@ -6,31 +6,31 @@
 						<a class="a-icon-back j-close-search" href="javascript:history.go(-1);"><i class="iconfont icon-back"></i></a>
 						<div class="box-flex input-text n-input-text i-search-input">
 							<a class="a-search-input j-search-input" href="javascript:void(0)"></a>
-						 <div class="j-input-text nav-soso"><i class="iconfont icon-sousuo"></i>商品搜索</div>
+						 <div class="j-input-text nav-soso"><i class="iconfont icon-sousuo"></i>商品検索</div>
 						</div>
-						<a href="#j-filter-div" class="s-filter j-s-filter">筛选</a>
+						<a href="#j-filter-div" class="s-filter j-s-filter">選別する</a>
 					</div>
 				</section>
 				<section class="product-sequence dis-box">
 					{if $order == 'asc' && $sort == 'goods_id'}
-					<a class="box-flex a-change {if $sort == 'goods_id'}active{/if}" href="{url('team/index/category', array('tc_id'=>$tc_id, 'intro'=>$intro, 'display'=>$display, 'brand'=>$brand_id, 'price_min'=>$price_min, 'price_max'=>$price_max, 'filter_attr'=>$filter_attr, 'page'=>$page, 'sort'=>'goods_id', 'order'=>'desc', 'keyword'=>$keywords))}#goods_list">综合<i class="iconfont icon-xiajiantou"></i></a>
+					<a class="box-flex a-change {if $sort == 'goods_id'}active{/if}" href="{url('team/index/category', array('tc_id'=>$tc_id, 'intro'=>$intro, 'display'=>$display, 'brand'=>$brand_id, 'price_min'=>$price_min, 'price_max'=>$price_max, 'filter_attr'=>$filter_attr, 'page'=>$page, 'sort'=>'goods_id', 'order'=>'desc', 'keyword'=>$keywords))}#goods_list">統合<i class="iconfont icon-xiajiantou"></i></a>
 					{else}
-					<a class="box-flex {if $sort == 'goods_id'}active{/if}" href="{url('team/index/category', array('tc_id'=>$tc_id, 'intro'=>$intro, 'display'=>$display, 'brand'=>$brand_id, 'price_min'=>$price_min, 'price_max'=>$price_max, 'filter_attr'=>$filter_attr, 'page'=>$page, 'sort'=>'goods_id', 'order'=>'asc', 'keyword'=>$keywords))}#goods_list">综合<i class="iconfont icon-xiajiantou"></i></a>
+					<a class="box-flex {if $sort == 'goods_id'}active{/if}" href="{url('team/index/category', array('tc_id'=>$tc_id, 'intro'=>$intro, 'display'=>$display, 'brand'=>$brand_id, 'price_min'=>$price_min, 'price_max'=>$price_max, 'filter_attr'=>$filter_attr, 'page'=>$page, 'sort'=>'goods_id', 'order'=>'asc', 'keyword'=>$keywords))}#goods_list">統合<i class="iconfont icon-xiajiantou"></i></a>
 					{/if}
 					{if $order == 'asc' && $sort == 'last_update'}
-					<a class="box-flex {if $sort == 'last_update'}active{/if}" href="{url('team/index/category', array('tc_id'=>$tc_id, 'intro'=>$intro, 'display'=>$display, 'brand'=>$brand_id, 'price_min'=>$price_min, 'price_max'=>$price_max, 'filter_attr'=>$filter_attr, 'page'=>$page, 'sort'=>'last_update', 'order'=>'desc', 'keyword'=>$keywords))}#goods_list">新品</a>
+					<a class="box-flex {if $sort == 'last_update'}active{/if}" href="{url('team/index/category', array('tc_id'=>$tc_id, 'intro'=>$intro, 'display'=>$display, 'brand'=>$brand_id, 'price_min'=>$price_min, 'price_max'=>$price_max, 'filter_attr'=>$filter_attr, 'page'=>$page, 'sort'=>'last_update', 'order'=>'desc', 'keyword'=>$keywords))}#goods_list">新着</a>
 					{else}
-					<a class="box-flex {if $sort == 'last_update'}active{/if}" href="{url('team/index/category', array('tc_id'=>$tc_id, 'intro'=>$intro, 'display'=>$display, 'brand'=>$brand_id, 'price_min'=>$price_min, 'price_max'=>$price_max, 'filter_attr'=>$filter_attr, 'page'=>$page, 'sort'=>'last_update', 'order'=>'ASC', 'keyword'=>$keywords))}#goods_list">新品</a>
+					<a class="box-flex {if $sort == 'last_update'}active{/if}" href="{url('team/index/category', array('tc_id'=>$tc_id, 'intro'=>$intro, 'display'=>$display, 'brand'=>$brand_id, 'price_min'=>$price_min, 'price_max'=>$price_max, 'filter_attr'=>$filter_attr, 'page'=>$page, 'sort'=>'last_update', 'order'=>'ASC', 'keyword'=>$keywords))}#goods_list">新着</a>
 					{/if}
 					{if $order == 'asc' && $sort == 'sales_volume'}
-					<a class="box-flex {if $sort == 'sales_volume'}active{/if}" href="{url('team/index/category', array('tc_id'=>$tc_id, 'intro'=>$intro, 'display'=>$display, 'brand'=>$brand_id, 'price_min'=>$price_min, 'price_max'=>$price_max, 'filter_attr'=>$filter_attr, 'page'=>$page, 'sort'=>'sales_volume', 'order'=>'DESC', 'keyword'=>$keywords))}#goods_list">销量</a>
+					<a class="box-flex {if $sort == 'sales_volume'}active{/if}" href="{url('team/index/category', array('tc_id'=>$tc_id, 'intro'=>$intro, 'display'=>$display, 'brand'=>$brand_id, 'price_min'=>$price_min, 'price_max'=>$price_max, 'filter_attr'=>$filter_attr, 'page'=>$page, 'sort'=>'sales_volume', 'order'=>'DESC', 'keyword'=>$keywords))}#goods_list">売上高</a>
 					{else}
-					<a class="box-flex {if $sort == 'sales_volume'}active{/if}" href="{url('team/index/category', array('tc_id'=>$tc_id, 'intro'=>$intro, 'display'=>$display, 'brand'=>$brand_id, 'price_min'=>$price_min, 'price_max'=>$price_max, 'filter_attr'=>$filter_attr, 'page'=>$page, 'sort'=>'sales_volume', 'order'=>'ASC', 'keyword'=>$keywords))}#goods_list">销量</a>
+					<a class="box-flex {if $sort == 'sales_volume'}active{/if}" href="{url('team/index/category', array('tc_id'=>$tc_id, 'intro'=>$intro, 'display'=>$display, 'brand'=>$brand_id, 'price_min'=>$price_min, 'price_max'=>$price_max, 'filter_attr'=>$filter_attr, 'page'=>$page, 'sort'=>'sales_volume', 'order'=>'ASC', 'keyword'=>$keywords))}#goods_list">売上高</a>
 					{/if}
 					{if $order == 'asc' && $sort == 'team_price'}
-					<a class="box-flex a-change {if $sort == 'team_price'}active{/if}" href="{url('team/index/category', array('tc_id'=>$tc_id, 'intro'=>$intro, 'display'=>$display, 'brand'=>$brand_id, 'price_min'=>$price_min, 'price_max'=>$price_max, 'filter_attr'=>$filter_attr, 'page'=>$page, 'sort'=>'team_price', 'order'=>'DESC', 'keyword'=>$keywords))}#goods_list">价格<i class="iconfont icon-xiajiantou"></i></a>
+					<a class="box-flex a-change {if $sort == 'team_price'}active{/if}" href="{url('team/index/category', array('tc_id'=>$tc_id, 'intro'=>$intro, 'display'=>$display, 'brand'=>$brand_id, 'price_min'=>$price_min, 'price_max'=>$price_max, 'filter_attr'=>$filter_attr, 'page'=>$page, 'sort'=>'team_price', 'order'=>'DESC', 'keyword'=>$keywords))}#goods_list">価格<i class="iconfont icon-xiajiantou"></i></a>
 					{else}
-					<a class="box-flex {if $sort == 'team_price'}active{/if}" href="{url('team/index/category', array('tc_id'=>$tc_id, 'intro'=>$intro, 'display'=>$display, 'brand'=>$brand_id, 'price_min'=>$price_min, 'price_max'=>$price_max, 'filter_attr'=>$filter_attr, 'page'=>$page, 'sort'=>'team_price', 'order'=>'ASC', 'keyword'=>$keywords))}#goods_list">价格<i class="iconfont icon-xiajiantou"></i></a>
+					<a class="box-flex {if $sort == 'team_price'}active{/if}" href="{url('team/index/category', array('tc_id'=>$tc_id, 'intro'=>$intro, 'display'=>$display, 'brand'=>$brand_id, 'price_min'=>$price_min, 'price_max'=>$price_max, 'filter_attr'=>$filter_attr, 'page'=>$page, 'sort'=>'team_price', 'order'=>'ASC', 'keyword'=>$keywords))}#goods_list">価格<i class="iconfont icon-xiajiantou"></i></a>
 					{/if}
 					<a class="a-sequence j-a-sequence"><i class="iconfont icon-pailie" data="1"></i></a>
 				</section>
@@ -45,7 +45,7 @@
 								<img class="product-list-img" src="<%goods.goods_thumb%>" />
 								<div class="product-text">
 									<h4><%goods.goods_name%></h4>
-									<p class="dis-box p-t-remark"><span class="box-flex">库存:<%goods.goods_number%></span><span class="box-flex">销量:<%goods.sales_volume%></span></p>
+									<p class="dis-box p-t-remark"><span class="box-flex">在庫量:<%goods.goods_number%></span><span class="box-flex">売上高:<%goods.sales_volume%></span></p>
 
 									<p><span class="p-price"><i class="iconfont icon-wodetuandui"></i><em class="f-04 col-7"><%goods.team_num%>人团 </em><em class="color-red f-08"><%goods.team_price%></em>
 									<small><em class="f-04 col7">单买</em><em class="f-05 color-red"><%goods.market_price%></em></small></span></p>
@@ -57,7 +57,7 @@
 						<% else %>
 		                <div class="no-div-message">
 		                    <i class="iconfont icon-biaoqingleiben"></i>
-		                    <p>亲，此处没有内容～！</p>
+		                    <p>ここには内容がありません～！</p>
 		                </div>
 		                 <% /if %>
                     	</script>

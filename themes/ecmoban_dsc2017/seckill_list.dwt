@@ -70,7 +70,6 @@
                                     <div class="p-del"><del>{$goods.market_price_formated}</del></div>
                                 </div>
                                 <div class="p-number clearfix">
-                                	<span>已售{$goods.percent}%</span>
                                     <div class="timebar"><i style="width:{$goods.percent}%;"></i></div>
                                 </div>
 								{if !$tb.is_end && !$tb.status}

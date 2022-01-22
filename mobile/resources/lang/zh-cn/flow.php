@@ -104,7 +104,7 @@ $_LANG['flow_js']['zip_not_num'] = '邮政编码只能填写数字';
 $_LANG['flow_js']['mobile_invaild'] = '手机号码不是合法号码';
 
 $_LANG['new_consignee_address'] = '新收货地址';
-$_LANG['consignee_address'] = '收货地址';
+$_LANG['consignee_address'] = '受取人住所';
 $_LANG['consignee_name'] = '收货人姓名';
 $_LANG['country_province'] = '配送区域';
 $_LANG['please_select'] = '请选择';
@@ -166,7 +166,7 @@ $_LANG['shopping_activity'] = '活动列表';
 $_LANG['shopping_package'] = '超值礼包列表';
 
 $_LANG['order_success'] = '下单成功';
-$_LANG['receiving_address'] = '收货地址';
+$_LANG['receiving_address'] = '受取人住所';
 $_LANG['msg_receiving_notnull'] = '收货人不能为空';
 $_LANG['msg_contact_way_notnull'] = '收货联系方式不能为空';
 $_LANG['msg_mobile_format_error'] = '手机号码格式不正确';

@@ -30,7 +30,7 @@ $_LANG['Group_purchase_end'] = "团购结束";
 $_LANG['Group_purchase_now'] = "立即团";
 $_LANG['see_to_see'] = "看了又看";
 $_LANG['Buy_and_buy'] = "买了又买";
-$_LANG['Sold'] = "已售";
+$_LANG['Sold'] = "販売済み";
 $_LANG['hot_group_purchase'] = "本期热卖团购";
 $_LANG['Change_set'] = "换一组";
 $_LANG['store_other_group'] = "该商铺的其他团购";
@@ -56,7 +56,7 @@ $_LANG['gong'] = "共";
 $_LANG['di_no'] = "第";
 $_LANG['weight'] = "重量";
 
-$_LANG['js_languages']['shiping_prompt'] = "暂不支持配送";
+$_LANG['js_languages']['shiping_prompt'] = "配送は当分サポートしておりません";
 $_LANG['js_languages']['Have_goods'] = "有货"; 
 $_LANG['js_languages']['No_goods'] = "无货";
 $_LANG['js_languages']['Deliver_back_order'] = "下单后立即发货";

@@ -11,7 +11,7 @@ environments:
         name: production_db
         user: root
         pass: ''
-        port: 3307
+        port: 3306
         charset: utf8
 
     development:
@@ -20,7 +20,7 @@ environments:
         name: development_db
         user: root
         pass: ''
-        port: 3307
+        port: 3306
         charset: utf8
 
     testing:
@@ -29,7 +29,7 @@ environments:
         name: testing_db
         user: root
         pass: ''
-        port: 3307
+        port: 3306
         charset: utf8
 
 version_order: creation

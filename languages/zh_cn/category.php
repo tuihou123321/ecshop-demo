@@ -12,7 +12,7 @@
  * $Author: liubo $
  * $Id: calendar.php 17217 2011-01-19 06:29:08Z liubo $20161214
 */
-$_LANG['Selected_condition'] = "已选条件";
+$_LANG['Selected_condition'] = "已選択";
 $_LANG['All_undo'] = "全部撤销";
 $_LANG['Other'] = '其他';
 $_LANG['close'] = '关闭';
@@ -42,7 +42,7 @@ $_LANG['cat_tpl2_one'] = "顶级分类页（家电模板）banner广告";
 $_LANG['cat_tpl2_two'] = "顶级分类页（家电模板）品牌广告";
 $_LANG['cat_tpl3_one'] = "顶级分类页（食品模板）banner广告";
 $_LANG['cat_tpl3_two'] = "顶级分类页（食品模板）热门区域广告";
-$_LANG['Sold'] = "已售";
+$_LANG['Sold'] = "販売済み";
 $_LANG['qiang'] = "抢";
 $_LANG['new_first'] = "新品首发";
 $_LANG['have_a_look'] = '随便看看';

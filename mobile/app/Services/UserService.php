@@ -218,7 +218,7 @@ class UserService
 
 	private function orderStatus($num)
 	{
-		$array = array('未确认', '已确认', '已取消', '无效', '退货', '已分单', '部分分单');
+		$array = array('未確認', '確認済み', '已取消', '无效', '退货', '已分单', '部分分单');
 		return $array[$num];
 	}
 

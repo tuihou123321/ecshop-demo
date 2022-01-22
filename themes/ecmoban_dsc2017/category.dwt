@@ -45,7 +45,6 @@
                                 {/if}
                             </div>
                             <div class="p-name"><a href="{$goods.url}" title="{$goods.goods_name|escape:html}" target="_blank">{$goods.goods_name}</a></div>
-                        	<div class="p-num">{$lang.Sold}<em>{$goods.sales_volume}</em>{$lang.jian}</div>
                         </li>
                         {/if}
                         <!--{/foreach}-->

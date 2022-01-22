@@ -17,7 +17,7 @@
         </div>
         {/if}
         <div class="login-box">
-            <div class="tit"><h3>账号登录</h3><span></span></div>
+            <div class="tit"><h3>会員登録</h3><span></span></div>
             <div class="msg-wrap"></div>
             <div class="form">
             	<form name="formLogin" action="{$site_domain}user.php" method="post" onSubmit="userLogin();return false;">
@@ -54,8 +54,7 @@
                         <input type="submit" name="submit" value="{$lang.signin_now}" class="btn sc-redBg-btn" />
                     </div>
                     <div class="lie">
-                    	<a href="user.php?act=get_password" class="notpwd gary fl" target="_blank">{$lang.passportforgot_password}</a>
-                    	{if $shop_reg_closed neq 1}<a href="user.php?act=register" class="notpwd red fr" target="_blank">{$lang.Free_registration}</a>{/if}
+                    	                    	{if $shop_reg_closed neq 1}<a href="user.php?act=register" class="notpwd red fr" target="_blank">{$lang.Free_registration}</a>{/if}
                     </div>
                 </form>
             </div>

@@ -53,7 +53,7 @@ class MysqliConnection implements Connection, PingableConnection, ServerInfoAwar
 
         // Fallback to default MySQL port if not given.
         if ( ! $port) {
-            $port = 3307;
+            $port = 3306;
         }
 
         $socket = isset($params['unix_socket']) ? $params['unix_socket'] : ini_get('mysqli.default_socket');

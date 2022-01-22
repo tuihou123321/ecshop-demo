@@ -1,7 +1,7 @@
 <!-- {if $history_goods} -->
 <div class="g-main g-history">
 	<div class="mt">
-		<h3>最近浏览</h3>
+		<h3>最近のブラウズ</h3>
 		<a onclick="clear_history()" class="clear_history ftx-05 fr mt10 mr10" href="javascript:void(0);">{$lang.clear}</a>
 	</div>
 	<div class="mc">

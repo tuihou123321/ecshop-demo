@@ -28,11 +28,11 @@ $_LANG['seller_cat'] = "店铺分类";
 $_LANG['seller_notice'] = "店铺公告";
 $_LANG['New_product'] = "新品商品";
 $_LANG['default'] = "默认";
-$_LANG['New'] = "新品";
-$_LANG['no_enabled'] = '关闭';
-$_LANG['go_pay'] = "去付款";
-$_LANG['go_shopping'] = "继续购物";
-$_LANG['Prompt'] = '提示';
+$_LANG['New'] = "新着商品";
+$_LANG['no_enabled'] = '閉じる';
+$_LANG['go_pay'] = "支払いに行く";
+$_LANG['go_shopping'] = "注文の続行";
+$_LANG['Prompt'] = 'ヒント';
 
 /*20161214*/
 $_LANG['goods_keyword_store'] = "商品名称关键字";

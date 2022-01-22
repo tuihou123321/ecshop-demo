@@ -17,30 +17,30 @@
 							<label class="dis-box {if $consignee.address_id == $address_id }active{/if}" onclick="adderss_user({$consignee.address_id})">
 								<i class="select-btn active-i"></i>
 								<span class="t-first margin-lr">
-									<a class="ml10 ftx-05 " href="javascript:void(0);">{if $consignee.address_id == $address_id }默认地址{else}设为默认{/if}</a>
+									<a class="ml10 ftx-05 " href="javascript:void(0);">{if $consignee.address_id == $address_id }デフォルトアドレス{else}黙認する{/if}</a>
 								</span>
 							</label>
 						</div>
                         <div class="fr">
 	                        <a href="{url('index/addaddress',array('address_id'=>$consignee.address_id))}">
-	                        	<i class="iconfont icon-bianji"></i>编辑
+	                        	<i class="iconfont icon-bianji"></i>編集
 	                        </a>
 	                        <a href="{url('index/drop',array('address_id'=>$consignee.address_id))}">
-	                        	<i class="iconfont icon-xiao10"></i>删除
+	                        	<i class="iconfont icon-xiao10"></i>削除
 	                        </a>
                         </div>
 					</div>
 				</section>
 				{/foreach}
 				<div class="ect-button-more dis-box filter-btn">
-					<a href="{url('index/addaddress')}" class="btn-submit box-flex">新增收货人信息</a>
+					<a href="{url('index/addaddress')}" class="btn-submit box-flex">受取人情報の追加</a>
 				</div>
 			</div>
 			{else}
 			<div class="no-div-message">
 				<i class="iconfont icon-biaoqingleiben"></i>
-				<p>亲，还没有收货地址哦～！</p>
-				<a href="{url('index/addaddress')}" class="t-first">点击添加一个收货地址</a>
+				<p>まだ受取人の住所がありませんよ～！</p>
+				<a href="{url('index/addaddress')}" class="t-first">クリックして受取人の住所を追加します</a>
 			</div>
 			{/if}
 		</div>
@@ -52,7 +52,7 @@
         function adderss_user(address_id){
             $.get("{url('user/index/ajax_make_address')}",{address_id:address_id},function(data){
                 if(data['address_id']){
-                    d_messages('设置成功');
+                    d_messages('設定成功');
                 }
                 return false;
             },'json');

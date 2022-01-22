@@ -1,11 +1,11 @@
 <!--{if $shippingFee.is_shipping eq 1}-->
 {if $shippingFee.shipping_fee > 0}
-<span class="gary" ectype="freight_info_span">[ 快递：{$shippingFee.shipping_fee_formated} ]&nbsp;&nbsp;{if $shippingFee.shipping_title}{$shippingFee.shipping_title}{/if}</span>
+<span class="gary" ectype="freight_info_span">[ 宅配便：{$shippingFee.shipping_fee_formated} ]&nbsp;&nbsp;{if $shippingFee.shipping_title}{$shippingFee.shipping_title}{/if}</span>
 {else}
 	{if $is_shipping eq 1}
-    <span class="gary" ectype="freight_info_span">[ 包邮 ]</span>
+    <span class="gary" ectype="freight_info_span">[ 送料無料 ]</span>
     {else}
-	<span class="gary" ectype="freight_info_span">[ 免运费 ]</span>
+	<span class="gary" ectype="freight_info_span">[ 送料無料 ]</span>
 	{/if}
 {/if}
 <!--{/if}-->

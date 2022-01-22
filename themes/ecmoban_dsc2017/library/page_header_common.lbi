@@ -25,29 +25,7 @@
             <!-- {/if} -->
             <!--{if $navigator_list.top}-->
             <li class="li_dorpdown" data-ectype="dorpdown">
-                <div class="dt dsc-cm">{$lang.Site_navigation}<i class="iconfont icon-down"></i></div>
-                <div class="dd dorpdown-layer">
-                    <dl class="fore1">
-                        <dt>特色主题</dt>
-                        <dd>
-                            <!-- {foreach name=nav_top_list from=$top_cat_list item=topc_cats key=key} -->
-                                <!--{if $smarty.foreach.nav_top_list.index < 3}-->
-                                    <div class="item"><a href="{$topc_cats.url}" target="_blank">{$topc_cats.cat_alias_name}</a></div>
-                                <!--{/if}-->
-                            <!-- {/foreach} -->
-                        </dd>
-                    </dl>
-                    <dl class="fore2">
-                        <dt>促销活动</dt>
-                        <dd>
-                            <!-- {foreach name=nav_top_list from=$navigator_list.top item=nav key=key} -->
-                                <!--{if $smarty.foreach.nav_top_list.index >= 4}-->
-                                    <div class="item"><a href="{$nav.url}"{if $nav.opennew} target="_blank"{/if}>{$nav.name}</a></div>
-                                <!--{/if}-->
-                            <!-- {/foreach} -->
-                        </dd>
-                    </dl>
-                </div>
+               
             </li>
             <!-- {/if} -->
         </ul>
@@ -75,8 +53,8 @@
                     <button type="button" class="button button-store" onclick="checkstore_search_cmt(2,this)" data-domain="{$site_domain}" >搜本店</button>
                      <!--{else}-->
                     <input type="hidden" name="store_search_cmt" value="{$search_type|default:0}">
-                    <button type="submit" class="button button-goods" onclick="checkstore_search_cmt(0)" >搜商品</button>
-                    <button type="submit" class="button button-store" onclick="checkstore_search_cmt(1)" >搜店铺</button>
+                    <button type="submit" class="button button-goods" onclick="checkstore_search_cmt(0)" >商品探し</button>
+                   
                     <!--{/if}-->
                 </form>
                 {if $searchkeywords}

@@ -550,7 +550,7 @@ class IndexController extends \App\Modules\Base\Controllers\FrontendController
 			}
 		}
 
-		$this->assign('page_title', '订单确认');
+		$this->assign('page_title', '注文書確認');
 		$this->display();
 	}
 
@@ -838,7 +838,7 @@ class IndexController extends \App\Modules\Base\Controllers\FrontendController
 		$this->assign('defulte_id', $default_id);
 		$this->assign('address_id', $address_id);
 		$this->assign('consignee_list', $consignee_list);
-		$this->assign('page_title', '收货地址');
+		$this->assign('page_title', '受取人住所');
 		$this->display();
 	}
 
@@ -848,25 +848,22 @@ class IndexController extends \App\Modules\Base\Controllers\FrontendController
 			$consignee = array('address_id' => I('address_id'), 'consignee' => I('consignee'), 'country' => 1, 'province' => I('province_region_id'), 'city' => I('city_region_id'), 'district' => I('district_region_id'), 'email' => I('email'), 'address' => I('address'), 'zipcode' => I('zipcode'), 'tel' => I('tel'), 'mobile' => I('mobile'), 'sign_building' => I('sign_building'), 'best_time' => I('best_time'), 'user_id' => $_SESSION['user_id']);
 
 			if (empty($consignee['consignee'])) {
-				show_message('收货人不能为空');
+				show_message('受取人は空白にしてはいけない');
 			}
 
 			if (empty($consignee['mobile'])) {
-				show_message('收货联系方式不能为空');
+				show_message('受取人の連絡先を空白にすることはできません');
 			}
 
-			if (is_mobile($consignee['mobile']) == false) {
-				show_message('手机号码格式不正确');
-			}
 
 			if (empty($consignee['address'])) {
-				show_message('详细地址不能为空');
+				show_message('詳細アドレスは空白にできません');
 			}
 
 			$limit_address = $this->db->getOne('select count(address_id) from {pre}user_address where user_id = \'' . $consignee['user_id'] . '\'');
 
 			if (5 < $limit_address) {
-				show_message('最多只能保存5个收货地址');
+				show_message('最大5つの受取人の住所しか保存できません');
 			}
 
 			if (0 < $_SESSION['user_id']) {
@@ -896,7 +893,7 @@ class IndexController extends \App\Modules\Base\Controllers\FrontendController
 		$this->assign('city_list', $city_list);
 		$district_list = get_region_city_county($this->city_id);
 		$this->assign('district_list', $district_list);
-		$this->assign('page_title', '新增收货地址');
+		$this->assign('page_title', '受取人の住所を増やす');
 		$this->display();
 	}
 
@@ -906,25 +903,23 @@ class IndexController extends \App\Modules\Base\Controllers\FrontendController
 			$consignee = array('address_id' => I('address_id'), 'consignee' => I('consignee'), 'country' => 1, 'province' => I('province_region_id'), 'city' => I('city_region_id'), 'district' => I('district_region_id'), 'email' => I('email'), 'address' => I('address'), 'zipcode' => I('zipcode'), 'tel' => I('tel'), 'mobile' => I('mobile'), 'sign_building' => I('sign_building'), 'best_time' => I('best_time'), 'user_id' => $_SESSION['user_id']);
 
 			if (empty($consignee['consignee'])) {
-				show_message('收货人不能为空');
+				show_message('受取人は空白にしてはいけない');
 			}
 
 			if (empty($consignee['mobile'])) {
-				show_message('收货联系方式不能为空');
+				show_message('受取人の連絡先を空白にすることはできません');
 			}
 
-			if (!preg_match('/^1[3|5|8|7|4]\\d{9}$/', $consignee['mobile'])) {
-				show_message('手机号码格式不正确');
-			}
+	
 
 			if (empty($consignee['address'])) {
-				show_message('详细地址不能为空');
+				show_message('詳細アドレスは空白にできません');
 			}
 
 			$limit_address = $this->db->getOne('select count(address_id) from {pre}user_address where user_id = \'' . $consignee['user_id'] . '\'');
 
 			if (5 < $limit_address) {
-				show_message('最多只能保存5个收货地址');
+				show_message('最大5つの出荷先住所しか保存できません');
 			}
 
 			if (0 < $_SESSION['user_id']) {
@@ -956,7 +951,7 @@ class IndexController extends \App\Modules\Base\Controllers\FrontendController
 			$consignee_list = $this->db->getRow('SELECT * FROM {pre}user_address WHERE user_id=\'' . $_SESSION['user_id'] . ']\' AND address_id=\'' . $address_id . '\'');
 
 			if (empty($consignee_list)) {
-				show_message('您没有此收货地址');
+				show_message('この受取人の住所がありません');
 			}
 
 			$c = get_region_name($consignee_list['province']);
@@ -982,7 +977,7 @@ class IndexController extends \App\Modules\Base\Controllers\FrontendController
 		$this->assign('city_list', $city_list);
 		$district_list = get_region_city_county($this->city_id);
 		$this->assign('district_list', $district_list);
-		$this->assign('page_title', '修改收货地址');
+		$this->assign('page_title', '受取人の住所の変更');
 		$this->display();
 	}
 

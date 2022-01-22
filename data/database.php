@@ -6,7 +6,7 @@ $capsule = new Capsule;
 
 $db_hosts = explode(':', $db_host);
 $db_host_conf = isset($db_hosts[0]) ? $db_hosts[0] : 'localhost';
-$db_port_conf = isset($db_hosts[1]) ? $db_hosts[1] : '3307';
+$db_port_conf = isset($db_hosts[1]) ? $db_hosts[1] : '3306';
 
 $capsule->addConnection([
     'driver'    => 'mysql',

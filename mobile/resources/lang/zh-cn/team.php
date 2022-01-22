@@ -25,10 +25,10 @@ $_LANG['team_keywords_result'] = '搜索结果';
 $_LANG['invalid_number'] = '对不起，您输入非法商品数值';
 
 /* 订单状态 */
-$_LANG['os'][OS_UNCONFIRMED] = '未确认';
-$_LANG['os'][OS_CONFIRMED] = '已确认';
-$_LANG['os'][OS_SPLITED] = '已确认';
-$_LANG['os'][OS_SPLITING_PART] = '已确认';
+$_LANG['os'][OS_UNCONFIRMED] = '未確認';
+$_LANG['os'][OS_CONFIRMED] = '確認済み';
+$_LANG['os'][OS_SPLITED] = '確認済み';
+$_LANG['os'][OS_SPLITING_PART] = '確認済み';
 $_LANG['os'][OS_CANCELED] = '已取消';
 $_LANG['os'][OS_INVALID] = '无效';
 $_LANG['os'][OS_RETURNED] = '退货';

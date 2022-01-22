@@ -69,20 +69,9 @@
             {/if}
 		</div>
         <div class="c-outhr">
-            <span class="info-item"><a href="{$order.shop_url}" class="user-shop-link">{$order.shop_name}</a>
-                {if $order.is_IM eq 1 || $order.is_dsc}
-                <a id="IM" onclick="openWin(this)" href="javascript:;" ru_id="{$order.ru_id}" class="iconfont icon-kefu user-shop-kefu"></a>
-                {else}
-                {if $order.kf_type eq 1}
-                <a href="http://www.taobao.com/webww/ww.php?ver=3&touid={$order.kf_ww}&siteid=cntaobao&status=1&charset=utf-8" class="iconfont icon-kefu user-shop-kefu" target="_blank"></a>
-                {else}
-                <a href="http://wpa.qq.com/msgrd?v=3&uin={$order.kf_qq}&site=qq&menu=yes" class="iconfont icon-kefu user-shop-kefu" target="_blank"></a>
-                {/if}
-                {/if}
-            </span>
-            {if $order.return_url}<span class="info-item"><a href="{$order.return_url}"class="ftx-05">{$lang.return_apply}</a></span>{/if}	
+        
         </div>
-		<div class="c-handle" id="ss_msg_{$order.order_id}">
+		<div class="t-handle" id="ss_msg_{$order.order_id}">
             {if $order.order_over neq 1}
 				{if $goods.og_extension_code eq 'package_buy' && !$order.is_package}
 					<span style="color:red">礼包已下架</span>
@@ -107,7 +96,7 @@
 						<span style="color:red">{$order.original_handler}</span>
 					{elseif $order.handler_act && $order.original_handler}
 						{if $order.is_my_shop neq 'my_shop'}
-						<a href="user.php?act={$order.handler_act}&order_id={$order.order_id}{if $order.sign neq 0}{$order.sign_url}{/if}{if $action eq 'auction'}&action=auction{/if}" {if $order.remind} onclick="if (!confirm('{$order.remind}')) return false;"{/if} class="sc-btn">{if $order.is_comment_again}查看评论{else}{$order.original_handler}{/if}</a>
+						<a href="user.php?act={$order.handler_act}&order_id={$order.order_id}{if $order.sign neq 0}{$order.sign_url}{/if}{if $action eq 'auction'}&action=auction{/if}" {if $order.remind} onclick="if (!confirm('{$order.remind}')) return false;"{/if} class="sc-btn">{if $order.is_comment_again}評価の表示{else}{$order.original_handler}{/if}</a>
 						{/if}
 					{/if}
 				{/if}

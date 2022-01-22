@@ -1134,7 +1134,7 @@ function addToCartResponse_quick(result) {
         }
     } else {
         // 更新购物车数量
-        d_messages("商品已加入购物车", 2);
+        d_messages("商品はカートに入っております", 2);
         $(".cart-num").html(result.goods_number);
         if(result.parent > 0){
             location.href = ROOT_URL + 'index.php?m=cart'; //配件加入购物车跳转

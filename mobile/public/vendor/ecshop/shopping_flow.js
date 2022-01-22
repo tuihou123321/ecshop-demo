@@ -576,7 +576,7 @@ function checkOrderForm(frm)
     //避免重复提交
     var submitObj = $('button[name="submit"]');
     var submitObjText = submitObj.text();
-    submitObj.attr("disabled", true).text('提交中...').css('background', '#ff9b9b');
+    submitObj.attr("disabled", true).text('コミット中...').css('background', '#ff9b9b');
     setTimeout(function () {
         submitObj.attr("disabled", false).text(submitObjText).css('background', '#EC5151');
     }, 5000);

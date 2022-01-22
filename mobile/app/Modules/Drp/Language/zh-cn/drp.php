@@ -19,12 +19,12 @@ $_LANG['separate_account_log'] = '订单号 %s, 分成:金钱 %s 积分 %s';
 $_LANG['transferred_to_balance'] = '用户 %s, 分销分成转到余额:金钱 %s 积分 %s';
 $_LANG['sch_order'] = '搜索订单号';
 //分销订单状态
-$_LANG['order_stats'][0] = '未确认';
-$_LANG['order_stats'][1] = '已确认';
-$_LANG['order_stats'][2] = '已取消';
-$_LANG['order_stats'][3] = '无效';
-$_LANG['order_stats'][4] = '退货';
-$_LANG['order_stats'][5] = '已分单';
+$_LANG['order_stats'][0] = '未確認';
+$_LANG['order_stats'][1] = '確認済み';
+$_LANG['order_stats'][2] = 'キャンセル済み';
+$_LANG['order_stats'][3] = '無効';
+$_LANG['order_stats'][4] = '返品';
+$_LANG['order_stats'][5] = '分割済請求書';
 
 $_LANG['ss'][SS_UNSHIPPED] = '未发货';
 $_LANG['ss'][SS_PREPARING] = '配货中';
@@ -53,7 +53,7 @@ $_LANG['drp_affiliate_batch'] = '批量分成';
 
 
 $_LANG['drp_action'] = '操作信息';
-$_LANG['order_sn'] = '订单号';
+$_LANG['order_sn'] = '注文書番号';
 $_LANG['order_stats']['name'] = '订单状态';
 $_LANG['log_info'] = '操作信息';
 $_LANG['drp_info'] = '佣金明细';
@@ -101,8 +101,8 @@ $_LANG['admin_check'] = '请等待管理员审核';
 $_LANG['in_shop'] = '进入商城';
 $_LANG['shop_close'] = '店铺还未开启!';
 $_LANG['brokerage_list'] = '佣金明细';
-$_LANG['all_category'] =  '全部分类';
-$_LANG['all_goods'] =  '全部商品';
+$_LANG['all_category'] =  'すべての分類';
+$_LANG['all_goods'] =  '全商品';
 $_LANG['user_card'] =  '我的名片';
 $_LANG['my_team'] = '我的团队';
 $_LANG['team_detail'] = '团队详情';

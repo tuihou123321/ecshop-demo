@@ -304,7 +304,7 @@ $_LANG['topic_add'] = '添加专题';
 $_LANG['topic_list'] = '专题列表';
 $_LANG['10_auction'] = '拍卖活动';
 $_LANG['12_favourable'] = '优惠活动';
-$_LANG['13_wholesale'] = '批发管理';
+$_LANG['13_wholesale'] = '关键词设置';
 $_LANG['ebao_commend'] = '易宝推荐';
 $_LANG['14_package_list'] = '超值礼包';
 $_LANG['package_add'] = '添加超值礼包';
@@ -773,7 +773,7 @@ else {
 	$_LANG['03_wholesale_purchase'] = '求购列表';
 	$_LANG['wholesale_purchase'] = '求购列表';
 	$_LANG['wholesale_order'] = '采购订单';
-	$_LANG['01_wholesale'] = '批发管理';
+	$_LANG['01_wholesale'] = '关键词设置';
 }
 
 $_LANG['24_sms'] = '短信管理';
@@ -803,7 +803,7 @@ $_LANG['js_languages']['title_name_one'] = '已完成更新，请关闭该窗口
 $_LANG['js_languages']['title_name_two'] = '正在更新数据中，请勿关闭该窗口！';
 $_LANG['18_region_store'] = '卖场';
 $_LANG['01_region_store_manage'] = '卖场管理';
-$_LANG['00_home'] = '首页';
+$_LANG['00_home'] = 'トップページ';
 $_LANG['01_admin_core'] = '管理中心';
 $_LANG['02_operation_flow'] = '业务流程';
 $_LANG['03_novice_guide'] = '新手向导';
@@ -876,9 +876,9 @@ $_LANG['exist_cat'] = '分类名称“ %s ”已存在！';
 $_LANG['cloud_api'] = '供货平台配置';
 
 /* 供求 */
-$_LANG['supply_and_demand'] = '供求';
+$_LANG['supply_and_demand'] = '內鏈';
 $_LANG['01_wholesale_purchase'] = '求购列表';
-$_LANG['02_wholesale_order'] = '采购订单';
+$_LANG['02_wholesale_order'] = '內鏈添加';
 $_LANG['03_wholesale_purchase'] = '求购列表';
 
 ?>

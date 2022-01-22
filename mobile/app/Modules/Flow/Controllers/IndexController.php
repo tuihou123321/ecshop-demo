@@ -527,7 +527,7 @@ class IndexController extends \App\Modules\Base\Controllers\FrontendController
 
 		$this->assign('store_id', $store_id);
 		$this->assign('user_info', $user_info);
-		$this->assign('page_title', '订单确认');
+		$this->assign('page_title', '注文書確認');
 		$this->display();
 	}
 
@@ -550,7 +550,7 @@ class IndexController extends \App\Modules\Base\Controllers\FrontendController
 				$user_bonus[$key]['use_end_date'] = local_date('Y-m-d', $val['use_end_date']);
 
 				if ($val['usebonus_type'] == 1) {
-					$user_bonus[$key]['shop_name'] = '全场通用';
+					$user_bonus[$key]['shop_name'] = '満場共通';
 				}
 				else if ($val['user_id'] == 0) {
 					$user_bonus[$key]['shop_name'] = '';
@@ -2376,11 +2376,11 @@ class IndexController extends \App\Modules\Base\Controllers\FrontendController
 
 			$this->assign('city_list', $city_list);
 			$this->assign('consignee_list', $consignee_list);
-			$this->assign('page_title', '修改收货地址');
+			$this->assign('page_title', '受取人の住所の変更');
 			$this->display();
 		}
 		else {
-			$this->assign('page_title', '添加收货地址');
+			$this->assign('page_title', '受取人住所の追加');
 			$this->display();
 		}
 	}

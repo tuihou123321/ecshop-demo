@@ -1103,7 +1103,7 @@ function price_format($price = 0, $change_price = true)
 	if ($change_price && defined('ECS_ADMIN') === false) {
 		switch ($GLOBALS['_CFG']['price_format']) {
 		case 0:
-			$price = number_format($price, 2, '.', '');
+			$price = number_format($price, 0, '.', '');
 			break;
 
 		case 1:
@@ -1124,7 +1124,7 @@ function price_format($price = 0, $change_price = true)
 			break;
 
 		case 4:
-			$price = number_format($price, 1, '.', '');
+			$price = number_format($price, 0, '.', '');
 			break;
 
 		case 5:
@@ -1133,7 +1133,7 @@ function price_format($price = 0, $change_price = true)
 		}
 	}
 	else {
-		@$price = number_format($price, 2, '.', '');
+		@$price = number_format($price, 0, '.', '');
 	}
 
 	return sprintf($GLOBALS['_CFG']['currency_format'], $price);

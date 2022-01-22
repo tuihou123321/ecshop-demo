@@ -3,7 +3,7 @@
 <!-- {if $hot_goods} -->
 <div class="hot-sales">
     <div class="hotsale w1390 w">
-        <div class="hatsale-mt">{$lang.Popular_recommendation}</div>
+        <div class="hatsale-mt">おすすめ</div>
         <div class="bd">
             <ul>
             	<!--{foreach from=$hot_goods item=goods name=hot_goods}-->
@@ -19,7 +19,7 @@
                                 {$goods.shop_price}
                             {/if}
                         </div>
-                        <div class="p-btn"><a class="btn sc-redBg-btn" href="{$goods.url}">立即购买</a></div>
+                        <div class="p-btn"><a class="btn sc-redBg-btn" href="{$goods.url}">カート [購入する] </a></div>
                     </div>
                 </li>
                 {/if}

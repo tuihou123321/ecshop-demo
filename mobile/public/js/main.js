@@ -45477,7 +45477,7 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
       },
       "tag": "a"
     }
-  }, [_vm._v("\n    订单确认\n  ")])], 1)
+  }, [_vm._v("\n    注文書確認\n  ")])], 1)
 },staticRenderFns: []}
 module.exports.render._withStripped = true
 if (false) {

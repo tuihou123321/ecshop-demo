@@ -38,7 +38,7 @@ $_LANG['Recommended_Indiana'] = "推荐夺宝";
 $_LANG['current_price_snatch'] = "当前价";
 $_LANG['End_pitch'] = "距结束";
 $_LANG['Wait_au'] = "等待开拍";
-$_LANG['Popular_recommendation'] = "热门推荐";
+$_LANG['Popular_recommendation'] = "店長おすすめ";
 $_LANG['Change_set'] = "换一组";
 
 //20161214

@@ -55,10 +55,9 @@
                             <div class="summary-price-wrap">
                                 <div class="s-p-w-wrap">
                                     <div class="summary-item si-shop-price">
-                                        <div class="si-tit">{if $goods.gmt_end_time}促 销 价{else}商 城 价{/if}</div>
+                                        <div class="si-tit">{if $goods.gmt_end_time}特典価格{else}販売価格{/if}</div>
                                         <div class="si-warp">
                                             <strong class="shop-price" id="ECS_SHOPPRICE" ectype="SHOP_PRICE"></strong>
-                                            <span class="price-notify" data-userid="{$user_id}" data-goodsid="{$goods.goods_id}" ectype="priceNotify">{$lang.price_notice}</span>
                                         </div>
                                     </div>
                                     <!--{if $cfg.show_marketprice}-->
@@ -68,13 +67,13 @@
                                     </div>
                                     <!--{/if}-->
                                     <div class="si-info">
-                                        <div class="si-cumulative">{$lang.Cumulative_evaluation}<em>{$comment_all.allmen}</em></div>
-                                        <div class="si-cumulative">{$lang.Cumulative_Sales}<em>{$goods.sales_volume}</em></div>
+                                        <div class="si-cumulative"></div>
+                                        
                                     </div>
                                     <!--{if $two_code}-->
                                     <div class="si-phone-code">
                                         <div class="qrcode-wrap">
-                                            <div class="qrcode_tit">{$lang.summary_phone}<i class="iconfont icon-qr-code"></i></div>
+                                            
                                             <div class="qrcode_pop">
                                                 <div class="mobile-qrcode"><img src="{$weixin_img_url}" alt="{$lang.two_code}" title="{$weixin_img_text}" width="175"></div>
                                             </div>
@@ -208,13 +207,13 @@
                                     </div>
                                 </div>
                                 <div class="summary-item is-service">
-                                    <div class="si-tit">服务</div>
+                                    <div class="si-tit">サービス</div>
                                     <div class="si-warp">
                                         <div class="fl">
                                         {if $goods.user_id > 0}
-                                            由 <a href="{$goods.store_url}" class="link-red" target="_blank">{$goods.rz_shopName}</a> 发货并提供售后服务
+                                             <a href="{$goods.store_url}" class="link-red" target="_blank">Rush専門店</a> 出荷とアフターサービス
                                         {else}
-                                            由 <a href="javascript:void(0)" class="link-red">{$goods.rz_shopName}</a> 发货并提供售后服务
+                                             <a href="javascript:void(0)" class="link-red">Rush専門店</a> 出荷とアフターサービス
                                         {/if}
                                         </div>
                                         <div class="fl pl10" id="user_area_shipping"></div>
@@ -222,7 +221,7 @@
                                 </div>
                                 <!-- {if $cfg.show_brand && $goods.user_id && $goods.goods_brand} 显示商品品牌-->
                                 <div class="summary-item is-brand">
-                                    <div class="si-tit">品牌</div>
+                                    <div class="si-tit">ブランド</div>
                                     <div class="si-warp"><a href="{$goods.goods_brand_url}" target="_blank">{$goods.goods_brand}</a></div>
                                 </div>
                                 <!-- {/if} -->
@@ -240,7 +239,7 @@
                                 <!-- {/if} -->
                                 <!-- {if $goods.goods_extends.is_reality || $goods.goods_extends.is_return || $goods.goods_extends.is_fast} -->
                                 <div class="summary-item">
-                                    <div class="si-tit">承诺</div>
+                                    <div class="si-tit">に約束</div>
                                     <div class="si-warp">
                                         <ul class="tips-list">
                                             {if $goods.goods_extends.is_reality}<li class="choose-item choose-zp"><i class="iconfont icon-zheng"></i>{$lang.is_reality}</li>{/if}
@@ -360,7 +359,7 @@
                                 </div>
                                 <!-- {/if} -->
                                 <div class="summary-item is-number">
-                                    <div class="si-tit">数量</div>
+                                    <div class="si-tit">購入数量</div>
                                     <div class="si-warp">
                                         <div class="amount-warp">
                                             <input class="text buy-num" ectype="quantity" value="1" name="number" defaultnumber="1">
@@ -381,16 +380,16 @@
                             </div>
                             <div class="choose-btns{if !$area_position_list || $goods.store_count <= 0 || !$stages || $goods.is_on_sale eq 0 } ml60{/if} clearfix">
                                 {if $shop_close eq 0 && $goods.user_id neq 0}
-                                	<a class="btn-invalid" href="javascript:void(0);">此店铺已关闭</a>
+                                	<a class="btn-invalid" href="javascript:void(0);">店はもう閉まっている</a>
                                 {else}
                                     {if $goods.is_alone_sale eq 0}
-                                    <a href="category.php?id=347" class="btn-buynow">查看类似商品</a>
+                                    <a href="category.php?id=347" class="btn-buynow">同じ商品を見る</a>
                                     {else}
                                         {if $goods.review_status <= 2 || $goods.is_on_sale eq 0}
-                                            <a id="sold_out" class="btn-invalid" href="javascript:void(0);">此商品已下架</a>
+                                            <a id="sold_out" class="btn-invalid" href="javascript:void(0);">この商品はもう売り切れました</a>
                                         {else}
                                             {if $goods_area eq 1}
-                                                <a href="{if $user_id <= 0 && $one_step_buy}#none{else}javascript:bool=0;addToCart({$goods.goods_id}){/if}" data-type="{$one_step_buy}" class="btn-buynow" ectype="btn-buynow">立即购买</a>
+                                                <a href="{if $user_id <= 0 && $one_step_buy}#none{else}javascript:bool=0;addToCart({$goods.goods_id}){/if}" data-type="{$one_step_buy}" class="btn-buynow" ectype="btn-buynow">カート [購入する] </a>
                                                 {if !$one_step_buy}
                                                     <a href="javascript:bool=0;addToCartShowDiv({$goods.goods_id})" class="btn-append" ectype="btn-append"><i class="iconfont icon-carts"></i>{$lang.btn_add_to_cart}</a>
                                                 {/if}
@@ -400,7 +399,7 @@
                                                 {/if}
                                                 <!--分期购按钮 end-->
                                             {else}
-                                            <a id="no_addToCart" class="btn-invalid btn_disabled" href="javascript:void(0);">暂时无货</a>
+                                            <a id="no_addToCart" class="btn-invalid btn_disabled" href="javascript:void(0);">在庫なし</a>
                                             {/if}
                                         {/if}
                                     {/if}
@@ -412,7 +411,7 @@
                             <!-- {if $goods.goods_tag} -->
                             <div class="summary-basic-info">
                                 <div class="summary-item is-service">
-                                    <div class="si-tit">服务承诺</div>
+                                    <div class="si-tit">サービス承諾</div>
                                     <div class="si-warp">
                                         <!-- {foreach from=$goods.goods_tag item=tag} -->
                                         <span class="tary">{$tag}</span>
@@ -424,13 +423,13 @@
                             <!--{if !$goods.goods_extends.is_return || $goods.is_alone_sale eq 0}-->
                             <div class="summary-basic-info">
                                 <div class="summary-item is-service">
-                                    <div class="si-tit">温馨提示</div>
+                                    <div class="si-tit">お知らせ</div>
                                     <div class="si-warp gray">
                                         <!--{if $goods.is_alone_sale eq 0}-->
-                                        <p>·该商品不支持单独销售</p>
+                                        <p>·この商品は単独販売はできません</p>
                                         <!--{/if}-->
                                         <!--{if !$goods.goods_extends.is_return}-->
-                                        <p>·不支持退换货服务</p>
+                                        <p>·返品交換サービスはサポートされていません</p>
                                         <!--{/if}-->
                                     </div>
                                 </div>
@@ -473,27 +472,7 @@
                     {if $goods.shopinfo.self_run}
                     <div class="seller-sr">{$lang.platform_self}</div>
                     {/if}
-                    <div class="seller-pop-box">
-                    	<div class="s-score">
-                            <span class="score-icon"><span class="score-icon-bg" style="width:{$merch_cmt.cmt.all_zconments.allReview}%;"></span></span>
-                            <span>{$merch_cmt.cmt.all_zconments.score}</span>
-                            <i class="iconfont icon-down"></i>
-                        </div>
-                        <div class="g-s-parts">
-                            <div class="parts-item parts-goods">
-                                <span class="col1">商品评价</span>
-                                <span class="col2 {if $merch_cmt.cmt.commentRank.zconments.is_status eq 1}ftx-01{elseif $merch_cmt.cmt.commentRank.zconments.is_status eq 2}average{else}ftx-02{/if}">{$merch_cmt.cmt.commentRank.zconments.score}<i class="iconfont icon-arrow-{if $merch_cmt.cmt.commentRank.zconments.is_status eq 1}up{elseif $merch_cmt.cmt.commentRank.zconments.is_status eq 2}average{else}down{/if}"></i></span>
-                            </div>
-                            <div class="parts-item parts-goods">
-                                <span class="col1">服务态度</span>
-                                <span class="col2 {if $merch_cmt.cmt.commentServer.zconments.is_status eq 1}ftx-01{elseif $merch_cmt.cmt.commentServer.zconments.is_status eq 2}average{else}ftx-02{/if}">{$merch_cmt.cmt.commentServer.zconments.score}<i class="iconfont icon-arrow-{if $merch_cmt.cmt.commentServer.zconments.is_status eq 1}up{elseif $merch_cmt.cmt.commentServer.zconments.is_status eq 2}average{else}down{/if}"></i></span>
-                            </div>
-                            <div class="parts-item parts-goods">
-                                <span class="col1">发货速度</span>
-                                <span class="col2 {if $merch_cmt.cmt.commentDelivery.zconments.is_status eq 1}ftx-01{elseif $merch_cmt.cmt.commentDelivery.zconments.is_status eq 2}average{else}ftx-02{/if}">{$merch_cmt.cmt.commentDelivery.zconments.score}<i class="iconfont icon-arrow-{if $merch_cmt.cmt.commentDelivery.zconments.is_status eq 1}up{elseif $merch_cmt.cmt.commentDelivery.zconments.is_status eq 2}average{else}down{/if}"></i></span>
-                            </div>
-                        </div>
-                    </div>
+
                     <div class="seller-item">
                     	<a href="javascript:void(0);" ectype="collect_store" data-type='goods' data-value='{"userid":{$user_id},"storeid":{$goods.user_id}}' class="gz-store" data-url="{$goods.goods_url}"></a>
                         <a href="{$goods.store_url}" class="store-home"><i class="iconfont icon-home-store"></i>店铺</a>
@@ -523,16 +502,7 @@
                         <!--{/if}-->
                     <!--{else}-->
                         <!--{if $basic_info.kf_qq_all}-->
-                        <div class="g-main service_list">
-                            <div class="mt"><h3>{$lang.store_Customer_service}</h3></div>
-                            <div class="mc">
-                                <ul>
-                                    {foreach from=$basic_info.kf_qq_all  item=kf_qq}
-                                        <li class="service_qq"><a href="http://wpa.qq.com/msgrd?v=3&uin={$kf_qq.1}&site=qq&menu=yes" target="_blank"><i class="icon i-kefu"></i><span>{$kf_qq.0}</span></a></li>
-                                    {/foreach}
-                                </ul>
-                            </div>
-                        </div>
+                  
                         <!--{/if}-->
                     <!--{/if}-->
 
@@ -563,7 +533,7 @@
                     <!-- {if $goods_related_cat} 相关分类-->
                     <div class="g-main">
                     	<div class="mt">
-                            <h3>相关分类</h3>
+                            <h3>関連分類</h3>
                         </div>
                         <div class="mc">
                             <div class="mc-warp">
@@ -582,7 +552,7 @@
                     <!--{if $goods_brand} 同类其他品牌-->
                     <div class="g-main">
                     	<div class="mt">
-                            <h3>同类其他品牌</h3>
+                            <h3>その他のブランド</h3>
                         </div>
                         <div class="mc">
                             <div class="mc-warp">
@@ -605,9 +575,9 @@
                     <div class="g-main g-rank">
                         <div class="mc">
                             <ul class="mc-tab" ectype="rankMcTab">
-                            	<!--{if $new_goods}<li class="curr">新品</li>{/if}-->
-                                <!--{if $best_goods}<li>推荐</li>{/if}-->
-                                <!--{if $hot_goods}<li>热销</li>{/if}-->
+                            	{if $new_goods}<li class="curr">新着商品</li>{/if}
+                                {if $best_goods}<li>人気商品</li>{/if}
+                                {if $hot_goods}<li>大売り出し</li>{/if}
                             </ul>
                         	<div class="mc-content">
                                     <!-- TemplateBeginEditable name="新品排行" -->
@@ -723,25 +693,21 @@
                 <div class="g-m-detail">
                 	<div class="gm-tabbox" ectype="gm-tabs">
                     	<ul class="gm-tab">
-                            <li class="curr" ectype="gm-tab-item">商品详情</li>
-                            <!-- {if $properties} --><li ectype="gm-tab-item-spec">规格参数</li><!--{/if}-->
-                            <li ectype="gm-tab-item">用户评论（<em class="ReviewsCount">{$comment_all.allmen}</em>）</li>
-                            <li ectype="gm-tab-item">网友讨论圈</li>
-                        </ul>
+                            <li class="curr" ectype="gm-tab-item">商品の詳細</li>
+                            <!-- {if $properties} --><li ectype="gm-tab-item-spec">规格パラメータ</li><!--{/if}-->
+                                                    </ul>
                         <div class="extra">
                         	<div class="item">
 								<!--{if $two_code}-->
                                 <div class="si-phone-code">
                                     <div class="qrcode-wrap">
-                                        <div class="qrcode_tit">{$lang.summary_phone}<i class="iconfont icon-qr-code"></i></div>
                                         <div class="qrcode_pop">
-                                            <div class="mobile-qrcode"><img src="{$weixin_img_url}" alt="{$lang.two_code}" title="{$weixin_img_text}" width="175"></div>
-                                        </div>
+                                                                                  </div>
                                     </div>
                                 </div>
 								<!--{/if}-->
                             	<div class="inner">
-                                	<a href="javascript:void(0)" class="btn sc-redBg-btn" id="btn-anchor" ectype="tb-tab-anchor">{$lang.btn_add_to_cart}</a>
+                                	
                                 	<div class="tb-popsku">
                                     	<span class="arrow-top"></span>
                                         <div class="tb-popsku-content">
@@ -802,7 +768,7 @@
                                             <!-- {/if} -->
                                             <!-- {/foreach} -->
                                         	<div class="tb-list">
-                                            	<div class="tb-label">数量：</div>
+                                            	<div class="tb-label">購入数量：</div>
 												<div class="tb-value">
 													<div class="amount-warp">
 														<input class="text buy-num" ectype="quantity" value="1" name="number" defaultnumber="1">
@@ -832,14 +798,13 @@
                     <div class="gm-floors" ectype="gm-floors">
                         <div class="gm-f-item gm-f-details" ectype="gm-item">
                             <div class="gm-title">
-                                <h3>商品详情</h3>
+                                <h3>商品の詳細</h3>
                             </div>
                             <div class="goods-para-list">
                                 <dl class="goods-para">
                                     <dd class="column"><span>{$lang.goods_name}：{$goods.goods_name|escape:html}</span></dd>
                                     <dd class="column"><span>{$lang.Commodity_number}：{$goods.goods_sn}</span></dd>
-                                    <dd class="column"><span>{$lang.seller_store}：<a href="{$goods.store_url}" title="{$goods.rz_shopName}" target="_blank">{$goods.rz_shopName}</a></span></dd>
-                                    <!-- {if $cfg.show_goodsweight} 商品重量-->
+                                                                     <!-- {if $cfg.show_goodsweight} 商品重量-->
                                     <dd class="column"><span>{$lang.weight}：{$goods.goods_weight}</span></dd>
                                     <!-- {/if} -->
                                     <!-- {if $cfg.show_addtime} 上架时间-->
@@ -867,7 +832,7 @@
                                 <!-- {/if} -->
                                 <!-- {if $properties} -->
                                 <p class="more-par">
-                                    <a href="javascript:void(0);" ectype="product-detail" class="ftx-05">更多参数>></a>
+                                    <a href="javascript:void(0);" ectype="product-detail" class="ftx-05">その他の情報>></a>
                                 </p>
                                 <!--{/if}-->
                             </div>
@@ -895,42 +860,9 @@
                         </div>
                         <!-- {/if} -->
                         <div class="gm-f-item gm-f-comment" ectype="gm-item">
-                            <div class="gm-title">
-                                <h3>评论晒单</h3>
-                                {* DSC 提醒您：动态载入goods_comment_title.lbi，显示首页分类小广告 *}{insert name='goods_comment_title' goods_id=$goods.goods_id}
-                            </div>
-                            <div class="gm-warp">
-                                <div class="praise-rate-warp">
-                                    <div class="rate">
-                                        <strong>{$comment_all.goodReview}</strong>
-                                        <span class="rate-span">
-                                            <span class="tit">好评率</span>
-                                            <span class="bf">%</span>
-                                        </span>
-                                    </div>
-                                    <div class="actor-new">
-                                        {if $goods.impression_list}
-                                        <dl>
-                                            <dd ectype="comment_tag" data-type="1"><span class="red">全部</span></dd>
-                                            <!--{foreach from=$goods.impression_list item=tag}-->
-                                            <dd ectype="comment_tag"><span>{$tag.txt}</span>({$tag.num})</dd>
-                                            <!--{/foreach}-->
-                                        </dl>
-                                        {else}
-                                        <div class="not_impression">此商品还没有设置买家印象，陪我一起等下嘛~</div>
-                                        {/if}
-                                    </div>
-                                </div>
-                                <div class="com-list-main">
-                                <!-- #BeginLibraryItem "/library/comments.lbi" --> <!-- #EndLibraryItem -->
-                                </div>
-                            </div>
-                        </div>
-                        <div class="gm-f-item gm-f-tiezi" ectype="gm-item">
-                            {* DSC 提醒您：动态载入goods_discuss_title.lbi，显示首页分类小广告 *}{insert name='goods_discuss_title' goods_id=$goods.goods_id}
-                            <div class="table" id='discuss_list_ECS_COMMENT'></div>
-                        </div>
-                    </div>
+                            
+                                    
+                        
                 </div>
                 <div class="clear"></div>
                 <div class="rection" id="guess_goods_love">

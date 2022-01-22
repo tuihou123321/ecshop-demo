@@ -14,7 +14,7 @@
 */
 $_LANG['merchants_Settled_desc'] = "申请商家入驻；已提交申请，可查看当前审核状态。";
 $_LANG['see_Agreement'] = "查看开店协议";
-$_LANG['Popular_recommendation'] = "热门推荐";
+$_LANG['Popular_recommendation'] = "店長おすすめ";
 $_LANG['panic_buying'] = "疯狂抢购";
 $_LANG['Mall_recommend'] = "商城推荐";
 $_LANG['Forwardest_goods'] = "热评商品";

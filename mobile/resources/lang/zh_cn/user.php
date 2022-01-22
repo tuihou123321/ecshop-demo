@@ -39,7 +39,7 @@ $_LANG['return_info'] = "退换货申请已提交";
 //退换货 end
 
 /* 用户菜单 */
-$_LANG['user'] = '个人中心';
+$_LANG['user'] = 'ユーザーセンター';
 $_LANG['commentList'] = '待评价';
 $_LANG['label_welcome'] = '欢迎页';
 $_LANG['label_profile'] = '用户信息';
@@ -47,13 +47,13 @@ $_LANG['label_order'] = '我的订单';
 $_LANG['label_address'] = '收货地址';
 $_LANG['label_message'] = '我的留言';
 $_LANG['label_tag'] = '我的标签';
-$_LANG['label_collection'] = '我的收藏';
+$_LANG['label_collection'] = '私のコレクション';
 $_LANG['label_bonus'] = '我的优惠券';
 $_LANG['label_comment'] = '我的评论';
 $_LANG['label_affiliate'] = '我的推荐';
 $_LANG['label_group_buy'] = '我的团购';
 $_LANG['label_booking'] = '缺货登记';
-$_LANG['label_user_surplus'] = '资金管理';
+$_LANG['label_user_surplus'] = '代金券管理';
 $_LANG['label_track_packages'] = '跟踪包裹';
 $_LANG['label_transform_points'] = '积分兑换';
 $_LANG['label_logout'] = '退出';
@@ -79,7 +79,7 @@ $_LANG['submit_request'] = '提交申请';
 $_LANG['process_time'] = '操作时间';
 $_LANG['use_time'] = '使用时间';
 $_LANG['is_paid'] = '状态';
-$_LANG['is_confirm'] = '已完成';
+$_LANG['is_confirm'] = '完了';
 $_LANG['un_confirm'] = '未确认';
 $_LANG['pay'] = '付款';
 $_LANG['is_cancel'] = '取消';
@@ -327,11 +327,11 @@ $_LANG['second_order'] = '从订单';
 $_LANG['merge_order'] = '合并订单';
 $_LANG['no_priv'] = '你没有权限操作他人订单';
 $_LANG['buyer_cancel'] = '用户取消';
-$_LANG['cancel'] = '取消订单';
+$_LANG['cancel'] = '注文書を取り消す';
 $_LANG['pay_money'] = '付款';
 $_LANG['view_order'] = '查看订单';
 $_LANG['received'] = '确认收货';
-$_LANG['ss_received'] = '已完成';
+$_LANG['ss_received'] = '完了';
 $_LANG['confirm_cancel'] = '您确认要取消该订单吗？取消后此订单将视为无效订单';
 $_LANG['merge_ok'] = '订单合并成功！';
 $_LANG['merge_invalid_order'] = '对不起，您选择合并的订单不允许进行合并的操作。';
@@ -346,8 +346,8 @@ $_LANG['gb_deposit'] = '（保证金）';
 $_LANG['notice_gb_order_amount'] = '（备注：团购如果有保证金，第一次只需支付保证金和相应的支付费用）';
 $_LANG['business_message'] = '发送/查看商家留言';
 $_LANG['pay_order_by_surplus'] = '追加使用余额支付订单：%s';
-$_LANG['return_surplus_on_cancel'] = '取消订单 %s，退回支付订单时使用的预付款';
-$_LANG['return_integral_on_cancel'] = '取消订单 %s，退回支付订单时使用的积分';
+$_LANG['return_surplus_on_cancel'] = '注文書を取り消す %s，退回支付订单时使用的预付款';
+$_LANG['return_integral_on_cancel'] = '注文書を取り消す %s，退回支付订单时使用的积分';
 
 /* 订单状态 */
 $_LANG['os'][OS_UNCONFIRMED] = '未确认';
@@ -400,7 +400,7 @@ $_LANG['goods_price'] = '商品价格';
 $_LANG['goods_attr'] = '属性';
 $_LANG['use_balance'] = '使用余额';
 $_LANG['order_postscript'] = '订单附言';
-$_LANG['order_number'] = '订单号';
+$_LANG['order_number'] = '注文書番号';
 $_LANG['consignment'] = '发货单';
 $_LANG['shopping_money'] = '商品总价';
 $_LANG['invalid_order_id'] = '订单号错误';
@@ -422,11 +422,11 @@ $_LANG['error_order_is_paid'] = '该订单不需要付款！';
 $_LANG['error_surplus_not_enough'] = '您的帐户余额不足！';
 
 /* 订单状态 */
-$_LANG['detail_order_sn'] = '订单号';
+$_LANG['detail_order_sn'] = '注文書番号';
 $_LANG['detail_order_status'] = '订单状态';
 $_LANG['detail_pay_status'] = '付款状态';
 $_LANG['detail_shipping_status'] = '配送状态';
-$_LANG['detail_order_sn'] = '订单号';
+$_LANG['detail_order_sn'] = '注文書番号';
 $_LANG['detail_to_buyer'] = '卖家留言';
 
 $_LANG['confirm_time'] = '确认于 %s';
@@ -802,7 +802,7 @@ $_LANG['already_attention_check_shop'] = '已关注选中商品';
 $_LANG['cancel_attention'] = '已取消关注';
 
 /* 分类 category */
-$_LANG['all_category'] = '全部分类';
+$_LANG['all_category'] = 'すべての分類';
 
 /* 社区  community */
 $_LANG['community_my'] = '我的社区';

@@ -345,7 +345,7 @@
                     {if $child_num eq 1}
                     <div class="o-list">
                         <div class="o-list-info">
-                            <span>寄送至：{$main_order.address}</span>
+                            <span>配送先：{$main_order.address}</span>
                             <span>联系人：{$main_order.consignee}</span>
                             <span>{$main_order.mobile}</span>
                         </div>

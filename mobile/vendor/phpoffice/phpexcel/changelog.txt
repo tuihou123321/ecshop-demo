@@ -1236,7 +1236,7 @@ documentation for more information on entering dates into a cell.
 - Feature:  (MB) Work item 3543 - Create clickable links (hyperlinks)
 - Feature:  (MB) Work item 3241 - Additional page setup parameters
 - Feature:  (MB) Work item 3300 - Make temporary file path configurable (Excel5)
-- Feature:  (MB) Work item 3307 - Small addition to applyFromArray for font
+- Feature:  (MB) Work item 3306 - Small addition to applyFromArray for font
 - Feature:  (MB) Work item 3373 - Better feedback when save of file is not possible
 - Bugfix:   (MB) Work item 3181 - Text Rotation
 - Bugfix:   (MB) Work item 3237 - Small bug in Page Orientation

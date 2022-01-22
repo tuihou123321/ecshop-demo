@@ -3,7 +3,7 @@
 <!-- {if $hot_goods} -->
 <div class="ecsc-hot-sales">
     <div class="hotsale w1390">
-        <div class="hatsale-mt">{$lang.Popular_recommendation}</div>
+        <div class="hatsale-mt">おすすめ</div>
         <div class="bd">
             <ul>
             	<!--{foreach from=$hot_goods item=goods}-->

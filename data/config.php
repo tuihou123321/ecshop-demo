@@ -1,15 +1,15 @@
 <?php
 // database host
-$db_host   = "localhost:3307";
+$db_host   = "localhost:3306";
 
 // database name
-$db_name   = "db_ecshop";
+$db_name   = "ekanpou";
 
 // database username
-$db_user   = "ecshop";
+$db_user   = "ekanpou";
 
 // database password
-$db_pass   = "ecshop";
+$db_pass   = "123456";
 
 // table prefix
 $prefix    = "dsc_";

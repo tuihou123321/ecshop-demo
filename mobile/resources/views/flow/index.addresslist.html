@@ -7,7 +7,7 @@
 				<div class="flow-have-adr padding-all">
 					<div class="f-h-adr-title dis-box">
 						<label>{$consignee.consignee}</label> {if $consignee.address_id==$defulte_id }
-						<span class="t-first address-default">默认</span> {/if}
+						<span class="t-first address-default">黙認する</span> {/if}
 						<div class="box-flex">
 							<div class="fr"><span class="f-05">{$consignee.mobile}</span></div>
 						</div>
@@ -19,29 +19,29 @@
 					<div class="ect-select fl">
 						<label class="dis-box {if $address_id == $consignee.address_id}active{/if}" onclick="adderss_user({$consignee.address_id})">
 			                      <i class="select-btn active-i"></i>      
-			                      <span class="t-first margin-lr" id="address-defaul">选择</span>                       
+			                      <span class="t-first margin-lr" id="address-defaul">選択</span>                       
 			                    </label>
 					</div>
 					<div class="fr">
 						<a href="{url('flow/index/add_address',array('address_id'=>$consignee.address_id))}">
-							<i class="iconfont icon-bianji"></i>编辑
+							<i class="iconfont icon-bianji"></i>編集
 						</a>
 						<a onclick="del({$consignee.address_id})">
-							<i class="iconfont icon-xiao10"></i>删除
+							<i class="iconfont icon-xiao10"></i>削除
 						</a>
 					</div>
 				</div>
 			</section>
           {/foreach}
 		<div class="ect-button-more dis-box filter-btn">
-			<a href="{url('flow/index/add_address')}" class="btn-submit box-flex">新增收货人信息</a>
+			<a href="{url('flow/index/add_address')}" class="btn-submit box-flex">受取人情報の追加</a>
 		</div>
 		</div>
 		{else}
 		<div class="no-div-message">
 			<i class="iconfont icon-biaoqingleiben"></i>
-			<p>亲，还没有收货地址哦～！</p>
-			<a href="{url('flow/index/add_address')}" class="t-first">点击添加一个收货地址</a>
+			<p>まだ受取人の住所がありませんよ～！</p>
+			<a href="{url('flow/index/add_address')}" class="t-first">クリックして受取人の住所を追加します</a>
 		</div>
 		{/if}
 		</div>

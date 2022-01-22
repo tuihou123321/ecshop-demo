@@ -56,7 +56,6 @@
                 <!--{/foreach}-->
                 <!--{/if}-->
             </dd>
-            <dd class="give_up_all"><a href="{if $script_name eq 'search'}search.php?{if $cou_id}&cou_id={$cou_id}{/if}&keywords={$pager.search.keywords}{else}category.php?id={$category}{/if}" class="ftx-05">{$lang.All_undo}</a></dd>
         </dl>
     </div>
 	<div class="goods_list">
@@ -107,9 +106,7 @@
                         </div>
                     </div>
                     <div class="s-l-opt sl-ext">
-                        <div class="choose_open s-l-more"><i class="iconfont icon-down"></i></div>
-                        <div class="choose_more s-l-multiple"><i class="iconfont icon-plus"></i>{$lang.multi_select}</div>
-                    </div>
+                                            </div>
                 </div>
             </li>
             <!--{/if}-->

@@ -110,7 +110,7 @@
         </div>
         <div class="nav-main" id="nav">
             <ul class="navitems">
-                <li class="channel {if $pager.act eq 'index'}channel-now{/if}"><a href="{$url_presale}">首页</a></li>
+                <li class="channel {if $pager.act eq 'index'}channel-now{/if}"><a href="{$url_presale}">トップページ</a></li>
                 <li class="channel {if $pager.act eq 'new'}channel-now{/if}"><a href="{$url_presale_new}">新品发布</a></li>
                 <li class="channel {if $pager.act eq 'advance'}channel-now{/if}"><a href="{$url_presale_advance}">抢先订</a></li>
             </ul>

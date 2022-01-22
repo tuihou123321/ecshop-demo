@@ -6,8 +6,8 @@
 	</header>-->
  <body class="b-color-f">   
 <header class="history-header dis-box">
-		<div class="box-flex f-04 col-9">浏览条数<em class="col-7">{$count}</em>条</div>
-		<div class="his-btn f-03 color-red  clear_history">清空</div>
+		<div class="box-flex f-04 col-9">ブラウズバーの数<em class="col-7">{$count}</em>条</div>
+		<div class="his-btn f-03 color-red  clear_history">クリア</div>
 </header>
 	
     <section class="product-list j-product-list  product-list-small" data="2">
@@ -41,7 +41,7 @@
                     <%else%>
                     <div class="no-div-message">
                         <i class="iconfont icon-biaoqingleiben"></i>
-                        <p>亲，此处没有内容～！</p>
+                        <p>ここには内容がありません～！</p>
                     </div>
                     <%/if%>
     </script>
@@ -57,8 +57,8 @@
         var url="{url('user/index/clearhistory')}";
         $(".clear_history").click(function(){
                 layer.open({
-                    content: '真的要清空浏览记录',
-                    btn: ['确定', '取消'],
+                    content: 'ブラウズレコードをクリアしますか?',
+                    btn: ['確認', 'キャンセル'],
                     shadeClose: false,
                     yes: function() {
                       $.post(url, {status:status},

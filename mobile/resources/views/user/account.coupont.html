@@ -15,14 +15,14 @@
     <div class="flow-coupon user-coupon">
         <nav class="tab-title b-color-f of-hidden">
             <ul class="dis-box">
-                <li class="box-flex active"><a >我的优惠券</a></li>
+                <li class="box-flex active"><a >私のクーポン</a></li>
             </ul>
         </nav>
         <div class="coupon-nav">
             <div class="coupon-nav-cont">
                 <span class=" {if empty($status)}active{/if}"><a status="0" >未使用</a></span>
-                <span class=" {if $status == 1}active{/if}"><a status="1" >已使用</a></span>
-                <span class=" {if $status == 2}active{/if}"><a status="2" >已过期</a></span>
+                <span class=" {if $status == 1}active{/if}"><a status="1" >使用済み</a></span>
+                <span class=" {if $status == 2}active{/if}"><a status="2" >期限切れ</a></span>
             </div>
         </div>
 
@@ -38,7 +38,7 @@
                                     <div class="q-type">
                                         <div class="b-r-a-price">
                                             <%if order.cou_type == 5 %>
-                                            <strong class="coupons-money">免邮</strong>
+                                            <strong class="coupons-money">送料無料</strong>
                                             <%else%>
                                             <em>¥</em>
 											<strong class="coupons-money">
@@ -57,7 +57,7 @@
                                                 <span><%order.cou_type_name%></span>
                                             </div>
                                             <div class="couons-text text-left color-dark" >
-                                                <span>满<%order.cou_man%>元可用</span>
+                                                <span>満足する<%order.cou_man%>円使用可能</span>
                                             </div>
                                         </div>
                                         <div class="b-r-a-con text-left ">
@@ -70,11 +70,11 @@
                                     <b class="semi-circle"></b>
                                 </div>
                                 <%if order.is_use == 0 && order.is_overdue == 0 %>
-                                <a class="b-r-a-btn b-color-f temark-1-text tb-lr-center " href="<%order.to_use_url%>" >立即<br />使用</a>
+                                <a class="b-r-a-btn b-color-f temark-1-text tb-lr-center " href="<%order.to_use_url%>" >すぐに<br />使う</a>
                                 <%else if order.is_use == 1%>
-                                <a class="b-r-a-btn b-color-f temark-1-text tb-lr-center " href="javascript:;"  >已使用</a>
+                                <a class="b-r-a-btn b-color-f temark-1-text tb-lr-center " href="javascript:;"  >使用済み</a>
                                 <%else if order.is_overdue == 1%>
-                                <a class="b-r-a-btn b-color-f temark-1-text tb-lr-center " href="javascript:;"  >已过期</a>
+                                <a class="b-r-a-btn b-color-f temark-1-text tb-lr-center " href="javascript:;"  >期限切れ</a>
                                 <%/if%>
                             </li>
                             <%/each%>
@@ -82,7 +82,7 @@
                         <%else%>
                         <div class="no-div-message">
                             <i class="iconfont icon-biaoqingleiben"></i>
-                            <p>亲，还没有优惠券哦～！</p>
+                            <p>まだクーポンはありませんよ～！</p>
                         </div>
                         <%/if%>
                     </script>

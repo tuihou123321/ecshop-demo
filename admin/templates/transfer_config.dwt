@@ -34,7 +34,7 @@
                                 <div class="label_value">
                                     <input type="text" name='s_db_port' value='{$db_port}' class="text" autocomplete="off" />
                                     <div class="form_prompt"></div>
-                                    <div class="notic m20">示例：3307</div>
+                                    <div class="notic m20">示例：3306</div>
                                 </div>
                             </div>
                             <div class="item">

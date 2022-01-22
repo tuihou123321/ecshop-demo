@@ -31,7 +31,7 @@
         return null;
     }
 
-    document.getElementById('amount').value=getQueryString('value').replace('¥','').split('.')[0]
+    document.getElementById('amount').value=getQueryString('value').replace('¥','').replace('円','').split('.')[0]
 
 
     function initPayPalButton() {

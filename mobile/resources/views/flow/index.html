@@ -764,8 +764,13 @@
         <span class="box-flex t-remark">支払金額 {if $total.exchange_integral}<em class="t-first">{$total.exchange_integral}積分 + </em>{/if}<em class="t-first" id="amount">{$total.amount_formated}</em></span>
         {if $isStoreOrder == 1}<div><a href="{url('category/index/index')}" class="btn-submit" style="background:#fff;color:#444">注文の続行</a></div>{/if}
         <div>
-            <button class="btn-submit" onclick="
-                window.location.href=`/mobile/paypal.php?value={$total.amount_formated}`
+            <button class="btn-submit" name="submit" type="submit" onclick="
+            (function(){
+                    setTimeout(function (){
+        window.location.href=`/mobile/paypal.php?value={$total.amount_formated}`
+    },3000)
+})()
+
         ">{if $total.exchange_integral}両替の確認{else}注文書を出す{/if} </button>
         </div>
     </section>
